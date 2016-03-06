@@ -1,0 +1,14 @@
+{
+  "name": "jen-and-kin",
+  "version": "1.0.0",
+  "description": "jen and kin's wedding website",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.13.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kintendo/jen-and-kin.git"
+  },
+  "author": "Kin Thai",
+}

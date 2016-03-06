@@ -1,0 +1,15 @@
+{
+  "name": "jen-and-kin",
+  "authors": [
+    "Kin Thai <kinthai@gmail.com>"
+  ],
+  "main": "index.html",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
