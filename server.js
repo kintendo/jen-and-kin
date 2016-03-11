@@ -4,12 +4,11 @@ var express = require('express');
 var app = express();
 var PORT = 3000;
 
-app.get('/', function (req, res) {
-  res.sendFile(__dirname + '/index.html');
-});
+app.use(express.static(__dirname + '/public'))
 
-app.use('/images', express.static(__dirname + '/images'));
-app.use('/js', express.static(__dirname + '/js'));
+app.get('/', function (req, res) {
+  res.sendFile(__dirname + '/public/index.html');
+});
 
 app.listen(PORT, function () {
   console.log('listening on port', PORT);
