@@ -1,11 +1,10 @@
-
-// main.js
+'use strict';
 
 var React = require('react');
 var ReactDOM = require('react-dom');
-// var App = require('App.js');
+var App = require('./app.js');
+var elm = document.getElementById('app');
 
-ReactDOM.render(
-  <h1>Hello, world!</h1>,
-  document.getElementById('app')
-);
+if (elm) {
+  ReactDOM.render(React.createElement(App), elm);
+}
