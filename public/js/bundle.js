@@ -19057,7 +19057,7 @@ var App = function (_React$Component) {
     key: 'render',
     value: function render() {
 
-      var text = 'Hello again, world!';
+      var text = 'Hello again, world! Trying again. And Again.';
 
       return React.createElement(
         'div',

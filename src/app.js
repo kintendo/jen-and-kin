@@ -7,12 +7,14 @@ class App extends React.Component {
 
   render (){
 
-    let text = 'Hello again, world!';
+    let text = 'Hello again, world! Trying again. And Again.';
 
     return (
       <div>
         {text}
-        {/**/}
+        {/*nav bar Component
+
+          */}
       </div>
     );
   }

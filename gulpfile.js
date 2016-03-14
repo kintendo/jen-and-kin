@@ -10,3 +10,7 @@ gulp.task('build', function() {
     .bundle()
     .pipe(fs.createWriteStream('public/js/bundle.js'));
 });
+
+gulp.task('watch', function () {
+  gulp.watch('src/*', ['build']);
+});

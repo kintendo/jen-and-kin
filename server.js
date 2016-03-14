@@ -3,7 +3,7 @@
 var http = require('http');
 var express = require('express');
 var app = express();
-var PORT = 3000;
+var PORT = (typeof process.argv[2] === 'string') ? process.argv[2] : 3000;
 
 app.use(express.static(__dirname + '/public'))
 
