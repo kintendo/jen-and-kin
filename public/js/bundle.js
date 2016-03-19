@@ -19044,6 +19044,13 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var React = require('react');
 var ReactDOM = require('react-dom');
 
+// sub components
+var Navbar = require('./navbar.js');
+var Story = require('./story.js');
+var Wedding = require('./wedding.js');
+var Venue = require('./venue.js');
+var Hero = require('./hero.js');
+
 var App = function (_React$Component) {
   _inherits(App, _React$Component);
 
@@ -19062,7 +19069,11 @@ var App = function (_React$Component) {
       return React.createElement(
         'div',
         null,
-        text
+        React.createElement(Navbar, null),
+        React.createElement(Hero, null),
+        React.createElement(Story, null),
+        React.createElement(Wedding, null),
+        React.createElement(Venue, null)
       );
     }
   }]);
@@ -19072,7 +19083,44 @@ var App = function (_React$Component) {
 
 module.exports = App;
 
-},{"react":158,"react-dom":2}],160:[function(require,module,exports){
+},{"./hero.js":160,"./navbar.js":162,"./story.js":163,"./venue.js":164,"./wedding.js":165,"react":158,"react-dom":2}],160:[function(require,module,exports){
+'use strict';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var React = require('react');
+var ReactDOM = require('react-dom');
+
+var Hero = function (_React$Component) {
+  _inherits(Hero, _React$Component);
+
+  function Hero() {
+    _classCallCheck(this, Hero);
+
+    return _possibleConstructorReturn(this, Object.getPrototypeOf(Hero).apply(this, arguments));
+  }
+
+  _createClass(Hero, [{
+    key: 'render',
+    value: function render() {
+
+      // just an empty div w/ a bg picture or video even
+      return React.createElement('div', { className: 'hero' });
+    }
+  }]);
+
+  return Hero;
+}(React.Component);
+
+module.exports = Hero;
+
+},{"react":158,"react-dom":2}],161:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -19084,4 +19132,252 @@ if (elm) {
   ReactDOM.render(React.createElement(App), elm);
 }
 
-},{"./app.js":159,"react":158,"react-dom":2}]},{},[160]);
+},{"./app.js":159,"react":158,"react-dom":2}],162:[function(require,module,exports){
+'use strict';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var React = require('react');
+var ReactDOM = require('react-dom');
+
+var Navbar = function (_React$Component) {
+  _inherits(Navbar, _React$Component);
+
+  function Navbar() {
+    _classCallCheck(this, Navbar);
+
+    return _possibleConstructorReturn(this, Object.getPrototypeOf(Navbar).apply(this, arguments));
+  }
+
+  _createClass(Navbar, [{
+    key: 'render',
+    value: function render() {
+
+      var text = 'Navbar';
+
+      return React.createElement(
+        'div',
+        { className: 'navbar' },
+        React.createElement(
+          'ul',
+          null,
+          React.createElement(
+            'li',
+            null,
+            React.createElement(
+              'a',
+              null,
+              'the happy couple'
+            )
+          ),
+          React.createElement(
+            'li',
+            null,
+            React.createElement(
+              'a',
+              null,
+              'the big day'
+            )
+          ),
+          React.createElement(
+            'li',
+            null,
+            React.createElement(
+              'a',
+              null,
+              'the venue'
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return Navbar;
+}(React.Component);
+
+module.exports = Navbar;
+
+},{"react":158,"react-dom":2}],163:[function(require,module,exports){
+'use strict';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var React = require('react');
+var ReactDOM = require('react-dom');
+
+var Story = function (_React$Component) {
+  _inherits(Story, _React$Component);
+
+  function Story() {
+    _classCallCheck(this, Story);
+
+    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Story).call(this));
+
+    _this.state = {
+      portraitIndex: 0,
+      landscapeIndex: 0,
+      facebookIndex: 0,
+      instagramIndex: 0
+    };
+    _this.portaitPhotos = [];
+    _this.landscapePhotos = [];
+    _this.facebookPhotos = [];
+    _this.instagramPhotos = [];
+    return _this;
+  }
+
+  _createClass(Story, [{
+    key: 'render',
+    value: function render() {
+      var _state = this.state;
+      var portraitIndex = _state.portraitIndex;
+      var landscapeIndex = _state.landscapeIndex;
+      var facebookIndex = _state.facebookIndex;
+      var instagramIndex = _state.instagramIndex;
+
+      return React.createElement(
+        'div',
+        { className: 'story' },
+        React.createElement('div', { className: 'portrait' }),
+        React.createElement('div', { className: 'landscape' }),
+        React.createElement('div', { className: 'facebook' }),
+        React.createElement('div', { clasName: 'instagram' })
+      );
+    }
+  }]);
+
+  return Story;
+}(React.Component);
+
+module.exports = Story;
+
+},{"react":158,"react-dom":2}],164:[function(require,module,exports){
+'use strict';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var React = require('react');
+var ReactDOM = require('react-dom');
+
+var Venue = function (_React$Component) {
+  _inherits(Venue, _React$Component);
+
+  function Venue() {
+    _classCallCheck(this, Venue);
+
+    return _possibleConstructorReturn(this, Object.getPrototypeOf(Venue).apply(this, arguments));
+  }
+
+  _createClass(Venue, [{
+    key: 'render',
+    value: function render() {
+
+      var text = 'Info about the venue';
+
+      return React.createElement(
+        'div',
+        { className: 'venue-info' },
+        text
+      );
+    }
+  }]);
+
+  return Venue;
+}(React.Component);
+
+module.exports = Venue;
+
+},{"react":158,"react-dom":2}],165:[function(require,module,exports){
+'use strict';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var React = require('react');
+var ReactDOM = require('react-dom');
+
+var Wedding = function (_React$Component) {
+  _inherits(Wedding, _React$Component);
+
+  function Wedding() {
+    _classCallCheck(this, Wedding);
+
+    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Wedding).call(this));
+
+    _this.events = [{ time: '9:30 a.m.', title: 'the tea ceremony',
+      description: '\n          Both the bride and groom will participate in a traditional Chinese/Vietnamese tea ceremony.\n          A Buddhist monk has referenced the Chinese farmer\'s almanac.\n          Based on our Chinese Zodiac signs, the monk has the determined the most auspicious times to start and end the ceremony.\n        '
+    }, { time: '4:30 p.m.', title: 'the wedding ceremony',
+      description: '\n          Celebrating our alma mater, proctored by fellow alumni and good friend Carrie Holmes.\n        '
+    }, { time: '5:30 p.m.', title: 'the cocktail hour',
+      description: '\n          Join us for a magical hour with fresh craft cocktails & beer.\n          Prepare for some surprises up our sleeves.\n        '
+    }, { time: '6:30 p.m.', title: 'the reception',
+      description: '\n          Join us for a traditional Chinese banquet dinner, catered by Capital Seafood.\n        '
+    }];
+    return _this;
+  }
+
+  _createClass(Wedding, [{
+    key: 'render',
+    value: function render() {
+      return React.createElement(
+        'div',
+        { className: 'wedding-info' },
+        React.createElement(
+          'ul',
+          null,
+          this.events.map(function (curEvent) {
+            return React.createElement(
+              'li',
+              null,
+              React.createElement(
+                'h1',
+                null,
+                curEvent.time
+              ),
+              React.createElement(
+                'h2',
+                null,
+                curEvent.title
+              ),
+              React.createElement(
+                'p',
+                null,
+                curEvent.description
+              )
+            );
+          })
+        )
+      );
+    }
+  }]);
+
+  return Wedding;
+}(React.Component);
+
+module.exports = Wedding;
+
+},{"react":158,"react-dom":2}]},{},[161]);
