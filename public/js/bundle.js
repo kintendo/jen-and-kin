@@ -19291,12 +19291,104 @@ var Venue = function (_React$Component) {
     key: 'render',
     value: function render() {
 
-      var text = 'Info about the venue';
-
       return React.createElement(
         'div',
         { className: 'venue-info' },
-        text
+        React.createElement(
+          'h1',
+          null,
+          'UCLA'
+        ),
+        React.createElement('div', { className: 'school-banner' }),
+        React.createElement(
+          'p',
+          null,
+          'The ceremony is going to take place at the beautiful Janss Steps. It will overlook two of the most iconic buildings at UCLA, Royce Hall & Powell Library. Shortly after, the event will transition to a cocktail hour steps away at Dickson Court North, known to students as the "sunken garden".'
+        ),
+        React.createElement(
+          'h2',
+          null,
+          'Directions to UCLA'
+        ),
+        React.createElement(
+          'h3',
+          null,
+          'From 405 North'
+        ),
+        React.createElement(
+          'ul',
+          null,
+          React.createElement(
+            'li',
+            null,
+            'Exit Sunset Blvd and head East'
+          ),
+          React.createElement(
+            'li',
+            null,
+            'Make a right on Hilgard Ave and head South'
+          ),
+          React.createElement(
+            'li',
+            null,
+            'Make a right on Westholme Ave'
+          ),
+          React.createElement(
+            'li',
+            null,
+            'Make a left on Charles E Young Dr'
+          ),
+          React.createElement(
+            'li',
+            null,
+            'Parking structure 2 is on the left'
+          )
+        ),
+        React.createElement(
+          'h3',
+          null,
+          'From 405 South'
+        ),
+        React.createElement(
+          'ul',
+          null,
+          React.createElement(
+            'li',
+            null,
+            'Exit Wilshire Blvd and head East'
+          ),
+          React.createElement(
+            'li',
+            null,
+            'Make a left on Westwood Blvd'
+          ),
+          React.createElement(
+            'li',
+            null,
+            'Make an immediate right onto Lindbrook Dr'
+          ),
+          React.createElement(
+            'li',
+            null,
+            'Make a slight left onto Hilgard Ave and head North'
+          ),
+          React.createElement(
+            'li',
+            null,
+            'Make a left on Westholme Ave'
+          ),
+          React.createElement(
+            'li',
+            null,
+            'Make a left on Charles E Young Dr'
+          ),
+          React.createElement(
+            'li',
+            null,
+            'Parking structure 2 is on the left'
+          )
+        ),
+        React.createElement('iframe', { src: 'https://www.google.com/maps/d/u/0/embed?mid=z2VcF8lpIRrI.k_CspSbNLam8', width: '640', height: '480' })
       );
     }
   }]);
@@ -19349,10 +19441,10 @@ var Wedding = function (_React$Component) {
         React.createElement(
           'ul',
           null,
-          this.events.map(function (curEvent) {
+          this.events.map(function (curEvent, i) {
             return React.createElement(
               'li',
-              null,
+              { key: i },
               React.createElement(
                 'h1',
                 null,
