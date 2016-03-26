@@ -35,7 +35,7 @@ class Wedding extends React.Component {
 
   render (){
     return (
-      <div className="wedding-info">
+      <div id="wedding" className="wedding">
         <ul>
           {
             this.events.map( (curEvent, i) => {

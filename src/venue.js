@@ -9,7 +9,7 @@ class Venue extends React.Component {
 
 
     return (
-      <div className="venue-info">
+      <div id="venue" className="venue">
         <h1>UCLA</h1>
         <div className="school-banner"></div>
         <p>

@@ -18,8 +18,8 @@ class App extends React.Component {
 
     return (
       <div>
-        <Navbar />
         <Hero />
+        <Navbar />
         <Story />
         <Wedding />
         <Venue />
