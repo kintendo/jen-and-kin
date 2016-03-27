@@ -19074,8 +19074,6 @@ var App = function (_React$Component) {
     key: 'render',
     value: function render() {
 
-      var text = 'Hello again, world! Trying again. And Again.';
-
       return React.createElement(
         'div',
         null,
@@ -19189,9 +19187,11 @@ var Navbar = function (_React$Component) {
       window.addEventListener('scroll', this.handleScroll);
       smoothScroll.init({
         speed: 1000,
-        offset: 55
+        offset: 50
       });
-      gumShoe.init();
+      gumShoe.init({
+        offset: 50
+      });
     }
   }, {
     key: 'componentWillUnmount',
@@ -19203,7 +19203,7 @@ var Navbar = function (_React$Component) {
     value: function render() {
 
       return React.createElement(
-        'div',
+        'nav',
         { 'data-gumshoe-header': true, ref: 'navbar', className: 'navbar ' + this.state.stick },
         React.createElement(
           'ul',
@@ -19291,7 +19291,7 @@ var Story = function (_React$Component) {
 
       return React.createElement(
         'div',
-        { className: 'story' },
+        { id: 'couple', className: 'story' },
         React.createElement('div', { className: 'portrait' }),
         React.createElement('div', { className: 'landscape' }),
         React.createElement('div', { className: 'facebook' }),

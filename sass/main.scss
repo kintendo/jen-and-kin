@@ -1,17 +1,23 @@
 @import "sass/colors";
+@import "sass/mixins";
+@import "sass/fonts";
 @import "sass/navbar";
 
 body {
   color: $navy;
   margin: 0px;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 .hero {
   background: url('http://www.carissawoophotography.com/blog/wp-content/uploads/2016/01/21-35422-post/Malibu-Cafe-Engagement-Photographer-Carissa-Woo-Photography_0054.jpg') no-repeat center center fixed;
-  background-size: cover;
   height: 100vh;
+  @include background-size-cover;
 }
+.story {
+  height:600px;
 
+}
 .wedding {
   padding-top: 2px;
   display: flex;

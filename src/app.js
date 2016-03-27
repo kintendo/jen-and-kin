@@ -13,9 +13,7 @@ var Hero = require('./hero.js');
 class App extends React.Component {
 
   render (){
-
-    let text = 'Hello again, world! Trying again. And Again.';
-
+    
     return (
       <div>
         <Hero />

@@ -22,7 +22,7 @@ class Story extends React.Component {
   render (){
     const {portraitIndex, landscapeIndex, facebookIndex, instagramIndex} = this.state;
     return (
-      <div className="story">
+      <div id="couple" className="story">
         <div className="portrait">
         </div>
         <div className="landscape">
