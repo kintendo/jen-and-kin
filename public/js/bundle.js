@@ -19079,9 +19079,9 @@ var App = function (_React$Component) {
         null,
         React.createElement(Hero, null),
         React.createElement(Navbar, null),
-        React.createElement(Story, null),
         React.createElement(Wedding, null),
-        React.createElement(Venue, null)
+        React.createElement(Venue, null),
+        React.createElement(Story, null)
       );
     }
   }]);
@@ -19187,10 +19187,10 @@ var Navbar = function (_React$Component) {
       window.addEventListener('scroll', this.handleScroll);
       smoothScroll.init({
         speed: 1000,
-        offset: 50
+        offset: 40
       });
       gumShoe.init({
-        offset: 50
+        offset: 80
       });
     }
   }, {
@@ -19213,15 +19213,6 @@ var Navbar = function (_React$Component) {
             null,
             React.createElement(
               'a',
-              { 'data-scroll': true, href: '#couple' },
-              'the happy couple'
-            )
-          ),
-          React.createElement(
-            'li',
-            null,
-            React.createElement(
-              'a',
               { 'data-scroll': true, href: '#wedding' },
               'the big day'
             )
@@ -19233,6 +19224,15 @@ var Navbar = function (_React$Component) {
               'a',
               { 'data-scroll': true, href: '#venue' },
               'the venue'
+            )
+          ),
+          React.createElement(
+            'li',
+            null,
+            React.createElement(
+              'a',
+              { 'data-scroll': true, href: '#couple' },
+              'the happy couple'
             )
           )
         )

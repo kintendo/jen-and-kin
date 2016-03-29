@@ -29,10 +29,10 @@ class Navbar extends React.Component {
       window.addEventListener('scroll', this.handleScroll);
       smoothScroll.init({
         speed: 1000,
-        offset: 50
+        offset: 40
       });
       gumShoe.init({
-        offset: 50
+        offset: 80
       });
   }
 
@@ -45,9 +45,9 @@ class Navbar extends React.Component {
     return (
       <nav data-gumshoe-header ref="navbar" className={`navbar ${this.state.stick}`}>
         <ul data-gumshoe>
-          <li><a data-scroll href="#couple">the happy couple</a></li>
           <li><a data-scroll href="#wedding">the big day</a></li>
           <li><a data-scroll href="#venue">the venue</a></li>
+          <li><a data-scroll href="#couple">the happy couple</a></li>
         </ul>
       </nav>
     );

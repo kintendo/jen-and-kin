@@ -13,14 +13,14 @@ var Hero = require('./hero.js');
 class App extends React.Component {
 
   render (){
-    
+
     return (
       <div>
         <Hero />
         <Navbar />
-        <Story />
         <Wedding />
         <Venue />
+        <Story />
       </div>
     );
   }
