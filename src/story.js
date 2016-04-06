@@ -3,36 +3,59 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 var ReactAnimate = require('react-addons-css-transition-group');
+var photos = require('../lib/photos.js');
+var Years = require('./years.js');
 
 class Story extends React.Component {
 
   constructor() {
     super();
     this.state = {
-      portraitIndex: 0,
-      landscapeIndex: 0,
-      facebookIndex: 0,
-      instagramIndex: 0
+      currentYear: '2016'
     };
-    this.portaitPhotos = [];
-    this.landscapePhotos = [];
-    this.facebookPhotos = [];
-    this.instagramPhotos = [];
-    this.years = ['2004', '2005', '2016'];
+    this.handleYearClick = this.handleYearClick.bind(this);
+  }
+
+  handleYearClick (year) {
+    this.setState({
+      currentYear: ''
+    });
+    setTimeout(() => {
+      this.setState({
+        currentYear: year
+      });
+    }, 600);
   }
 
   render (){
-    const {portraitIndex, landscapeIndex, facebookIndex, instagramIndex} = this.state;
+
+    const {currentYear} = this.state;
+    const years = Object.keys(photos);
+
+    const photoItems = photos[currentYear] ?
+      photos[currentYear].map((photo, i) => {
+        return (
+          <div key={i} className="photo-wrapper">
+            <img className="photo" src={photo}/>
+          </div>
+        );
+      }) : null;
     return (
       <div id="couple" className="story">
-        <div className="portrait">
-        </div>
-        <div className="landscape">
-        </div>
-        <div className="facebook">
-        </div>
-        <div clasName="instagram">
-        </div>
+        <ReactAnimate
+          component="div"
+          transitionName="animate"
+          transitionEnterTimeout={300}
+          transitionLeaveTimeout={300}
+          className="photos"
+        >
+          {photoItems}
+        </ReactAnimate>
+        <Years
+          years={years}
+          currentYear={currentYear}
+          onYearClick={this.handleYearClick}
+        />
       </div>
     );
   }

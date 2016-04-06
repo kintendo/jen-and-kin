@@ -4,6 +4,7 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var smoothScroll = require('smooth-scroll');
 var gumShoe = require('gumshoe');
+var ReactAnimate = require('react-addons-css-transition-group');
 
 class Navbar extends React.Component {
 
@@ -43,13 +44,21 @@ class Navbar extends React.Component {
   render() {
 
     return (
-      <nav data-gumshoe-header ref="navbar" className={`navbar ${this.state.stick}`}>
+      <ReactAnimate
+        component="nav"
+        data-gumshoe-header
+        ref="navbar"
+        className={`navbar ${this.state.stick}`}
+        transitionName="animate"
+        transitionAppear={true}
+        transitionAppearTimeout={2000}
+      >
         <ul data-gumshoe>
           <li><a data-scroll href="#wedding">the big day</a></li>
           <li><a data-scroll href="#venue">the venue</a></li>
           <li><a data-scroll href="#couple">the happy couple</a></li>
         </ul>
-      </nav>
+      </ReactAnimate>
     );
   }
 

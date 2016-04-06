@@ -56,4 +56,43 @@ body {
   height: 100vh;
   min-height: 480px;
   background-color: $navy;
+  .photos {
+    height: 360px;
+    padding-top: 80px;
+    display: flex;
+    justify-content: space-around;
+    .photo-wrapper{
+      transition: all 500ms linear;
+      .photo {
+        height: auto;
+        width: auto;
+        max-width: 200px;
+        max-height: 200px;
+        overflow: hidden;
+        padding: 20px;
+        padding-bottom: 80px;
+        background-color: white;
+        border-radius: 10px;
+        transition: all 500ms linear;
+      }
+    }
+  }
+}
+
+.years {
+  display: flex;
+  justify-content: space-around;
+  background-color: white;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 80px;
+  span {
+    padding: 10px;
+    &.selected {
+      font-weight: bolder;
+      color: $gold;
+      background: $navy;
+    }
+  }
 }
