@@ -1,6 +1,7 @@
+@import "sass/animations";
 @import "sass/colors";
-@import "sass/mixins";
 @import "sass/fonts";
+@import "sass/mixins";
 @import "sass/navbar";
 
 body {
@@ -10,14 +11,12 @@ body {
 }
 
 .hero {
-  background: url('http://www.carissawoophotography.com/blog/wp-content/uploads/2016/01/21-35422-post/Malibu-Cafe-Engagement-Photographer-Carissa-Woo-Photography_0054.jpg') no-repeat center center fixed;
+  background: url('http://www.carissawoophotography.com/blog/wp-content/uploads/2016/01/21-35422-post/Malibu-Cafe-Engagement-Photographer-Carissa-Woo-Photography_0054.jpg') no-repeat center center;
   height: 100vh;
+  width: auto;
   @include background-size-cover;
 }
-.story {
-  height:600px;
 
-}
 .wedding {
   padding-top: 2px;
   display: flex;
@@ -37,4 +36,24 @@ body {
 
 .venue {
   padding-top: 2px;
+  img {
+    width: 100%;
+  }
+  .content-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    iframe {
+      width: 100%;
+      height: 480px;
+      border: none;
+    }
+  }
+
+}
+
+.story {
+  height: 100vh;
+  min-height: 480px;
+  background-color: $navy;
 }

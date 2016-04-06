@@ -9,8 +9,9 @@
   "dependencies": {
     "express": "^4.13.4",
     "gumshoe": "cferdinandi/gumshoe",
-    "react": "^0.14.7",
-    "react-dom": "^0.14.7",
+    "react": "^0.14.8",
+    "react-addons-css-transition-group": "^0.14.8",
+    "react-dom": "^0.14.8",
     "smooth-scroll": "cferdinandi/smooth-scroll"
   },
   "devDependencies": {

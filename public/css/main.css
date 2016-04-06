@@ -2,6 +2,27 @@
 @import url(https://fonts.googleapis.com/css?family=Sacramento);
 @import url(https://fonts.googleapis.com/css?family=Josefin+Sans);
 @import url(https://fonts.googleapis.com/css?family=Sacramento);
+.animate-enter {
+  opacity: 0.01; }
+
+.animate-enter.example-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in; }
+
+.animate-leave {
+  opacity: 1; }
+
+.animate-leave.example-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in; }
+
+.animate-appear {
+  opacity: 0.01; }
+
+.animate-appear.example-appear-active {
+  opacity: 1;
+  transition: opacity 3s ease-in; }
+
 .navbar {
   background: white;
   font-family: 'Sacramento', cursive;
@@ -13,7 +34,7 @@
     top: 0;
     margin-top: 0; }
   .navbar ul {
-    margin: 0 0 2px 0;
+    margin: 0;
     list-style: none;
     display: flex;
     flex-direction: row;
@@ -37,15 +58,13 @@ body {
   font-family: 'Josefin Sans', sans-serif; }
 
 .hero {
-  background: url("http://www.carissawoophotography.com/blog/wp-content/uploads/2016/01/21-35422-post/Malibu-Cafe-Engagement-Photographer-Carissa-Woo-Photography_0054.jpg") no-repeat center center fixed;
+  background: url("http://www.carissawoophotography.com/blog/wp-content/uploads/2016/01/21-35422-post/Malibu-Cafe-Engagement-Photographer-Carissa-Woo-Photography_0054.jpg") no-repeat center center;
   height: 100vh;
+  width: auto;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover; }
-
-.story {
-  height: 600px; }
 
 .wedding {
   padding-top: 2px;
@@ -61,3 +80,18 @@ body {
 
 .venue {
   padding-top: 2px; }
+  .venue img {
+    width: 100%; }
+  .venue .content-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%; }
+    .venue .content-wrapper iframe {
+      width: 100%;
+      height: 480px;
+      border: none; }
+
+.story {
+  height: 100vh;
+  min-height: 480px;
+  background-color: #002b5c; }

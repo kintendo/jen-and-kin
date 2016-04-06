@@ -2,6 +2,7 @@
 
 var React = require('react');
 var ReactDOM = require('react-dom');
+var ReactAnimate = require('react-addons-css-transition-group');
 
 class Story extends React.Component {
 
@@ -17,6 +18,7 @@ class Story extends React.Component {
     this.landscapePhotos = [];
     this.facebookPhotos = [];
     this.instagramPhotos = [];
+    this.years = ['2004', '2005', '2016'];
   }
 
   render (){
