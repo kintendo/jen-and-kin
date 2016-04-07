@@ -18,13 +18,13 @@ class Story extends React.Component {
 
   handleYearClick (year) {
     this.setState({
-      currentYear: ''
+      currentYear: year
     });
-    setTimeout(() => {
-      this.setState({
-        currentYear: year
-      });
-    }, 600);
+    // setTimeout(() => {
+    //   this.setState({
+    //     currentYear: year
+    //   });
+    // }, 0);
   }
 
   render (){

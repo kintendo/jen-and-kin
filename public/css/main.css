@@ -112,8 +112,7 @@ body {
         max-width: 200px;
         max-height: 200px;
         overflow: hidden;
-        padding: 20px;
-        padding-bottom: 80px;
+        padding: 10px;
         background-color: white;
         border-radius: 10px;
         transition: all 500ms linear; }
@@ -126,9 +125,20 @@ body {
   margin-left: auto;
   margin-right: auto;
   border-radius: 80px; }
-  .years span {
-    padding: 10px; }
-    .years span.selected {
+  .years .year-wrapper {
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer; }
+    .years .year-wrapper .year {
+      border-bottom: 2px solid white;
+      border-top: 2px; }
+      .years .year-wrapper .year:hover {
+        border-bottom: 2px solid #D4AF37; }
+    .years .year-wrapper.selected {
       font-weight: bolder;
       color: #D4AF37;
-      background: #002b5c; }
+      background: #002b5c;
+      font-size: 24px;
+      padding: 10px; }

@@ -20079,16 +20079,14 @@ var Story = function (_React$Component) {
   _createClass(Story, [{
     key: 'handleYearClick',
     value: function handleYearClick(year) {
-      var _this2 = this;
-
       this.setState({
-        currentYear: ''
+        currentYear: year
       });
-      setTimeout(function () {
-        _this2.setState({
-          currentYear: year
-        });
-      }, 600);
+      // setTimeout(() => {
+      //   this.setState({
+      //     currentYear: year
+      //   });
+      // }, 0);
     }
   }, {
     key: 'render',
@@ -20410,12 +20408,16 @@ var Years = function (_React$Component) {
       var yearItems = years.map(function (year) {
         return year === currentYear ? React.createElement(
           "span",
-          { className: "selected", key: year },
+          { className: "year-wrapper selected", key: year },
           year
         ) : React.createElement(
           "span",
-          { key: year, onClick: onYearClick.bind(null, year) },
-          year
+          { className: "year-wrapper", key: year, onClick: onYearClick.bind(null, year) },
+          React.createElement(
+            "span",
+            { className: "year" },
+            year
+          )
         );
       });
 
