@@ -20116,11 +20116,15 @@ var Story = function (_React$Component) {
           },
           photoItems
         ),
-        React.createElement(Years, {
-          years: years,
-          currentYear: currentYear,
-          onYearClick: this.handleYearClick
-        })
+        React.createElement(
+          'div',
+          { className: 'years-wrapper' },
+          React.createElement(Years, {
+            years: years,
+            currentYear: currentYear,
+            onYearClick: this.handleYearClick
+          })
+        )
       );
     }
   }]);
@@ -20391,27 +20395,45 @@ var React = require('react');
 var Years = function (_React$Component) {
   _inherits(Years, _React$Component);
 
-  function Years() {
+  function Years(props) {
     _classCallCheck(this, Years);
 
-    return _possibleConstructorReturn(this, Object.getPrototypeOf(Years).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Years).call(this, props));
+
+    _this.state = {
+      displayYear: props.currentYear
+    };
+    return _this;
   }
 
   _createClass(Years, [{
+    key: "componentDidUpdate",
+    value: function componentDidUpdate() {
+      var _this2 = this;
+
+      var targetYear = parseInt(this.props.currentYear, 10);
+      var displayYear = parseInt(this.state.displayYear, 10);
+      var newDisplayYear = displayYear < targetYear ? displayYear + 1 : displayYear - 1;
+      if (displayYear != targetYear) {
+        setTimeout(function () {
+          _this2.setState({
+            displayYear: newDisplayYear.toString()
+          });
+        }, 100);
+      }
+    }
+  }, {
     key: "render",
     value: function render() {
       var _props = this.props;
       var years = _props.years;
       var currentYear = _props.currentYear;
       var onYearClick = _props.onYearClick;
+      var displayYear = this.state.displayYear;
 
       var yearItems = years.map(function (year) {
-        return year === currentYear ? React.createElement(
-          "span",
-          { className: "year-wrapper selected", key: year },
-          year
-        ) : React.createElement(
-          "span",
+        return React.createElement(
+          "li",
           { className: "year-wrapper", key: year, onClick: onYearClick.bind(null, year) },
           React.createElement(
             "span",
@@ -20421,10 +20443,21 @@ var Years = function (_React$Component) {
         );
       });
 
+      var multiplier = 2016 - parseInt(currentYear, 10) + 1;
+      var offset = 77 * multiplier;
+      var currentYearStyle = {
+        left: "-" + offset + "px"
+      };
+
       return React.createElement(
-        "div",
+        "ul",
         { className: "years" },
-        yearItems
+        yearItems,
+        React.createElement(
+          "li",
+          { className: "current-year", style: currentYearStyle },
+          displayYear
+        )
       );
     }
   }]);

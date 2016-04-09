@@ -51,11 +51,13 @@ class Story extends React.Component {
         >
           {photoItems}
         </ReactAnimate>
-        <Years
-          years={years}
-          currentYear={currentYear}
-          onYearClick={this.handleYearClick}
-        />
+        <div className="years-wrapper">
+          <Years
+            years={years}
+            currentYear={currentYear}
+            onYearClick={this.handleYearClick}
+          />
+        </div>
       </div>
     );
   }
