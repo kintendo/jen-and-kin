@@ -131,6 +131,7 @@ body {
     float: left;
     position: relative;
     font-size: 24px;
+    width: 50px;
     transition: left 1s ease-in-out; }
   .years .year-wrapper {
     float: left;
