@@ -19,13 +19,13 @@ body {
 
 .wedding {
   padding-top: 2px;
-  display: flex;
-  justify-content: center;
+  @include flexbox;
+  @include justify-content(center);
   ul {
     width: 50%;
-    display: flex;
+    @include flexbox;
 
-    flex-direction: column;
+    @include flex-direction(column);
     list-style: none;
 
     li {
@@ -59,21 +59,23 @@ body {
   .photos {
     height: 360px;
     padding-top: 80px;
-    display: flex;
-    justify-content: space-around;
+    padding-bottom: 40px;
+    @include flexbox;
+    @include justify-content(center);
+    @include align-items(center);
     .photo-wrapper{
       position: relative;
       &.rotate-left {
-        transform: rotate(-20deg);
+        @include rotate(-20deg);
       }
       &.rotate-right {
-        transform: rotate(20deg);
+        @include rotate(20deg);
       }
       .photo {
         height: auto;
         width: auto;
-        max-width: 200px;
-        max-height: 200px;
+        max-width: 300px;
+        max-height: 300px;
         overflow: hidden;
         padding: 10px;
         background-color: white;
@@ -82,8 +84,9 @@ body {
     }
   }
   .years-wrapper {
-    display: flex;
-    justify-content: center;
+    @include flexbox;
+    @include justify-content(center);
+    @include align-items(center);
     width: 100%;
   }
 }
@@ -99,7 +102,7 @@ body {
     position:relative;
     font-size: 24px;
     width: 50px;
-    transition: left 1s ease-in-out;
+    @include transition(left 1s ease-in-out);
   }
   .year-wrapper {
     float: left;

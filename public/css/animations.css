@@ -5,6 +5,10 @@
 .animate-right-enter.animate-right-enter-active {
   left: 0px;
   opacity: 1;
+  -webkit-transition: left 1s ease-out, opacity 1s ease-in;
+  -moz-transition: left 1s ease-out, opacity 1s ease-in;
+  -o-transition: left 1s ease-out, opacity 1s ease-in;
+  -ms-transition: left 1s ease-out, opacity 1s ease-in;
   transition: left 1s ease-out, opacity 1s ease-in; }
 
 .animate-right-leave {
@@ -14,6 +18,10 @@
 .animate-right-leave.animate-right-leave-active {
   left: 1000px;
   opacity: 0.01;
+  -webkit-transition: left 1s linear, opacity 1s ease-out;
+  -moz-transition: left 1s linear, opacity 1s ease-out;
+  -o-transition: left 1s linear, opacity 1s ease-out;
+  -ms-transition: left 1s linear, opacity 1s ease-out;
   transition: left 1s linear, opacity 1s ease-out; }
 
 .animate-left-enter {
@@ -23,6 +31,10 @@
 .animate-left-enter.animate-left-enter-active {
   left: 0px;
   opacity: 1;
+  -webkit-transition: left 1s ease-out, opacity 1s ease-in;
+  -moz-transition: left 1s ease-out, opacity 1s ease-in;
+  -o-transition: left 1s ease-out, opacity 1s ease-in;
+  -ms-transition: left 1s ease-out, opacity 1s ease-in;
   transition: left 1s ease-out, opacity 1s ease-in; }
 
 .animate-left-leave {
@@ -32,6 +44,10 @@
 .animate-left-leave.animate-left-leave-active {
   left: -1000px;
   opacity: 0.01;
+  -webkit-transition: left 1s linear, opacity 1s ease-out;
+  -moz-transition: left 1s linear, opacity 1s ease-out;
+  -o-transition: left 1s linear, opacity 1s ease-out;
+  -ms-transition: left 1s linear, opacity 1s ease-out;
   transition: left 1s linear, opacity 1s ease-out; }
 
 .animate-appear {
@@ -39,4 +55,8 @@
 
 .animate-appear.animate-appear-active {
   opacity: 1;
+  -webkit-transition: opacity 2s ease-in;
+  -moz-transition: opacity 2s ease-in;
+  -o-transition: opacity 2s ease-in;
+  -ms-transition: opacity 2s ease-in;
   transition: opacity 2s ease-in; }

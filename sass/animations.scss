@@ -1,3 +1,5 @@
+@import "sass/mixins";
+
 // slide right
 .animate-right-enter {
   left: -1000px;
@@ -7,7 +9,7 @@
 .animate-right-enter.animate-right-enter-active {
   left: 0px;
   opacity: 1;
-  transition: left 1s ease-out, opacity 1s ease-in;
+  @include transition(left 1s ease-out, opacity 1s ease-in);
 }
 
 .animate-right-leave {
@@ -18,7 +20,7 @@
 .animate-right-leave.animate-right-leave-active {
   left: 1000px;
   opacity: 0.01;
-  transition: left 1s linear, opacity 1s ease-out;
+  @include transition(left 1s linear, opacity 1s ease-out);
 }
 
 // slide left
@@ -30,7 +32,7 @@
 .animate-left-enter.animate-left-enter-active {
   left: 0px;
   opacity: 1;
-  transition: left 1s ease-out, opacity 1s ease-in;
+  @include transition(left 1s ease-out, opacity 1s ease-in);
 }
 
 .animate-left-leave {
@@ -41,7 +43,7 @@
 .animate-left-leave.animate-left-leave-active {
   left: -1000px;
   opacity: 0.01;
-  transition: left 1s linear, opacity 1s ease-out;
+  @include transition(left 1s linear, opacity 1s ease-out);
 }
 
 // fade in
@@ -51,5 +53,5 @@
 
 .animate-appear.animate-appear-active {
   opacity: 1;
-  transition: opacity 2s ease-in;
+  @include transition(opacity 2s ease-in);
 }

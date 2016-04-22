@@ -9,6 +9,10 @@
 .animate-right-enter.animate-right-enter-active {
   left: 0px;
   opacity: 1;
+  -webkit-transition: left 1s ease-out, opacity 1s ease-in;
+  -moz-transition: left 1s ease-out, opacity 1s ease-in;
+  -o-transition: left 1s ease-out, opacity 1s ease-in;
+  -ms-transition: left 1s ease-out, opacity 1s ease-in;
   transition: left 1s ease-out, opacity 1s ease-in; }
 
 .animate-right-leave {
@@ -18,6 +22,10 @@
 .animate-right-leave.animate-right-leave-active {
   left: 1000px;
   opacity: 0.01;
+  -webkit-transition: left 1s linear, opacity 1s ease-out;
+  -moz-transition: left 1s linear, opacity 1s ease-out;
+  -o-transition: left 1s linear, opacity 1s ease-out;
+  -ms-transition: left 1s linear, opacity 1s ease-out;
   transition: left 1s linear, opacity 1s ease-out; }
 
 .animate-left-enter {
@@ -27,6 +35,10 @@
 .animate-left-enter.animate-left-enter-active {
   left: 0px;
   opacity: 1;
+  -webkit-transition: left 1s ease-out, opacity 1s ease-in;
+  -moz-transition: left 1s ease-out, opacity 1s ease-in;
+  -o-transition: left 1s ease-out, opacity 1s ease-in;
+  -ms-transition: left 1s ease-out, opacity 1s ease-in;
   transition: left 1s ease-out, opacity 1s ease-in; }
 
 .animate-left-leave {
@@ -36,6 +48,10 @@
 .animate-left-leave.animate-left-leave-active {
   left: -1000px;
   opacity: 0.01;
+  -webkit-transition: left 1s linear, opacity 1s ease-out;
+  -moz-transition: left 1s linear, opacity 1s ease-out;
+  -o-transition: left 1s linear, opacity 1s ease-out;
+  -ms-transition: left 1s linear, opacity 1s ease-out;
   transition: left 1s linear, opacity 1s ease-out; }
 
 .animate-appear {
@@ -43,6 +59,10 @@
 
 .animate-appear.animate-appear-active {
   opacity: 1;
+  -webkit-transition: opacity 2s ease-in;
+  -moz-transition: opacity 2s ease-in;
+  -o-transition: opacity 2s ease-in;
+  -ms-transition: opacity 2s ease-in;
   transition: opacity 2s ease-in; }
 
 .navbar {
@@ -90,11 +110,28 @@ body {
 
 .wedding {
   padding-top: 2px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
   justify-content: center; }
   .wedding ul {
     width: 50%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
     flex-direction: column;
     list-style: none; }
     .wedding ul li {
@@ -120,26 +157,61 @@ body {
   .story .photos {
     height: 360px;
     padding-top: 80px;
+    padding-bottom: 40px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-around; }
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    align-items: center; }
     .story .photos .photo-wrapper {
       position: relative; }
       .story .photos .photo-wrapper.rotate-left {
+        -webkit-transform: rotate(-20deg);
+        -moz-transform: rotate(-20deg);
+        -ms-transform: rotate(-20deg);
+        -o-transform: rotate(-20deg);
         transform: rotate(-20deg); }
       .story .photos .photo-wrapper.rotate-right {
+        -webkit-transform: rotate(20deg);
+        -moz-transform: rotate(20deg);
+        -ms-transform: rotate(20deg);
+        -o-transform: rotate(20deg);
         transform: rotate(20deg); }
       .story .photos .photo-wrapper .photo {
         height: auto;
         width: auto;
-        max-width: 200px;
-        max-height: 200px;
+        max-width: 300px;
+        max-height: 300px;
         overflow: hidden;
         padding: 10px;
         background-color: white;
         border-radius: 10px; }
   .story .years-wrapper {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    align-items: center;
     width: 100%; }
 
 .years {
@@ -153,6 +225,10 @@ body {
     position: relative;
     font-size: 24px;
     width: 50px;
+    -webkit-transition: left 1s ease-in-out;
+    -moz-transition: left 1s ease-in-out;
+    -o-transition: left 1s ease-in-out;
+    -ms-transition: left 1s ease-in-out;
     transition: left 1s ease-in-out; }
   .years .year-wrapper {
     float: left;
