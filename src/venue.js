@@ -15,7 +15,6 @@ class Venue extends React.Component {
   }
 
   enableFrameClick () {
-    console.log('cool');
     this.setState({
       pointerEvents: 'auto'
     });

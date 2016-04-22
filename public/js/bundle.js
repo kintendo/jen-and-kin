@@ -20061,6 +20061,8 @@ var ReactAnimate = require('react-addons-css-transition-group');
 var photos = require('../lib/photos.js');
 var Years = require('./years.js');
 
+var photoClasses = ['rotate-left', 'rotate-right', 'none'];
+
 var Story = function (_React$Component) {
   _inherits(Story, _React$Component);
 
@@ -20070,7 +20072,9 @@ var Story = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Story).call(this));
 
     _this.state = {
-      currentYear: '2016'
+      currentYear: '2016',
+      currentPhotoYear: '2016',
+      currentDirection: 'right'
     };
     _this.handleYearClick = _this.handleYearClick.bind(_this);
     return _this;
@@ -20082,7 +20086,9 @@ var Story = function (_React$Component) {
       var _this2 = this;
 
       this.setState({
-        currentYear: ''
+        currentYear: year,
+        currentPhotoYear: '',
+        currentDirection: year < this.state.currentYear ? 'right' : 'left'
       });
 
       // animate photo items leaving
@@ -20091,24 +20097,27 @@ var Story = function (_React$Component) {
       // for each photo
       // set class for that photo to come in from left or right
       // set rotation for that photo to be random
-
       setTimeout(function () {
         _this2.setState({
-          currentYear: year
+          currentPhotoYear: year
         });
       }, 1000);
     }
   }, {
     key: 'render',
     value: function render() {
-      var currentYear = this.state.currentYear;
+      var _state = this.state;
+      var currentYear = _state.currentYear;
+      var currentPhotoYear = _state.currentPhotoYear;
+      var currentDirection = _state.currentDirection;
 
       var years = Object.keys(photos);
 
-      var photoItems = photos[currentYear] ? photos[currentYear].map(function (photo, i) {
+      var photoItems = photos[currentPhotoYear] ? photos[currentPhotoYear].map(function (photo, i) {
+        var randomClass = photoClasses[Math.floor(Math.random() * photoClasses.length)];
         return React.createElement(
           'div',
-          { key: i, className: 'photo-wrapper' },
+          { key: i, className: 'photo-wrapper ' + randomClass },
           React.createElement('img', { className: 'photo', src: photo })
         );
       }) : null;
@@ -20121,9 +20130,9 @@ var Story = function (_React$Component) {
           ReactAnimate,
           {
             component: 'div',
-            transitionName: 'animate',
-            transitionEnterTimeout: 300,
-            transitionLeaveTimeout: 300,
+            transitionName: 'animate-' + currentDirection,
+            transitionEnterTimeout: 1000,
+            transitionLeaveTimeout: 1000,
             className: 'photos'
           },
           photoItems
@@ -20179,7 +20188,6 @@ var Venue = function (_React$Component) {
   _createClass(Venue, [{
     key: 'enableFrameClick',
     value: function enableFrameClick() {
-      console.log('cool');
       this.setState({
         pointerEvents: 'auto'
       });

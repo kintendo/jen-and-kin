@@ -1,26 +1,35 @@
 'use strict';
 
-var React = require('react');
-var ReactDOM = require('react-dom');
-var ReactAnimate = require('react-addons-css-transition-group');
-var photos = require('../lib/photos.js');
-var Years = require('./years.js');
+const React = require('react');
+const ReactDOM = require('react-dom');
+const ReactAnimate = require('react-addons-css-transition-group');
+const photos = require('../lib/photos.js');
+const Years = require('./years.js');
+
+const photoClasses = [
+  'rotate-left',
+  'rotate-right',
+  'none'
+];
 
 class Story extends React.Component {
 
   constructor() {
     super();
     this.state = {
-      currentYear: '2016'
+      currentYear: '2016',
+      currentPhotoYear: '2016',
+      currentDirection: 'right'
     };
     this.handleYearClick = this.handleYearClick.bind(this);
   }
 
   handleYearClick (year) {
     this.setState({
-      currentYear: ''
+      currentYear: year,
+      currentPhotoYear: '',
+      currentDirection: (year < this.state.currentYear) ? 'right' : 'left'
     });
-
 
     // animate photo items leaving
     // change year to get new photos
@@ -28,26 +37,24 @@ class Story extends React.Component {
       // for each photo
         // set class for that photo to come in from left or right
         // set rotation for that photo to be random
-
-
-
-
     setTimeout(() => {
       this.setState({
-        currentYear: year
+        currentPhotoYear: year
       });
     }, 1000);
+
   }
 
   render (){
 
-    const {currentYear} = this.state;
+    const {currentYear, currentPhotoYear, currentDirection} = this.state;
     const years = Object.keys(photos);
 
-    const photoItems = photos[currentYear] ?
-      photos[currentYear].map((photo, i) => {
+    const photoItems = photos[currentPhotoYear] ?
+      photos[currentPhotoYear].map((photo, i) => {
+        const randomClass = photoClasses[Math.floor(Math.random()*photoClasses.length)];
         return (
-          <div key={i} className="photo-wrapper">
+          <div key={i} className={`photo-wrapper ${randomClass}`}>
             <img className="photo" src={photo}/>
           </div>
         );
@@ -58,9 +65,9 @@ class Story extends React.Component {
       <div id="couple" className="story">
         <ReactAnimate
           component="div"
-          transitionName="animate"
-          transitionEnterTimeout={300}
-          transitionLeaveTimeout={300}
+          transitionName={`animate-${currentDirection}`}
+          transitionEnterTimeout={1000}
+          transitionLeaveTimeout={1000}
           className="photos"
         >
           {photoItems}

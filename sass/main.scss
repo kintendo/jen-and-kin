@@ -63,7 +63,12 @@ body {
     justify-content: space-around;
     .photo-wrapper{
       position: relative;
-      transition: transform 1s ease-in;
+      &.rotate-left {
+        transform: rotate(-20deg);
+      }
+      &.rotate-right {
+        transform: rotate(20deg);
+      }
       .photo {
         height: auto;
         width: auto;

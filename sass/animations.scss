@@ -1,23 +1,50 @@
-.animate-enter {
+// slide right
+.animate-right-enter {
+  left: -1000px;
   opacity: 0.01;
 }
 
-.animate-enter.animate-enter-active {
+.animate-right-enter.animate-right-enter-active {
+  left: 0px;
   opacity: 1;
-  transform: rotate(360deg);
+  transition: left 1s ease-out, opacity 1s ease-in;
 }
 
-.animate-leave {
-  margin-left: 0;
-  opacity: 1;
+.animate-right-leave {
+  left: 0px;
+  opacity: 1
 }
 
-.animate-leave.animate-leave-active {
-  margin-left: -1000px;
+.animate-right-leave.animate-right-leave-active {
+  left: 1000px;
   opacity: 0.01;
-  transition: opacity 1s ease-out;
+  transition: left 1s linear, opacity 1s ease-out;
 }
 
+// slide left
+.animate-left-enter {
+  left: 1000px;
+  opacity: 0.01;
+}
+
+.animate-left-enter.animate-left-enter-active {
+  left: 0px;
+  opacity: 1;
+  transition: left 1s ease-out, opacity 1s ease-in;
+}
+
+.animate-left-leave {
+  left: 0px;
+  opacity: 1
+}
+
+.animate-left-leave.animate-left-leave-active {
+  left: -1000px;
+  opacity: 0.01;
+  transition: left 1s linear, opacity 1s ease-out;
+}
+
+// fade in
 .animate-appear {
   opacity: 0.01;
 }
