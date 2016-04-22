@@ -18,13 +18,25 @@ class Story extends React.Component {
 
   handleYearClick (year) {
     this.setState({
-      currentYear: year
+      currentYear: ''
     });
-    // setTimeout(() => {
-    //   this.setState({
-    //     currentYear: year
-    //   });
-    // }, 0);
+
+
+    // animate photo items leaving
+    // change year to get new photos
+    // animate photo items coming in
+      // for each photo
+        // set class for that photo to come in from left or right
+        // set rotation for that photo to be random
+
+
+
+
+    setTimeout(() => {
+      this.setState({
+        currentYear: year
+      });
+    }, 1000);
   }
 
   render (){
@@ -40,6 +52,8 @@ class Story extends React.Component {
           </div>
         );
       }) : null;
+
+    //
     return (
       <div id="couple" className="story">
         <ReactAnimate

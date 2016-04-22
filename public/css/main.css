@@ -3,13 +3,11 @@
 @import url(https://fonts.googleapis.com/css?family=Josefin+Sans);
 @import url(https://fonts.googleapis.com/css?family=Sacramento);
 .animate-enter {
-  margin-right: -1000px;
   opacity: 0.01; }
 
 .animate-enter.animate-enter-active {
-  margin-right: 0;
   opacity: 1;
-  transition: all 300ms ease-out; }
+  transform: rotate(360deg); }
 
 .animate-leave {
   margin-left: 0;
@@ -18,7 +16,7 @@
 .animate-leave.animate-leave-active {
   margin-left: -1000px;
   opacity: 0.01;
-  transition: all 300ms ease-out; }
+  transition: opacity 1s ease-out; }
 
 .animate-appear {
   opacity: 0.01; }
@@ -105,7 +103,8 @@ body {
     display: flex;
     justify-content: space-around; }
     .story .photos .photo-wrapper {
-      transition: all 500ms linear; }
+      position: relative;
+      transition: transform 1s ease-in; }
       .story .photos .photo-wrapper .photo {
         height: auto;
         width: auto;
@@ -114,8 +113,7 @@ body {
         overflow: hidden;
         padding: 10px;
         background-color: white;
-        border-radius: 10px;
-        transition: all 500ms linear; }
+        border-radius: 10px; }
   .story .years-wrapper {
     display: flex;
     justify-content: center;

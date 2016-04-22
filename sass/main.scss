@@ -62,7 +62,8 @@ body {
     display: flex;
     justify-content: space-around;
     .photo-wrapper{
-      transition: all 500ms linear;
+      position: relative;
+      transition: transform 1s ease-in;
       .photo {
         height: auto;
         width: auto;
@@ -72,7 +73,6 @@ body {
         padding: 10px;
         background-color: white;
         border-radius: 10px;
-        transition: all 500ms linear;
       }
     }
   }

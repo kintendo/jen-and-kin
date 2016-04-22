@@ -20079,14 +20079,24 @@ var Story = function (_React$Component) {
   _createClass(Story, [{
     key: 'handleYearClick',
     value: function handleYearClick(year) {
+      var _this2 = this;
+
       this.setState({
-        currentYear: year
+        currentYear: ''
       });
-      // setTimeout(() => {
-      //   this.setState({
-      //     currentYear: year
-      //   });
-      // }, 0);
+
+      // animate photo items leaving
+      // change year to get new photos
+      // animate photo items coming in
+      // for each photo
+      // set class for that photo to come in from left or right
+      // set rotation for that photo to be random
+
+      setTimeout(function () {
+        _this2.setState({
+          currentYear: year
+        });
+      }, 1000);
     }
   }, {
     key: 'render',
@@ -20102,6 +20112,8 @@ var Story = function (_React$Component) {
           React.createElement('img', { className: 'photo', src: photo })
         );
       }) : null;
+
+      //
       return React.createElement(
         'div',
         { id: 'couple', className: 'story' },
@@ -20412,14 +20424,19 @@ var Years = function (_React$Component) {
       var _this2 = this;
 
       var targetYear = parseInt(this.props.currentYear, 10);
-      var displayYear = parseInt(this.state.displayYear, 10);
-      var newDisplayYear = displayYear < targetYear ? displayYear + 1 : displayYear - 1;
-      if (displayYear != targetYear) {
-        setTimeout(function () {
-          _this2.setState({
-            displayYear: newDisplayYear.toString()
-          });
-        }, 100);
+
+      if (targetYear) {
+        (function () {
+          var displayYear = parseInt(_this2.state.displayYear, 10);
+          var newDisplayYear = displayYear < targetYear ? displayYear + 1 : displayYear - 1;
+          if (displayYear != targetYear) {
+            setTimeout(function () {
+              _this2.setState({
+                displayYear: newDisplayYear.toString()
+              });
+            }, 100);
+          }
+        })();
       }
     }
   }, {

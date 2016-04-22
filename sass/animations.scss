@@ -1,12 +1,10 @@
 .animate-enter {
-  margin-right: -1000px;
   opacity: 0.01;
 }
 
 .animate-enter.animate-enter-active {
-  margin-right: 0;
   opacity: 1;
-  transition: all 300ms ease-out;
+  transform: rotate(360deg);
 }
 
 .animate-leave {
@@ -17,7 +15,7 @@
 .animate-leave.animate-leave-active {
   margin-left: -1000px;
   opacity: 0.01;
-  transition: all 300ms ease-out;
+  transition: opacity 1s ease-out;
 }
 
 .animate-appear {

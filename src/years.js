@@ -11,14 +11,17 @@ class Years extends React.Component {
 
   componentDidUpdate() {
     const targetYear = parseInt(this.props.currentYear, 10);
-    const displayYear = parseInt(this.state.displayYear, 10);
-    const newDisplayYear = (displayYear < targetYear) ? displayYear + 1 : displayYear - 1;
-    if (displayYear != targetYear) {
-      setTimeout(()=> {
-        this.setState({
-          displayYear: newDisplayYear.toString()
-        });
-      }, 100);
+
+    if (targetYear) {
+      const displayYear = parseInt(this.state.displayYear, 10);
+      const newDisplayYear = (displayYear < targetYear) ? displayYear + 1 : displayYear - 1;
+      if (displayYear != targetYear) {
+        setTimeout(()=> {
+          this.setState({
+            displayYear: newDisplayYear.toString()
+          });
+        }, 100);
+      }
     }
   }
 
