@@ -22,70 +22,87 @@ class Story extends React.Component {
     super();
     this.state = {
       currentYear: '2016',
-      currentPhotoYear: '2016',
       currentDirection: 'right',
       fadeOut: false
     };
     this.handleYearClick = this.handleYearClick.bind(this);
+    this.setCurrentPhotos = this.setCurrentPhotos.bind(this);
+  }
+
+  componentWillMount () {
+    this.setCurrentPhotos(this.state.currentYear);
   }
 
   handleYearClick (year) {
     // animate year, fade slide out pictures
+    const currentDirection = (year < this.state.currentYear) ? 'right' : 'left';
+    const oppositeDirection = (year < this.state.currentYear) ? 'left' : 'right';
+
     this.setState({
       currentYear: year,
-      // currentPhotoYear: '',
-      currentDirection: (year < this.state.currentYear) ? 'right' : 'left',
+      currentDirection: currentDirection,
       fadeOut: true
     });
     setTimeout(() => {
-      // replace pictures
-      this.setState({
-        currentPhotoYear: year
-      });
+      // replace pictures & classes & flip direction
+      this.setCurrentPhotos(year, oppositeDirection);
       setTimeout( () => {
         // fade slide pictures in
         this.setState({
-          fadeOut: false
+          fadeOut: false,
+          currentDirection: ''
         });
-      }, 1000);
-    }, 1200);
+      }, 800);
+    }, 1000);
   }
 
-  setCurrentPhotos() {
-    
+  setCurrentPhotos(year, direction) {
+    // set current photos in state
+    // set current photo classes in state
+    let fabFive = [];
+    let randomClasses = [];
+    if (year) {
+      let currentPhotos = [...photos[year]];
+      const curLen = currentPhotos.length;
+      for(let i = 0; i < 5 && i < curLen; i++) {
+        // random photo
+        const randomPhotoIndex = Math.floor(Math.random()*currentPhotos.length);
+        let randomPhoto = currentPhotos.splice(randomPhotoIndex, 1)[0];
+        fabFive.push(randomPhoto);
+        //random photo class
+        const randomClassIndex = Math.floor(Math.random()*photoClasses.length);
+        randomClasses.push(photoClasses[randomClassIndex]);
+      }
+    }
+    this.setState({
+      currentPhotos: fabFive,
+      currentClasses: randomClasses,
+      currentDirection: direction
+    });
   }
-
 
   render (){
 
-    const {currentYear, currentPhotoYear, currentDirection, fadeOut} = this.state;
+    const {
+      currentYear,
+      currentDirection,
+      currentPhotos,
+      currentClasses,
+      fadeOut
+    } = this.state;
     const years = Object.keys(photos);
 
-    let fabFive = [];
-    if (currentPhotoYear) {
-      let currentPhotos = [...photos[currentPhotoYear]];
-      const curLen = currentPhotos.length;
-      for(let i = 0; i < 5 && i < curLen; i++) {
-        const randomIndex = Math.floor(Math.random()*currentPhotos.length);
-        let randomPhoto = currentPhotos.splice(randomIndex, 1)[0];
-        fabFive.push(randomPhoto);
-      }
-    }
+    const photoItems = currentPhotos.map((photo, i) => {
+      return (
+        <div key={i} className={`photo-wrapper ${currentClasses[i]} `}>
+          <img className="photo" src={photo}/>
+        </div>
+      );
+    });
 
-    const photoItems = currentPhotoYear ?
-      fabFive.map((photo, i) => {
-        const randomClass = photoClasses[Math.floor(Math.random()*photoClasses.length)];
-        return (
-          <div key={i} className={`photo-wrapper ${randomClass} ${fadeOut?'fade-out':''}`}>
-            <img className="photo" src={photo}/>
-          </div>
-        );
-      }) : null;
-
-    //
     return (
       <div id="couple" className="story">
-        <div className={`photos ${currentDirection}`}>
+        <div className={`photos ${fadeOut?'fade-out':''} ${currentDirection}`}>
           {photoItems}
         </div>
         <div className="years-wrapper">

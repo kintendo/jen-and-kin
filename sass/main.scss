@@ -98,16 +98,24 @@ body {
     height: 360px;
     padding-top: 80px;
     padding-bottom: 40px;
+    margin-left: 0;
+    opacity: 1;
+    &.fade-out {
+      opacity: 0.001;
+      &.left {
+        margin-left: -2000px;
+      }
+      &.right {
+        margin-left: 2000px;
+      }
+    }
     @include flexbox;
     @include justify-content(center);
     @include align-items(center);
+    @include transition(margin-left 1s linear, opacity 800ms linear);
+
     .photo-wrapper{
-      opacity: 1;
       position: relative;
-      @include transition(opacity 1s linear);
-      &.fade-out {
-        opacity: 0.01;
-      }
       &.rotate-left {
         @include rotate(-20deg);
       }
