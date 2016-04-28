@@ -20085,6 +20085,8 @@ module.exports = Navbar;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -20110,7 +20112,8 @@ var Story = function (_React$Component) {
     _this.state = {
       currentYear: '2016',
       currentPhotoYear: '2016',
-      currentDirection: 'right'
+      currentDirection: 'right',
+      fadeOut: false
     };
     _this.handleYearClick = _this.handleYearClick.bind(_this);
     return _this;
@@ -20121,18 +20124,29 @@ var Story = function (_React$Component) {
     value: function handleYearClick(year) {
       var _this2 = this;
 
+      // animate year, fade slide out pictures
       this.setState({
         currentYear: year,
-        currentPhotoYear: '',
-        currentDirection: year < this.state.currentYear ? 'right' : 'left'
+        // currentPhotoYear: '',
+        currentDirection: year < this.state.currentYear ? 'right' : 'left',
+        fadeOut: true
       });
-
       setTimeout(function () {
+        // replace pictures
         _this2.setState({
           currentPhotoYear: year
         });
-      }, 1000);
+        setTimeout(function () {
+          // fade slide pictures in
+          _this2.setState({
+            fadeOut: false
+          });
+        }, 1000);
+      }, 1200);
     }
+  }, {
+    key: 'setCurrentPhotos',
+    value: function setCurrentPhotos() {}
   }, {
     key: 'render',
     value: function render() {
@@ -20140,16 +20154,18 @@ var Story = function (_React$Component) {
       var currentYear = _state.currentYear;
       var currentPhotoYear = _state.currentPhotoYear;
       var currentDirection = _state.currentDirection;
+      var fadeOut = _state.fadeOut;
 
       var years = Object.keys(photos);
 
       var fabFive = [];
       if (currentPhotoYear) {
-        var currentPhotos = photos[currentPhotoYear];
-        for (var i = 0; i < 5; i++) {
-          var randomPhoto = currentPhotos[Math.floor(Math.random() * photoClasses.length)];
+        var currentPhotos = [].concat(_toConsumableArray(photos[currentPhotoYear]));
+        var curLen = currentPhotos.length;
+        for (var i = 0; i < 5 && i < curLen; i++) {
+          var randomIndex = Math.floor(Math.random() * currentPhotos.length);
+          var randomPhoto = currentPhotos.splice(randomIndex, 1)[0];
           fabFive.push(randomPhoto);
-          // TODO: check for dupes!
         }
       }
 
@@ -20157,7 +20173,7 @@ var Story = function (_React$Component) {
         var randomClass = photoClasses[Math.floor(Math.random() * photoClasses.length)];
         return React.createElement(
           'div',
-          { key: i, className: 'photo-wrapper ' + randomClass },
+          { key: i, className: 'photo-wrapper ' + randomClass + ' ' + (fadeOut ? 'fade-out' : '') },
           React.createElement('img', { className: 'photo', src: photo })
         );
       }) : null;
@@ -20167,14 +20183,8 @@ var Story = function (_React$Component) {
         'div',
         { id: 'couple', className: 'story' },
         React.createElement(
-          ReactAnimate,
-          {
-            component: 'div',
-            transitionName: 'animate-' + currentDirection,
-            transitionEnterTimeout: 1000,
-            transitionLeaveTimeout: 1000,
-            className: 'photos'
-          },
+          'div',
+          { className: 'photos ' + currentDirection },
           photoItems
         ),
         React.createElement(

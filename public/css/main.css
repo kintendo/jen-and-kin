@@ -234,7 +234,15 @@ body {
     -moz-align-items: center;
     align-items: center; }
     .story .photos .photo-wrapper {
-      position: relative; }
+      opacity: 1;
+      position: relative;
+      -webkit-transition: opacity 1s linear;
+      -moz-transition: opacity 1s linear;
+      -o-transition: opacity 1s linear;
+      -ms-transition: opacity 1s linear;
+      transition: opacity 1s linear; }
+      .story .photos .photo-wrapper.fade-out {
+        opacity: 0.01; }
       .story .photos .photo-wrapper.rotate-left {
         -webkit-transform: rotate(-20deg);
         -moz-transform: rotate(-20deg);

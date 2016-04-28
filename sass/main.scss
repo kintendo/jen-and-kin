@@ -102,7 +102,12 @@ body {
     @include justify-content(center);
     @include align-items(center);
     .photo-wrapper{
+      opacity: 1;
       position: relative;
+      @include transition(opacity 1s linear);
+      &.fade-out {
+        opacity: 0.01;
+      }
       &.rotate-left {
         @include rotate(-20deg);
       }

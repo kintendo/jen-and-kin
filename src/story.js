@@ -23,39 +23,52 @@ class Story extends React.Component {
     this.state = {
       currentYear: '2016',
       currentPhotoYear: '2016',
-      currentDirection: 'right'
+      currentDirection: 'right',
+      fadeOut: false
     };
     this.handleYearClick = this.handleYearClick.bind(this);
   }
 
   handleYearClick (year) {
+    // animate year, fade slide out pictures
     this.setState({
       currentYear: year,
-      currentPhotoYear: '',
-      currentDirection: (year < this.state.currentYear) ? 'right' : 'left'
+      // currentPhotoYear: '',
+      currentDirection: (year < this.state.currentYear) ? 'right' : 'left',
+      fadeOut: true
     });
-
     setTimeout(() => {
+      // replace pictures
       this.setState({
         currentPhotoYear: year
       });
-    }, 1000);
+      setTimeout( () => {
+        // fade slide pictures in
+        this.setState({
+          fadeOut: false
+        });
+      }, 1000);
+    }, 1200);
+  }
 
+  setCurrentPhotos() {
+    
   }
 
 
   render (){
 
-    const {currentYear, currentPhotoYear, currentDirection} = this.state;
+    const {currentYear, currentPhotoYear, currentDirection, fadeOut} = this.state;
     const years = Object.keys(photos);
 
     let fabFive = [];
     if (currentPhotoYear) {
-      const currentPhotos = photos[currentPhotoYear]
-      for(let i = 0; i < 5; i++) {
-        let randomPhoto = currentPhotos[Math.floor(Math.random()*photoClasses.length)];
+      let currentPhotos = [...photos[currentPhotoYear]];
+      const curLen = currentPhotos.length;
+      for(let i = 0; i < 5 && i < curLen; i++) {
+        const randomIndex = Math.floor(Math.random()*currentPhotos.length);
+        let randomPhoto = currentPhotos.splice(randomIndex, 1)[0];
         fabFive.push(randomPhoto);
-        // TODO: check for dupes!
       }
     }
 
@@ -63,7 +76,7 @@ class Story extends React.Component {
       fabFive.map((photo, i) => {
         const randomClass = photoClasses[Math.floor(Math.random()*photoClasses.length)];
         return (
-          <div key={i} className={`photo-wrapper ${randomClass}`}>
+          <div key={i} className={`photo-wrapper ${randomClass} ${fadeOut?'fade-out':''}`}>
             <img className="photo" src={photo}/>
           </div>
         );
@@ -72,15 +85,9 @@ class Story extends React.Component {
     //
     return (
       <div id="couple" className="story">
-        <ReactAnimate
-          component="div"
-          transitionName={`animate-${currentDirection}`}
-          transitionEnterTimeout={1000}
-          transitionLeaveTimeout={1000}
-          className="photos"
-        >
+        <div className={`photos ${currentDirection}`}>
           {photoItems}
-        </ReactAnimate>
+        </div>
         <div className="years-wrapper">
           <Years
             years={years}
