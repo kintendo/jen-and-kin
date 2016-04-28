@@ -8,7 +8,11 @@ const Years = require('./years.js');
 
 const photoClasses = [
   'rotate-left',
+  'rotate-slight-left',
+  'rotate-major-left',
   'rotate-right',
+  'rotate-slight-right',
+  'rotate-major-left',
   'none'
 ];
 
@@ -31,12 +35,6 @@ class Story extends React.Component {
       currentDirection: (year < this.state.currentYear) ? 'right' : 'left'
     });
 
-    // animate photo items leaving
-    // change year to get new photos
-    // animate photo items coming in
-      // for each photo
-        // set class for that photo to come in from left or right
-        // set rotation for that photo to be random
     setTimeout(() => {
       this.setState({
         currentPhotoYear: year
@@ -45,13 +43,24 @@ class Story extends React.Component {
 
   }
 
+
   render (){
 
     const {currentYear, currentPhotoYear, currentDirection} = this.state;
     const years = Object.keys(photos);
 
-    const photoItems = photos[currentPhotoYear] ?
-      photos[currentPhotoYear].map((photo, i) => {
+    let fabFive = [];
+    if (currentPhotoYear) {
+      const currentPhotos = photos[currentPhotoYear]
+      for(let i = 0; i < 5; i++) {
+        let randomPhoto = currentPhotos[Math.floor(Math.random()*photoClasses.length)];
+        fabFive.push(randomPhoto);
+        // TODO: check for dupes!
+      }
+    }
+
+    const photoItems = currentPhotoYear ?
+      fabFive.map((photo, i) => {
         const randomClass = photoClasses[Math.floor(Math.random()*photoClasses.length)];
         return (
           <div key={i} className={`photo-wrapper ${randomClass}`}>

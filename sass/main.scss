@@ -7,11 +7,13 @@
 body {
   color: $navy;
   margin: 0px;
-  font-family: 'Josefin Sans', sans-serif;
+  //font-family: 'Josefin Sans', sans-serif;
+  //font-family: 'Roboto Condensed', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .hero {
-  background: url('http://www.carissawoophotography.com/blog/wp-content/uploads/2016/01/21-35422-post/Malibu-Cafe-Engagement-Photographer-Carissa-Woo-Photography_0054.jpg') no-repeat center center;
+  background: url('../img/engagement_photo5.jpg') no-repeat center center;
   height: 100vh;
   width: auto;
   @include background-size-cover;
@@ -69,9 +71,22 @@ body {
       &.rotate-left {
         @include rotate(-20deg);
       }
+      &.rotate-slight-left {
+        @include rotate(-10deg);
+      }
+      &.rotate-major-left {
+        @include rotate(30deg);
+      }
       &.rotate-right {
         @include rotate(20deg);
       }
+      &.rotate-slight-right {
+        @include rotate(10deg);
+      }
+      &.rotate-major-right {
+        @include rotate(30deg);
+      }
+
       .photo {
         height: auto;
         width: auto;
@@ -98,16 +113,12 @@ body {
     background: $navy;
     color: $gold;
     z-index: 1;
-    padding: 15px 18px 14px 18px;
     float: left;
     position:relative;
-    font-size: 24px;
-
     @include transition(left 1s ease-in-out);
   }
   .year-wrapper {
     float: left;
-
     cursor: pointer;
     background: white;
     .year {
@@ -128,25 +139,33 @@ body {
   }
 }
 
+// smart phones
 @media only screen
   and (min-device-width: 320px)
   and (max-device-width: 736px) {
   .years {
     .current-year {
       width: 38px;
+      padding: 12px 18px 11px 14px;
+      font-size: 22px;
+      margin-top: -1px;
     }
     .year-wrapper {
       width: 30px;
       padding: 14px;
+      margin-right: -1px;
     }
   }
 }
 
+// tablets & desktops
 @media only screen
   and (min-device-width: 737px) {
   .years{
     .current-year {
       width: 50px;
+      padding: 15px 18px 14px 18px;
+      font-size: 24px;
     }
     .year-wrapper {
       width: 40px;

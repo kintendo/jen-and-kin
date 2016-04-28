@@ -1,7 +1,11 @@
 @import url(https://fonts.googleapis.com/css?family=Josefin+Sans);
 @import url(https://fonts.googleapis.com/css?family=Sacramento);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
 @import url(https://fonts.googleapis.com/css?family=Josefin+Sans);
 @import url(https://fonts.googleapis.com/css?family=Sacramento);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
 .animate-right-enter {
   left: -1000px;
   opacity: 0.01; }
@@ -97,10 +101,10 @@
 body {
   color: #002b5c;
   margin: 0px;
-  font-family: 'Josefin Sans', sans-serif; }
+  font-family: 'Open Sans', sans-serif; }
 
 .hero {
-  background: url("http://www.carissawoophotography.com/blog/wp-content/uploads/2016/01/21-35422-post/Malibu-Cafe-Engagement-Photographer-Carissa-Woo-Photography_0054.jpg") no-repeat center center;
+  background: url("../img/engagement_photo5.jpg") no-repeat center center;
   height: 100vh;
   width: auto;
   -webkit-background-size: cover;
@@ -182,12 +186,36 @@ body {
         -ms-transform: rotate(-20deg);
         -o-transform: rotate(-20deg);
         transform: rotate(-20deg); }
+      .story .photos .photo-wrapper.rotate-slight-left {
+        -webkit-transform: rotate(-10deg);
+        -moz-transform: rotate(-10deg);
+        -ms-transform: rotate(-10deg);
+        -o-transform: rotate(-10deg);
+        transform: rotate(-10deg); }
+      .story .photos .photo-wrapper.rotate-major-left {
+        -webkit-transform: rotate(30deg);
+        -moz-transform: rotate(30deg);
+        -ms-transform: rotate(30deg);
+        -o-transform: rotate(30deg);
+        transform: rotate(30deg); }
       .story .photos .photo-wrapper.rotate-right {
         -webkit-transform: rotate(20deg);
         -moz-transform: rotate(20deg);
         -ms-transform: rotate(20deg);
         -o-transform: rotate(20deg);
         transform: rotate(20deg); }
+      .story .photos .photo-wrapper.rotate-slight-right {
+        -webkit-transform: rotate(10deg);
+        -moz-transform: rotate(10deg);
+        -ms-transform: rotate(10deg);
+        -o-transform: rotate(10deg);
+        transform: rotate(10deg); }
+      .story .photos .photo-wrapper.rotate-major-right {
+        -webkit-transform: rotate(30deg);
+        -moz-transform: rotate(30deg);
+        -ms-transform: rotate(30deg);
+        -o-transform: rotate(30deg);
+        transform: rotate(30deg); }
       .story .photos .photo-wrapper .photo {
         height: auto;
         width: auto;
@@ -221,10 +249,8 @@ body {
     background: #002b5c;
     color: #D4AF37;
     z-index: 1;
-    padding: 15px 18px 14px 18px;
     float: left;
     position: relative;
-    font-size: 24px;
     -webkit-transition: left 1s ease-in-out;
     -moz-transition: left 1s ease-in-out;
     -o-transition: left 1s ease-in-out;
@@ -248,14 +274,20 @@ body {
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 736px) {
   .years .current-year {
-    width: 38px; }
+    width: 38px;
+    padding: 12px 18px 11px 14px;
+    font-size: 22px;
+    margin-top: -1px; }
   .years .year-wrapper {
     width: 30px;
-    padding: 14px; } }
+    padding: 14px;
+    margin-right: -1px; } }
 
 @media only screen and (min-device-width: 737px) {
   .years .current-year {
-    width: 50px; }
+    width: 50px;
+    padding: 15px 18px 14px 18px;
+    font-size: 24px; }
   .years .year-wrapper {
     width: 40px;
     padding: 18px; } }
