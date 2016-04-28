@@ -19867,12 +19867,8 @@ var App = function (_React$Component) {
       return React.createElement(
         'div',
         null,
-        React.createElement(
-          'div',
-          { className: 'hero-container' },
-          React.createElement(Hero, null),
-          React.createElement(Navbar, null)
-        ),
+        React.createElement(Hero, null),
+        React.createElement(Navbar, null),
         React.createElement(Wedding, null),
         React.createElement(Venue, null),
         React.createElement(Story, null)

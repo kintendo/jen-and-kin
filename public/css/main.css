@@ -70,7 +70,7 @@
   transition: opacity 2s ease-in; }
 
 .navbar {
-  z-index: 5;
+  z-index: 1;
   background: white;
   font-family: 'Sacramento', cursive;
   font-size: 24px;
@@ -104,14 +104,13 @@ body {
   margin: 0px;
   font-family: 'Open Sans', sans-serif; }
 
-.hero-container {
-  height: 100vh; }
-
 .hero {
-  height: calc(100% - 45px);
-  z-index: -1;
-  background: url("../img/engagement_photo5.jpg") no-repeat center center;
+  height: calc(100vh - 45px);
   width: auto;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   -webkit-transition: opacity 1s ease-in;
   -moz-transition: opacity 1s ease-in;
   -o-transition: opacity 1s ease-in;

@@ -16,10 +16,8 @@ class App extends React.Component {
 
     return (
       <div>
-        <div className="hero-container">
-          <Hero />
-          <Navbar />
-        </div>
+        <Hero />
+        <Navbar />
         <Wedding />
         <Venue />
         <Story />
