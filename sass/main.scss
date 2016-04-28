@@ -12,11 +12,52 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
-.hero {
-  background: url('../img/engagement_photo5.jpg') no-repeat center center;
+.hero-container {
   height: 100vh;
+}
+
+.hero {
+  height: calc(100% - 45px);
+  z-index: -1;
+  background: url('../img/engagement_photo5.jpg') no-repeat center center;
+
   width: auto;
-  @include background-size-cover;
+  @include transition(opacity 1s ease-in);
+  &.fade-out {
+    opacity: 0.01;
+  }
+  &.first {
+    background: url('../img/engagement_photo1.jpg') no-repeat center center;
+    @include background-size-cover;
+  }
+  &.second {
+    background: url('../img/engagement_photo2.jpg') no-repeat center center;
+    @include background-size-cover;
+  }
+  &.third {
+    background: url('../img/engagement_photo3.jpg') no-repeat center center;
+    @include background-size-cover;
+  }
+  &.fourth {
+    background: url('../img/engagement_photo4.jpg') no-repeat center center;
+    @include background-size-cover;
+  }
+  &.fifth {
+    background: url('../img/engagement_photo5.jpg') no-repeat center center;
+    @include background-size-cover;
+  }
+  &.sixth {
+    background: url('../img/engagement_photo6.jpg') no-repeat center center;
+    @include background-size-cover;
+  }
+  &.seventh {
+    background: url('../img/engagement_photo7.jpg') no-repeat center center;
+    @include background-size-cover;
+  }
+  &.eighth {
+    background: url('../img/engagement_photo8.jpg') no-repeat center center;
+    @include background-size-cover;
+  }
 }
 
 .wedding {

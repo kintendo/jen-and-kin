@@ -2,10 +2,12 @@
 @import "sass/fonts";
 
 .navbar {
+  z-index: 5;
   background: white;
   font-family: 'Sacramento', cursive;
   font-size: 24px;
-  margin-top: -45px;
+  //margin-top: -45px;
+  height: 45px;
   width: 100%;
   &.stick {
     position: fixed;

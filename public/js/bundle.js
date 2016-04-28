@@ -19867,8 +19867,12 @@ var App = function (_React$Component) {
       return React.createElement(
         'div',
         null,
-        React.createElement(Hero, null),
-        React.createElement(Navbar, null),
+        React.createElement(
+          'div',
+          { className: 'hero-container' },
+          React.createElement(Hero, null),
+          React.createElement(Navbar, null)
+        ),
         React.createElement(Wedding, null),
         React.createElement(Venue, null),
         React.createElement(Story, null)
@@ -19895,21 +19899,57 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var React = require('react');
 var ReactDOM = require('react-dom');
 
+var backgroundClasses = ['first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth'];
+
 var Hero = function (_React$Component) {
   _inherits(Hero, _React$Component);
 
-  function Hero() {
+  function Hero(props) {
     _classCallCheck(this, Hero);
 
-    return _possibleConstructorReturn(this, Object.getPrototypeOf(Hero).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Hero).call(this, props));
+
+    _this.state = {
+      backgroundIndex: 4,
+      fadeOut: false
+    };
+    return _this;
   }
 
   _createClass(Hero, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      setInterval(function () {
+        // fade out
+        _this2.setState({
+          fadeOut: true
+        });
+        setTimeout(function () {
+          // change image
+          _this2.setState({
+            backgroundIndex: Math.floor(Math.random() * 8)
+          });
+          setTimeout(function () {
+            // fade in
+            _this2.setState({
+              fadeOut: false
+            });
+          }, 1000);
+        }, 1000);
+      }, 8000);
+    }
+  }, {
     key: 'render',
     value: function render() {
+      var _state = this.state;
+      var backgroundIndex = _state.backgroundIndex;
+      var fadeOut = _state.fadeOut;
 
+      var randomBackground = backgroundClasses[backgroundIndex];
       // just an empty div w/ a bg picture or video even
-      return React.createElement('div', { className: 'hero' });
+      return React.createElement('div', { className: 'hero ' + randomBackground + ' ' + (fadeOut ? 'fade-out' : '') });
     }
   }]);
 

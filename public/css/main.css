@@ -70,10 +70,11 @@
   transition: opacity 2s ease-in; }
 
 .navbar {
+  z-index: 5;
   background: white;
   font-family: 'Sacramento', cursive;
   font-size: 24px;
-  margin-top: -45px;
+  height: 45px;
   width: 100%; }
   .navbar.stick {
     position: fixed;
@@ -103,14 +104,69 @@ body {
   margin: 0px;
   font-family: 'Open Sans', sans-serif; }
 
+.hero-container {
+  height: 100vh; }
+
 .hero {
+  height: calc(100% - 45px);
+  z-index: -1;
   background: url("../img/engagement_photo5.jpg") no-repeat center center;
-  height: 100vh;
   width: auto;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover; }
+  -webkit-transition: opacity 1s ease-in;
+  -moz-transition: opacity 1s ease-in;
+  -o-transition: opacity 1s ease-in;
+  -ms-transition: opacity 1s ease-in;
+  transition: opacity 1s ease-in; }
+  .hero.fade-out {
+    opacity: 0.01; }
+  .hero.first {
+    background: url("../img/engagement_photo1.jpg") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; }
+  .hero.second {
+    background: url("../img/engagement_photo2.jpg") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; }
+  .hero.third {
+    background: url("../img/engagement_photo3.jpg") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; }
+  .hero.fourth {
+    background: url("../img/engagement_photo4.jpg") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; }
+  .hero.fifth {
+    background: url("../img/engagement_photo5.jpg") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; }
+  .hero.sixth {
+    background: url("../img/engagement_photo6.jpg") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; }
+  .hero.seventh {
+    background: url("../img/engagement_photo7.jpg") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; }
+  .hero.eighth {
+    background: url("../img/engagement_photo8.jpg") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; }
 
 .wedding {
   padding-top: 2px;
