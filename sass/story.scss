@@ -1,0 +1,135 @@
+@import "sass/mixins";
+@import "sass/colors";
+
+.story {
+  height: 100vh;
+  min-height: 480px;
+  background-color: $navy;
+  overflow: hidden;
+  .photos {
+    height: 360px;
+    padding-top: 80px;
+    padding-bottom: 40px;
+    margin-left: 0;
+    opacity: 1;
+    &.fade-out {
+      opacity: 0.001;
+      &.left {
+        margin-left: -2000px;
+      }
+      &.right {
+        margin-left: 2000px;
+      }
+    }
+    @include flexbox;
+    @include justify-content(center);
+    @include align-items(center);
+    @include transition(margin-left 1s linear, opacity 800ms linear);
+
+    .photo-wrapper{
+      position: relative;
+      &.rotate-left {
+        @include rotate(-20deg);
+      }
+      &.rotate-slight-left {
+        @include rotate(-10deg);
+      }
+      &.rotate-major-left {
+        @include rotate(30deg);
+      }
+      &.rotate-right {
+        @include rotate(20deg);
+      }
+      &.rotate-slight-right {
+        @include rotate(10deg);
+      }
+      &.rotate-major-right {
+        @include rotate(30deg);
+      }
+
+      .photo {
+        height: auto;
+        width: auto;
+        max-width: 300px;
+        max-height: 300px;
+        overflow: hidden;
+        padding: 10px;
+        background-color: white;
+        border-radius: 10px;
+      }
+    }
+  }
+  .years-wrapper {
+    @include flexbox;
+    @include justify-content(center);
+    @include align-items(center);
+    width: 100%;
+  }
+}
+
+.years {
+  list-style: none;
+  .current-year {
+    background: $navy;
+    color: $gold;
+    z-index: 1;
+    float: left;
+    position:relative;
+    @include transition(left 1s ease-in-out);
+  }
+  .year-wrapper {
+    float: left;
+    cursor: pointer;
+    background: white;
+    .year {
+      &:hover {
+          border-bottom: 2px solid $gold;
+      }
+      border-bottom: 2px;
+      border-top: 2px;
+    }
+    &:first-child {
+      border-top-left-radius:80px;
+      border-bottom-left-radius:80px;
+    }
+    &:nth-last-child(2) {
+      border-top-right-radius:80px;
+      border-bottom-right-radius:80px;
+    }
+  }
+}
+
+// smart phones
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 736px) {
+  .years {
+    .current-year {
+      width: 38px;
+      padding: 12px 18px 11px 14px;
+      font-size: 22px;
+      margin-top: -1px;
+    }
+    .year-wrapper {
+      width: 30px;
+      padding: 14px;
+      margin-right: -1px;
+    }
+  }
+}
+
+// tablets & desktops
+@media only screen
+  and (min-device-width: 737px) {
+  .years{
+    .current-year {
+      width: 50px;
+      padding: 15px 18px 14px 18px;
+      font-size: 24px;
+    }
+    .year-wrapper {
+      width: 40px;
+      padding: 18px;
+    }
+  }
+}

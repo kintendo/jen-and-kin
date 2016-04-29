@@ -19851,6 +19851,8 @@ var Wedding = require('./wedding.js');
 var Venue = require('./venue.js');
 var Hero = require('./hero.js');
 
+var preloadedPhotos = ['../img/engagement_photo1.jpg', '../img/engagement_photo2.jpg', '../img/engagement_photo3.jpg', '../img/engagement_photo4.jpg', '../img/engagement_photo5.jpg'];
+
 var App = function (_React$Component) {
   _inherits(App, _React$Component);
 
@@ -19861,6 +19863,14 @@ var App = function (_React$Component) {
   }
 
   _createClass(App, [{
+    key: 'componentWillMount',
+    value: function componentWillMount() {
+      preloadedPhotos.forEach(function (photo) {
+        var preloadedPhoto = new Image();
+        preloadedPhoto.src = photo;
+      });
+    }
+  }, {
     key: 'render',
     value: function render() {
 
@@ -20014,7 +20024,7 @@ var Navbar = function (_React$Component) {
       window.addEventListener('scroll', this.handleScroll);
       smoothScroll.init({
         speed: 1000,
-        offset: 40
+        offset: 0
       });
       gumShoe.init({
         offset: 80

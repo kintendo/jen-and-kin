@@ -10,7 +10,22 @@ var Wedding = require('./wedding.js');
 var Venue = require('./venue.js');
 var Hero = require('./hero.js');
 
+const preloadedPhotos = [
+  '../img/engagement_photo1.jpg',
+  '../img/engagement_photo2.jpg',
+  '../img/engagement_photo3.jpg',
+  '../img/engagement_photo4.jpg',
+  '../img/engagement_photo5.jpg'
+];
+
 class App extends React.Component {
+
+  componentWillMount() {
+    preloadedPhotos.forEach((photo) => {
+      let preloadedPhoto = new Image();
+      preloadedPhoto.src = photo;
+    });
+  }
 
   render (){
 
