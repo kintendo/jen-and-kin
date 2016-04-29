@@ -19848,6 +19848,7 @@ var ReactDOM = require('react-dom');
 var Navbar = require('./navbar.js');
 var Story = require('./story.js');
 var Wedding = require('./wedding.js');
+var Party = require('./party.js');
 var Venue = require('./venue.js');
 var Hero = require('./hero.js');
 
@@ -19863,24 +19864,18 @@ var App = function (_React$Component) {
   }
 
   _createClass(App, [{
-    key: 'componentWillMount',
-    value: function componentWillMount() {
-      preloadedPhotos.forEach(function (photo) {
-        var preloadedPhoto = new Image();
-        preloadedPhoto.src = photo;
-      });
-    }
-  }, {
     key: 'render',
     value: function render() {
 
       return React.createElement(
         'div',
         null,
+        React.createElement('div', { className: 'preloader' }),
         React.createElement(Hero, null),
         React.createElement(Navbar, null),
         React.createElement(Wedding, null),
         React.createElement(Venue, null),
+        React.createElement(Party, null),
         React.createElement(Story, null)
       );
     }
@@ -19891,7 +19886,7 @@ var App = function (_React$Component) {
 
 module.exports = App;
 
-},{"./hero.js":170,"./navbar.js":172,"./story.js":173,"./venue.js":174,"./wedding.js":175,"react":167,"react-dom":5}],170:[function(require,module,exports){
+},{"./hero.js":170,"./navbar.js":172,"./party.js":173,"./story.js":174,"./venue.js":175,"./wedding.js":176,"react":167,"react-dom":5}],170:[function(require,module,exports){
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -20076,6 +20071,15 @@ var Navbar = function (_React$Component) {
             null,
             React.createElement(
               'a',
+              { 'data-scroll': true, href: '#party' },
+              'the bridal party'
+            )
+          ),
+          React.createElement(
+            'li',
+            null,
+            React.createElement(
+              'a',
               { 'data-scroll': true, href: '#couple' },
               'the happy couple'
             )
@@ -20091,6 +20095,41 @@ var Navbar = function (_React$Component) {
 module.exports = Navbar;
 
 },{"gumshoe":3,"react":167,"react-addons-css-transition-group":4,"react-dom":5,"smooth-scroll":168}],173:[function(require,module,exports){
+'use strict';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var React = require('react');
+var ReactDOM = require('react-dom');
+
+var Party = function (_React$Component) {
+  _inherits(Party, _React$Component);
+
+  function Party() {
+    _classCallCheck(this, Party);
+
+    return _possibleConstructorReturn(this, Object.getPrototypeOf(Party).call(this));
+  }
+
+  _createClass(Party, [{
+    key: 'render',
+    value: function render() {
+      return React.createElement('div', { id: 'party', className: 'party' });
+    }
+  }]);
+
+  return Party;
+}(React.Component);
+
+module.exports = Party;
+
+},{"react":167,"react-dom":5}],174:[function(require,module,exports){
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -20232,7 +20271,7 @@ var Story = function (_React$Component) {
 
 module.exports = Story;
 
-},{"../lib/photos.js":1,"./years.js":176,"react":167,"react-addons-css-transition-group":4,"react-dom":5}],174:[function(require,module,exports){
+},{"../lib/photos.js":1,"./years.js":177,"react":167,"react-addons-css-transition-group":4,"react-dom":5}],175:[function(require,module,exports){
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -20402,7 +20441,7 @@ var Venue = function (_React$Component) {
 
 module.exports = Venue;
 
-},{"react":167,"react-dom":5}],175:[function(require,module,exports){
+},{"react":167,"react-dom":5}],176:[function(require,module,exports){
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -20476,7 +20515,7 @@ var Wedding = function (_React$Component) {
 
 module.exports = Wedding;
 
-},{"react":167,"react-dom":5}],176:[function(require,module,exports){
+},{"react":167,"react-dom":5}],177:[function(require,module,exports){
 "use strict";
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();

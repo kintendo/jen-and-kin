@@ -7,6 +7,7 @@ var ReactDOM = require('react-dom');
 var Navbar = require('./navbar.js');
 var Story = require('./story.js');
 var Wedding = require('./wedding.js');
+var Party = require('./party.js');
 var Venue = require('./venue.js');
 var Hero = require('./hero.js');
 
@@ -20,21 +21,16 @@ const preloadedPhotos = [
 
 class App extends React.Component {
 
-  componentWillMount() {
-    preloadedPhotos.forEach((photo) => {
-      let preloadedPhoto = new Image();
-      preloadedPhoto.src = photo;
-    });
-  }
-
   render (){
 
     return (
       <div>
+        <div className="preloader"></div>
         <Hero />
         <Navbar />
         <Wedding />
         <Venue />
+        <Party />
         <Story />
       </div>
     );

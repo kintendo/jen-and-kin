@@ -13,6 +13,19 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
+.preloader {
+  background: url('../img/engagement_photo1.jpg') no-repeat -9999px -9999px;
+	background:
+    url('../img/engagement_photo1.jpg') no-repeat -9999px -9999px,
+    url('../img/engagement_photo2.jpg') no-repeat -9999px -9999px,
+    url('../img/engagement_photo3.jpg') no-repeat -9999px -9999px,
+    url('../img/engagement_photo4.jpg') no-repeat -9999px -9999px,
+    url('../img/engagement_photo5.jpg') no-repeat -9999px -9999px,
+    url('../img/engagement_photo6.jpg') no-repeat -9999px -9999px,
+    url('../img/engagement_photo7.jpg') no-repeat -9999px -9999px,
+    url('../img/engagement_photo8.jpg') no-repeat -9999px -9999px;
+}
+
 .hero {
   height: calc(100vh - 45px);
   width: auto;
