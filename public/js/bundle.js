@@ -19852,8 +19852,6 @@ var Party = require('./party.js');
 var Venue = require('./venue.js');
 var Hero = require('./hero.js');
 
-var preloadedPhotos = ['../img/engagement_photo1.jpg', '../img/engagement_photo2.jpg', '../img/engagement_photo3.jpg', '../img/engagement_photo4.jpg', '../img/engagement_photo5.jpg'];
-
 var App = function (_React$Component) {
   _inherits(App, _React$Component);
 
@@ -19870,7 +19868,6 @@ var App = function (_React$Component) {
       return React.createElement(
         'div',
         null,
-        React.createElement('div', { className: 'preloader' }),
         React.createElement(Hero, null),
         React.createElement(Navbar, null),
         React.createElement(Wedding, null),
@@ -20470,13 +20467,13 @@ var Wedding = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Wedding).call(this));
 
     _this.events = [{ time: '9:30 a.m.', title: 'the tea ceremony',
-      description: '\n          Both of us will be participating in a traditional Chinese/Vietnamese tea ceremony.\n        '
+      description: '\n          An intimate ceremony attended exclusively by family, relatives, and close family friends.\n          This ritual serves as the bride\'s symbolic introduction to the groom\'s family.\n        '
     }, { time: '4:30 p.m.', title: 'the wedding ceremony',
-      description: '\n          We would love the pleasure of your company in celebrating our marriage.\n          Taking place in the most iconic location at UCLA, officiated by fellow alumni and good friend Carrie Holmes.\n        '
+      description: '\n          Taking place at the top of Janss steps in front of Shapiro fountain which overlooks UCLA’s two most iconic buildings, Royce Hall and Powell Library.\n          Officiated by close friend and fellow UCLA alumni, Carrie Holmes.\n          Jennifer and Kin have each prepared their own vows to exchange.\n        '
     }, { time: '5:30 p.m.', title: 'the cocktail hour',
-      description: '\n          Enjoy a magical hour with us and celebrate with fresh craft cocktails & beer.\n        '
+      description: '\n          Stroll over to Dickson Court North and begin the celebration with a magical hour of passed appetizers, select his & her cocktails, and craft beers.\n        '
     }, { time: '6:30 p.m.', title: 'the reception',
-      description: '\n          Join us for traditional Chinese banquet dinner, catered by Capital Seafood.\n          Dancing will be mandatory.\n        '
+      description: '\n          Continue the celebration with the newlyweds with a seven course family-style traditional Chinese banquet followed by wedding cake from King’s Hawaiian.\n          Dinner is followed by dancing (mandatory per the groom’s request!).\n          Look forward to an eclectic playlist curated by the wedding party.\n          Keep the night going with lawn games, a flipbook booth, a full service open bar, and a coffee bar.\n        '
     }];
     return _this;
   }

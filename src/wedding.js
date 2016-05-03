@@ -9,24 +9,28 @@ class Wedding extends React.Component {
     this.events = [
       {time: '9:30 a.m.', title: 'the tea ceremony',
         description: `
-          Both of us will be participating in a traditional Chinese/Vietnamese tea ceremony.
+          An intimate ceremony attended exclusively by family, relatives, and close family friends.
+          This ritual serves as the bride's symbolic introduction to the groom's family.
         `
       },
       {time: '4:30 p.m.', title: 'the wedding ceremony',
         description: `
-          We would love the pleasure of your company in celebrating our marriage.
-          Taking place in the most iconic location at UCLA, officiated by fellow alumni and good friend Carrie Holmes.
+          Taking place at the top of Janss steps in front of Shapiro fountain which overlooks UCLA’s two most iconic buildings, Royce Hall and Powell Library.
+          Officiated by close friend and fellow UCLA alumni, Carrie Holmes.
+          Jennifer and Kin have each prepared their own vows to exchange.
         `
       },
       {time: '5:30 p.m.', title: 'the cocktail hour',
         description: `
-          Enjoy a magical hour with us and celebrate with fresh craft cocktails & beer.
+          Stroll over to Dickson Court North and begin the celebration with a magical hour of passed appetizers, select his & her cocktails, and craft beers.
         `
       },
       {time: '6:30 p.m.', title: 'the reception',
         description: `
-          Join us for traditional Chinese banquet dinner, catered by Capital Seafood.
-          Dancing will be mandatory.
+          Continue the celebration with the newlyweds with a seven course family-style traditional Chinese banquet followed by wedding cake from King’s Hawaiian.
+          Dinner is followed by dancing (mandatory per the groom’s request!).
+          Look forward to an eclectic playlist curated by the wedding party.
+          Keep the night going with lawn games, a flipbook booth, a full service open bar, and a coffee bar.
         `
       }
     ];

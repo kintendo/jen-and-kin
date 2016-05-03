@@ -11,13 +11,6 @@ var Party = require('./party.js');
 var Venue = require('./venue.js');
 var Hero = require('./hero.js');
 
-const preloadedPhotos = [
-  '../img/engagement_photo1.jpg',
-  '../img/engagement_photo2.jpg',
-  '../img/engagement_photo3.jpg',
-  '../img/engagement_photo4.jpg',
-  '../img/engagement_photo5.jpg'
-];
 
 class App extends React.Component {
 
@@ -25,7 +18,6 @@ class App extends React.Component {
 
     return (
       <div>
-        <div className="preloader"></div>
         <Hero />
         <Navbar />
         <Wedding />
