@@ -19930,8 +19930,12 @@ var Hero = function (_React$Component) {
           });
           setTimeout(function () {
             // change image
+            var newIndex = Math.floor(Math.random() * 8);
+            while (newIndex === _this2.state.backgroundIndex) {
+              newIndex = Math.floor(Math.random() * 8);
+            }
             _this2.setState({
-              backgroundIndex: Math.floor(Math.random() * 8)
+              backgroundIndex: newIndex
             });
             setTimeout(function () {
               // fade in

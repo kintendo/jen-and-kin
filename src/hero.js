@@ -29,8 +29,12 @@ class Hero extends React.Component {
         });
         setTimeout( () => {
           // change image
+          let newIndex = Math.floor(Math.random()*8);
+          while(newIndex === this.state.backgroundIndex){
+            newIndex = Math.floor(Math.random()*8);
+          }
           this.setState({
-            backgroundIndex: Math.floor(Math.random()*8)
+            backgroundIndex: newIndex
           });
           setTimeout( () => {
             // fade in
