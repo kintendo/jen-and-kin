@@ -204,8 +204,8 @@ body {
   font-family: 'Open Sans', sans-serif; }
 
 .preloader {
-  background: url("http://i.imgbox.com/1XJAfYCU.jpg") no-repeat -9999px -9999px;
-  background: url("http://i.imgbox.com/1XJAfYCU.jpg") no-repeat -9999px -9999px, url("http://i.imgbox.com/X6A9zj1i.jpg") no-repeat -9999px -9999px, url("http://i.imgbox.com/WnnEHG5j.jpg") no-repeat -9999px -9999px, url("http://i.imgbox.com/eSwFe5L4.jpg") no-repeat -9999px -9999px, url("http://i.imgbox.com/L5qqP1fg.jpg") no-repeat -9999px -9999px, url("http://i.imgbox.com/9K9WU0bv.jpg") no-repeat -9999px -9999px, url("http://i.imgbox.com/sE6oSX3u.jpg") no-repeat -9999px -9999px, url("http://i.imgbox.com/frtMDQ4Q.jpg") no-repeat -9999px -9999px; }
+  background: url("../img/engagement_photo1.jpg") no-repeat -9999px -9999px;
+  background: url("../img/engagement_photo1.jpg") no-repeat -9999px -9999px, url("../img/engagement_photo2.jpg") no-repeat -9999px -9999px, url("../img/engagement_photo3.jpg") no-repeat -9999px -9999px, url("../img/engagement_photo4.jpg") no-repeat -9999px -9999px, url("../img/engagement_photo5.jpg") no-repeat -9999px -9999px, url("../img/engagement_photo6.jpg") no-repeat -9999px -9999px, url("../img/engagement_photo7.jpg") no-repeat -9999px -9999px, url("../img/engagement_photo8.jpg") no-repeat -9999px -9999px; }
 
 .hero {
   opacity: 0.01;
@@ -217,11 +217,11 @@ body {
   background-size: cover; }
   .hero.fade-in {
     opacity: 1;
-    -webkit-transition: opacity 2s ease-in;
-    -moz-transition: opacity 2s ease-in;
-    -o-transition: opacity 2s ease-in;
-    -ms-transition: opacity 2s ease-in;
-    transition: opacity 2s ease-in; }
+    -webkit-transition: opacity 3s ease-in;
+    -moz-transition: opacity 3s ease-in;
+    -o-transition: opacity 3s ease-in;
+    -ms-transition: opacity 3s ease-in;
+    transition: opacity 3s ease-in; }
   .hero.fade-out {
     opacity: 0.01;
     -webkit-transition: opacity 1s ease-in;
