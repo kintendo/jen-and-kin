@@ -13,38 +13,43 @@ class Hero extends React.Component {
     super(props);
     this.state = {
       backgroundIndex: 4,
-      fadeOut: false
+      fadeOut: false,
+      fadeIn: false
     };
   }
 
   componentDidMount () {
-    setInterval( () => {
-      // fade out
-      this.setState({
-        fadeOut: true
-      });
-      setTimeout( () => {
-        // change image
+    // first fade in
+    setTimeout( () => {
+      this.setState({fadeIn: true});
+      setInterval( () => {
+        // fade out
         this.setState({
-          backgroundIndex: Math.floor(Math.random()*8)
+          fadeOut: true
         });
         setTimeout( () => {
-          // fade in
+          // change image
           this.setState({
-            fadeOut: false
+            backgroundIndex: Math.floor(Math.random()*8)
           });
+          setTimeout( () => {
+            // fade in
+            this.setState({
+              fadeOut: false
+            });
+          }, 1000);
         }, 1000);
-      }, 1000);
-    }, 8000);
+      }, 8000);
+    }, 500);
   }
 
   render (){
 
-    const {backgroundIndex, fadeOut} = this.state;
+    const {backgroundIndex, fadeOut, fadeIn} = this.state;
     const randomBackground = backgroundClasses[backgroundIndex];
     // just an empty div w/ a bg picture or video even
     return (
-      <div className={`hero ${randomBackground} ${fadeOut ? 'fade-out' : ''}`}>
+      <div className={`hero ${randomBackground} ${fadeIn ? 'fade-in' : ''} ${fadeOut ? 'fade-out' : ''}`}>
       </div>
     );
   }
