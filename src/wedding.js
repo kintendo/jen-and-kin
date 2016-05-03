@@ -15,22 +15,26 @@ class Wedding extends React.Component {
       },
       {time: '4:30 p.m.', title: 'the wedding ceremony',
         description: `
-          Taking place at the top of Janss steps in front of Shapiro fountain which overlooks UCLA’s two most iconic buildings, Royce Hall and Powell Library.
-          Officiated by close friend and fellow UCLA alumni, Carrie Holmes.
-          Jennifer and Kin have each prepared their own vows to exchange.
+          The ceremony will be taking place at the top of Janss steps overlooking UCLA’s two most iconic buildings,
+          Royce Hall and Powell Library.
+          It will be officiated by close friend and fellow UCLA alumni, Carrie Holmes.
+          Come witness as Jennifer and Kin have each prepared their own vows to exchange.
         `
       },
       {time: '5:30 p.m.', title: 'the cocktail hour',
         description: `
-          Stroll over to Dickson Court North and begin the celebration with a magical hour of passed appetizers, select his & her cocktails, and craft beers.
+          At the conlcusion of the ceremony,
+          stroll on over to Dickson Court North and begin the celebration with a magical hour of passed appetizers,
+          select his & her cocktails,
+          and craft beers.
         `
       },
       {time: '6:30 p.m.', title: 'the reception',
         description: `
-          Continue the celebration with the newlyweds with a seven course family-style traditional Chinese banquet followed by wedding cake from King’s Hawaiian.
-          Dinner is followed by dancing (mandatory per the groom’s request!).
+          Continue the celebration with the newlyweds with a seven course family-style traditional Chinese banquet followed by a wedding cake from King’s Hawaiian.
+          Dinner will be followed by dancing (mandatory per the groom’s request!).
           Look forward to an eclectic playlist curated by the wedding party.
-          Keep the night going with lawn games, a flipbook booth, a full service open bar, and a coffee bar.
+          Keep the night going with lawn games, full service open bars, a flipbook booth, and a coffee bar.
         `
       }
     ];
@@ -44,8 +48,7 @@ class Wedding extends React.Component {
             this.events.map( (curEvent, i) => {
               return (
                 <li key={i}>
-                  <h1>{curEvent.time}</h1>
-                  <h2>{curEvent.title}</h2>
+                  <h2>{curEvent.time}<span className="divider">&nbsp;|&nbsp;&nbsp;&nbsp;</span><span className="title">{curEvent.title}</span></h2>
                   <p>{curEvent.description}</p>
                 </li>
               );

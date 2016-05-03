@@ -20469,11 +20469,11 @@ var Wedding = function (_React$Component) {
     _this.events = [{ time: '9:30 a.m.', title: 'the tea ceremony',
       description: '\n          An intimate ceremony attended exclusively by family, relatives, and close family friends.\n          This ritual serves as the bride\'s symbolic introduction to the groom\'s family.\n        '
     }, { time: '4:30 p.m.', title: 'the wedding ceremony',
-      description: '\n          Taking place at the top of Janss steps in front of Shapiro fountain which overlooks UCLA’s two most iconic buildings, Royce Hall and Powell Library.\n          Officiated by close friend and fellow UCLA alumni, Carrie Holmes.\n          Jennifer and Kin have each prepared their own vows to exchange.\n        '
+      description: '\n          The ceremony will be taking place at the top of Janss steps overlooking UCLA’s two most iconic buildings,\n          Royce Hall and Powell Library.\n          It will be officiated by close friend and fellow UCLA alumni, Carrie Holmes.\n          Come witness as Jennifer and Kin have each prepared their own vows to exchange.\n        '
     }, { time: '5:30 p.m.', title: 'the cocktail hour',
-      description: '\n          Stroll over to Dickson Court North and begin the celebration with a magical hour of passed appetizers, select his & her cocktails, and craft beers.\n        '
+      description: '\n          At the conlcusion of the ceremony,\n          stroll on over to Dickson Court North and begin the celebration with a magical hour of passed appetizers,\n          select his & her cocktails,\n          and craft beers.\n        '
     }, { time: '6:30 p.m.', title: 'the reception',
-      description: '\n          Continue the celebration with the newlyweds with a seven course family-style traditional Chinese banquet followed by wedding cake from King’s Hawaiian.\n          Dinner is followed by dancing (mandatory per the groom’s request!).\n          Look forward to an eclectic playlist curated by the wedding party.\n          Keep the night going with lawn games, a flipbook booth, a full service open bar, and a coffee bar.\n        '
+      description: '\n          Continue the celebration with the newlyweds with a seven course family-style traditional Chinese banquet followed by a wedding cake from King’s Hawaiian.\n          Dinner will be followed by dancing (mandatory per the groom’s request!).\n          Look forward to an eclectic playlist curated by the wedding party.\n          Keep the night going with lawn games, full service open bars, a flipbook booth, and a coffee bar.\n        '
     }];
     return _this;
   }
@@ -20492,14 +20492,19 @@ var Wedding = function (_React$Component) {
               'li',
               { key: i },
               React.createElement(
-                'h1',
-                null,
-                curEvent.time
-              ),
-              React.createElement(
                 'h2',
                 null,
-                curEvent.title
+                curEvent.time,
+                React.createElement(
+                  'span',
+                  { className: 'divider' },
+                  ' |   '
+                ),
+                React.createElement(
+                  'span',
+                  { className: 'title' },
+                  curEvent.title
+                )
               ),
               React.createElement(
                 'p',

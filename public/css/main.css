@@ -279,7 +279,7 @@ body {
     background-size: cover; }
 
 .wedding {
-  padding-top: 2px;
+  padding-top: 47px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-flex;
@@ -306,6 +306,14 @@ body {
     list-style: none; }
     .wedding ul li {
       text-align: center; }
+      .wedding ul li .divider {
+        color: #D4AF37;
+        font-size: 30px; }
+      .wedding ul li .title {
+        font-family: 'Sacramento', cursive;
+        font-size: 42px;
+        font-weight: 100;
+        vertical-align: middle; }
 
 .venue {
   padding-top: 2px; }

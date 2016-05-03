@@ -74,18 +74,27 @@ body {
 }
 
 .wedding {
-  padding-top: 2px;
+  padding-top: 47px;
   @include flexbox;
   @include justify-content(center);
   ul {
     width: 50%;
     @include flexbox;
-
     @include flex-direction(column);
     list-style: none;
 
     li {
       text-align: center;
+      .divider {
+        color: $gold;
+        font-size: 30px;
+      }
+      .title {
+        font-family: 'Sacramento', cursive;
+        font-size: 42px;
+        font-weight: 100;
+        vertical-align: middle;
+      }
     }
   }
 }
