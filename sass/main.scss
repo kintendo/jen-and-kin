@@ -100,7 +100,9 @@ body {
 }
 
 .venue {
-  padding-top: 2px;
+  .gold {
+    color: $gold;
+  }
   img {
     width: 100%;
   }

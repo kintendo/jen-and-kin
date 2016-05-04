@@ -20026,7 +20026,7 @@ var Navbar = function (_React$Component) {
       window.addEventListener('scroll', this.handleScroll);
       smoothScroll.init({
         speed: 1000,
-        offset: 0
+        offset: 40
       });
       gumShoe.init({
         offset: 80
@@ -20335,20 +20335,26 @@ var Venue = function (_React$Component) {
       return React.createElement(
         'div',
         { id: 'venue', className: 'venue', onClick: this.disableFrameClick },
-        React.createElement('img', { src: 'https://harrt.ucla.edu/wp-content/uploads/sites/34/2015/07/088-UCLA_Hedrick-View-e1438026412784.jpg' }),
+        React.createElement('img', { src: '../img/ucla_banner.png' }),
         React.createElement(
           'div',
           { className: 'content-wrapper' },
           React.createElement(
             'h1',
             null,
-            'UCLA'
+            'U',
+            React.createElement(
+              'span',
+              { className: 'gold' },
+              'C'
+            ),
+            'LA'
           ),
           React.createElement('div', { className: 'school-banner' }),
           React.createElement(
             'p',
             null,
-            'The ceremony will be taking place at the summit of Janss Steps. It will overlook two of the most iconic buildings at UCLA, Royce Hall & Powell Library. Shortly after, the event will transition to a cocktail hour steps away at Dickson Court North, known to students as the "sunken garden".'
+            'The ceremony will be taking place at the summit of Janss Steps.\n            It will overlook two of the most iconic buildings at UCLA, Royce Hall & Powell Library.\n            Shortly after, the event will transition to a cocktail hour steps away at Dickson Court North,\n            known to students as the "sunken garden".'
           ),
           React.createElement(
             'h2',

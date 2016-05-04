@@ -64,11 +64,14 @@
     @include justify-content(center);
     @include align-items(center);
     width: 100%;
+    background-color: white;
   }
 }
 
 .years {
   list-style: none;
+  padding: 0;
+  margin: 0;
   .current-year {
     background: $navy;
     color: $gold;

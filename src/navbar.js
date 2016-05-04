@@ -30,7 +30,7 @@ class Navbar extends React.Component {
       window.addEventListener('scroll', this.handleScroll);
       smoothScroll.init({
         speed: 1000,
-        offset: 0
+        offset: 40
       });
       gumShoe.init({
         offset: 80

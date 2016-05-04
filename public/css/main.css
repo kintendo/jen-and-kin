@@ -147,10 +147,13 @@
     -webkit-align-items: center;
     -moz-align-items: center;
     align-items: center;
-    width: 100%; }
+    width: 100%;
+    background-color: white; }
 
 .years {
-  list-style: none; }
+  list-style: none;
+  padding: 0;
+  margin: 0; }
   .years .current-year {
     background: #002b5c;
     color: #D4AF37;
@@ -315,18 +318,20 @@ body {
         font-weight: 100;
         vertical-align: middle; }
 
-.venue {
-  padding-top: 2px; }
-  .venue img {
-    width: 100%; }
-  .venue .content-wrapper {
-    margin-left: auto;
-    margin-right: auto;
-    width: 80%; }
-    .venue .content-wrapper iframe {
-      width: 100%;
-      height: 480px;
-      border: none; }
+.venue .gold {
+  color: #D4AF37; }
+
+.venue img {
+  width: 100%; }
+
+.venue .content-wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%; }
+  .venue .content-wrapper iframe {
+    width: 100%;
+    height: 480px;
+    border: none; }
 
 .party {
   height: 800px; }
