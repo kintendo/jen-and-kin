@@ -14,7 +14,7 @@ module.exports = {
   2013: ['http://i.imgbox.com/KpeWLNqQ.jpg', 'http://i.imgbox.com/omqtOdzb.jpg', 'http://i.imgbox.com/v99mlVsv.jpg', 'http://i.imgbox.com/g1H3BLri.jpg', 'http://i.imgbox.com/1WK4koo1.jpg', 'http://i.imgbox.com/hrmNIq1X.jpg', 'http://i.imgbox.com/ecU4pS4G.jpg', 'http://i.imgbox.com/ovLmjeo1.jpg'],
   2014: ['http://i.imgbox.com/ZiTU1h0S.jpg', 'http://i.imgbox.com/LxPudQcs.jpg', 'http://i.imgbox.com/Z99KuxxA.jpg', 'http://i.imgbox.com/RvXXQSvK.jpg', 'http://i.imgbox.com/rSiIVMjd.jpg', 'http://i.imgbox.com/w5KRo68R.jpg'],
   2015: ['http://i.imgbox.com/3Rom0gmF.jpg', 'http://i.imgbox.com/c1d4bblq.jpg', 'http://i.imgbox.com/Qg6QEGnz.jpg', 'http://i.imgbox.com/cC6UOVb1.jpg', 'http://i.imgbox.com/cms6xz9v.jpg', 'http://i.imgbox.com/6kvPultp.jpg', 'http://i.imgbox.com/7cBkPqza.jpg', 'http://i.imgbox.com/1Yy9Ry2I.jpg', 'http://i.imgbox.com/hkmGcjWO.jpg', 'http://i.imgbox.com/0OKwLs5E.jpg', 'http://i.imgbox.com/nbjNzCmK.jpg', 'http://i.imgbox.com/7KzAQGhx.jpg', 'http://i.imgbox.com/x554rjFC.jpg', 'http://i.imgbox.com/tKmoS62v.jpg', 'http://i.imgbox.com/O180rpk1.jpg', 'http://i.imgbox.com/hy6cehNQ.jpg', 'http://i.imgbox.com/oQqc8wAE.jpg', 'http://i.imgbox.com/leHcwXHo.jpg'],
-  2016: ['http://www.carissawoophotography.com/blog/wp-content/uploads/2016/01/21-35422-post/Malibu-Cafe-Engagement-Photographer-Carissa-Woo-Photography_0041.jpg', 'http://www.carissawoophotography.com/blog/wp-content/uploads/2016/01/21-35422-post/Malibu-Cafe-Engagement-Photographer-Carissa-Woo-Photography_0041.jpg', 'http://www.carissawoophotography.com/blog/wp-content/uploads/2016/01/21-35422-post/Malibu-Cafe-Engagement-Photographer-Carissa-Woo-Photography_0041.jpg', 'http://www.carissawoophotography.com/blog/wp-content/uploads/2016/01/21-35422-post/Malibu-Cafe-Engagement-Photographer-Carissa-Woo-Photography_0041.jpg', 'http://www.carissawoophotography.com/blog/wp-content/uploads/2016/01/21-35422-post/Malibu-Cafe-Engagement-Photographer-Carissa-Woo-Photography_0038.jpg', 'http://www.carissawoophotography.com/blog/wp-content/uploads/2016/01/21-35422-post/Malibu-Cafe-Engagement-Photographer-Carissa-Woo-Photography_0041.jpg', 'http://www.carissawoophotography.com/blog/wp-content/uploads/2016/01/21-35422-post/Malibu-Cafe-Engagement-Photographer-Carissa-Woo-Photography_0035.jpg', 'http://www.carissawoophotography.com/blog/wp-content/uploads/2016/01/21-35422-post/Malibu-Cafe-Engagement-Photographer-Carissa-Woo-Photography_0035.jpg']
+  2016: ['http://www.carissawoophotography.com/blog/wp-content/uploads/2016/01/21-35422-post/Malibu-Cafe-Engagement-Photographer-Carissa-Woo-Photography_0028.jpg', 'http://www.carissawoophotography.com/blog/wp-content/uploads/2016/01/21-35422-post/Malibu-Cafe-Engagement-Photographer-Carissa-Woo-Photography_0033.jpg', 'http://www.carissawoophotography.com/blog/wp-content/uploads/2016/01/21-35422-post/Malibu-Cafe-Engagement-Photographer-Carissa-Woo-Photography_0035.jpg', 'http://www.carissawoophotography.com/blog/wp-content/uploads/2016/01/21-35422-post/Malibu-Cafe-Engagement-Photographer-Carissa-Woo-Photography_0038.jpg', 'http://www.carissawoophotography.com/blog/wp-content/uploads/2016/01/21-35422-post/Malibu-Cafe-Engagement-Photographer-Carissa-Woo-Photography_0040.jpg', 'http://www.carissawoophotography.com/blog/wp-content/uploads/2016/01/21-35422-post/Malibu-Cafe-Engagement-Photographer-Carissa-Woo-Photography_0041.jpg', 'http://www.carissawoophotography.com/blog/wp-content/uploads/2016/01/21-35422-post/Malibu-Cafe-Engagement-Photographer-Carissa-Woo-Photography_0045.jpg', 'http://www.carissawoophotography.com/blog/wp-content/uploads/2016/01/21-35422-post/Malibu-Cafe-Engagement-Photographer-Carissa-Woo-Photography_0049.jpg', 'http://www.carissawoophotography.com/blog/wp-content/uploads/2016/01/21-35422-post/Malibu-Cafe-Engagement-Photographer-Carissa-Woo-Photography_0051.jpg', 'http://www.carissawoophotography.com/blog/wp-content/uploads/2016/01/21-35422-post/Malibu-Cafe-Engagement-Photographer-Carissa-Woo-Photography_0053.jpg', 'http://www.carissawoophotography.com/blog/wp-content/uploads/2016/01/21-35422-post/Malibu-Cafe-Engagement-Photographer-Carissa-Woo-Photography_0054.jpg']
 };
 
 },{}],2:[function(require,module,exports){
@@ -19872,7 +19872,6 @@ var App = function (_React$Component) {
         React.createElement(Navbar, null),
         React.createElement(Wedding, null),
         React.createElement(Venue, null),
-        React.createElement(Party, null),
         React.createElement(Story, null)
       );
     }
@@ -20080,15 +20079,6 @@ var Navbar = function (_React$Component) {
             null,
             React.createElement(
               'a',
-              { 'data-scroll': true, href: '#party' },
-              'the wedding party'
-            )
-          ),
-          React.createElement(
-            'li',
-            null,
-            React.createElement(
-              'a',
               { 'data-scroll': true, href: '#couple' },
               'the happy couple'
             )
@@ -20220,12 +20210,14 @@ var Story = function (_React$Component) {
             // flip out
             _this2.setState(_defineProperty({}, currentSide + 'Class', 'flipOutX'));
             setTimeout(function () {
-              var _this2$setState2;
-
-              // pick new photo & flip in
-              _this2.setState((_this2$setState2 = {}, _defineProperty(_this2$setState2, currentSide + 'Class', 'flipInX'), _defineProperty(_this2$setState2, currentSide, _this2.pickNewPhoto()), _this2$setState2));
-            }, 1000);
-          }, 3000);
+              // pick new photo
+              _this2.setState(_defineProperty({}, currentSide, _this2.pickNewPhoto()));
+              setTimeout(function () {
+                // flip in
+                _this2.setState(_defineProperty({}, currentSide + 'Class', 'flipInX'));
+              }, 800);
+            }, 800);
+          }, 3600);
           _this2.setState({ currentInterval: newInterval });
         }, 500);
       }, 800);

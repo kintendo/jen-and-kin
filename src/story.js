@@ -59,13 +59,18 @@ class Story extends React.Component {
               [`${currentSide}Class`]: 'flipOutX'
             });
             setTimeout(() => {
-              // pick new photo & flip in
+              // pick new photo
               this.setState({
-                [`${currentSide}Class`]: 'flipInX',
                 [currentSide]: this.pickNewPhoto()
               });
-            }, 1000);
-          }, 3000);
+              setTimeout(() => {
+                // flip in
+                this.setState({
+                  [`${currentSide}Class`]: 'flipInX'
+                });
+              }, 800);
+            }, 800);
+          }, 3600);
           this.setState({currentInterval: newInterval});
       }, 500);
     }, 800);
