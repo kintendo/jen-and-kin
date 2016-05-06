@@ -47,6 +47,10 @@ class Venue extends React.Component {
             known to students as the "sunken garden".`}
           </p>
           <h2>{`Directions to UCLA`}</h2>
+          <div>
+            <p>10745 Dickson Court<br/>
+            Los Angeles, CA 90095</p>
+          </div>
           <h3>{`From 405 North`}</h3>
             <ul>
               <li>{`Exit Sunset Blvd and head East`}</li>

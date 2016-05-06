@@ -20265,7 +20265,6 @@ var Story = function (_React$Component) {
     }
   }, {
     key: 'render',
-    //currentDirection: direction
     value: function render() {
       var _state2 = this.state;
       var currentYear = _state2.currentYear;
@@ -20302,7 +20301,7 @@ var Story = function (_React$Component) {
           React.createElement(
             'p',
             null,
-            'Jen and Kin are finally tying the knot after twelve long years.\n            Click the years below to get a blast from the past\n            and see the happy couple through the years.'
+            'Jen and Kin are finally tying the knot after twelve wonderful years together.\n            Click the years below to get a blast from the past\n            and see the happy couple through the many years.'
           )
         ),
         React.createElement(
@@ -20410,6 +20409,17 @@ var Venue = function (_React$Component) {
             'h2',
             null,
             'Directions to UCLA'
+          ),
+          React.createElement(
+            'div',
+            null,
+            React.createElement(
+              'p',
+              null,
+              '10745 Dickson Court',
+              React.createElement('br', null),
+              'Los Angeles, CA 90095'
+            )
           ),
           React.createElement(
             'h3',

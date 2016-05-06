@@ -107,8 +107,7 @@ class Story extends React.Component {
 
     this.setState({
       leftPhoto: leftPhoto,
-      rightPhoto: rightPhoto,
-      //currentDirection: direction
+      rightPhoto: rightPhoto
     });
   }
 
@@ -139,9 +138,9 @@ class Story extends React.Component {
         <div className="prologue">
           <h4>One Dozen Years</h4>
           <p>
-            {`Jen and Kin are finally tying the knot after twelve long years.
+            {`Jen and Kin are finally tying the knot after twelve wonderful years together.
             Click the years below to get a blast from the past
-            and see the happy couple through the years.`}
+            and see the happy couple through the many years.`}
           </p>
         </div>
         <div className={`photos animated ${fadeOut?'fadeOut':'fadeIn'}${currentDirection}`}>
