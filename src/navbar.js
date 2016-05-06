@@ -19,7 +19,7 @@ class Navbar extends React.Component {
   }
 
   handleScroll() {
-    if (document.body.scrollTop > window.innerHeight - 50) {
+    if (document.body.scrollTop > window.innerHeight - 45) {
       this.setState({stick: 'stick'});
     } else {
       this.setState({stick: ''});
@@ -52,6 +52,8 @@ class Navbar extends React.Component {
         transitionName="animate"
         transitionAppear={true}
         transitionAppearTimeout={2000}
+        transitionEnterTimeout={0}
+        transitionLeaveTimeout={0}
       >
         <ul data-gumshoe>
           <li><a data-scroll href="#wedding">the big day</a></li>

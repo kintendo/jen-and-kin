@@ -74,6 +74,8 @@ body {
 }
 
 .wedding {
+  // background-image: url('../img/lightpaperfibers.png');
+  // background-repeat: repeat;
   padding-top: 47px;
   @include flexbox;
   @include justify-content(center);

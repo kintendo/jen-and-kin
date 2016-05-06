@@ -131,6 +131,14 @@ class Story extends React.Component {
 
     return (
       <div id="couple" className="story">
+        <div className="prologue">
+          <h4>One Dozen Years</h4>
+          <p>
+            {`Jen and Kin are finally tying the knot after twelve long years.
+            Click the years below to get a blast from the past
+            and see the happy couple through the years.`}
+          </p>
+        </div>
         <div className={`photos animated ${fadeOut?'fadeOut':'fadeIn'}${currentDirection}`}>
           {photoItems}
         </div>

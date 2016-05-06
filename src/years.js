@@ -36,8 +36,9 @@ class Years extends React.Component {
       );
     });
 
+
     const multiplier = 2016 - parseInt(currentYear, 10) + 1;
-    const offset = 77 * multiplier;
+    const offset = (window.innerWidth < 1000 ? 57 : 77) * multiplier;
     const currentYearStyle = {
       left: `-${offset}px`
     };
