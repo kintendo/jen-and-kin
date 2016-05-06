@@ -56,7 +56,7 @@ class Navbar extends React.Component {
         <ul data-gumshoe>
           <li><a data-scroll href="#wedding">the big day</a></li>
           <li><a data-scroll href="#venue">the venue</a></li>
-          <li><a data-scroll href="#party">the bridal party</a></li>
+          <li><a data-scroll href="#party">the wedding party</a></li>
           <li><a data-scroll href="#couple">the happy couple</a></li>
         </ul>
       </ReactAnimate>

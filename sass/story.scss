@@ -7,55 +7,27 @@
   background-color: $navy;
   overflow: hidden;
   .photos {
-    height: 360px;
-    padding-top: 80px;
-    padding-bottom: 40px;
-    margin-left: 0;
-    opacity: 1;
-    &.fade-out {
-      opacity: 0.001;
-      &.left {
-        margin-left: -2000px;
-      }
-      &.right {
-        margin-left: 2000px;
-      }
-    }
+    width: 75%;
+    margin-top: 80px;
+    margin-bottom: 40px;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
     @include flexbox;
     @include justify-content(center);
     @include align-items(center);
-    @include transition(margin-left 1s linear, opacity 800ms linear);
-
+    @include flex-wrap(wrap);
     .photo-wrapper{
       position: relative;
-      &.rotate-left {
-        @include rotate(-20deg);
-      }
-      &.rotate-slight-left {
-        @include rotate(-10deg);
-      }
-      &.rotate-major-left {
-        @include rotate(30deg);
-      }
-      &.rotate-right {
-        @include rotate(20deg);
-      }
-      &.rotate-slight-right {
-        @include rotate(10deg);
-      }
-      &.rotate-major-right {
-        @include rotate(30deg);
-      }
-
       .photo {
         height: auto;
         width: auto;
         max-width: 300px;
         max-height: 300px;
         overflow: hidden;
-        padding: 10px;
-        background-color: white;
-        border-radius: 10px;
+        padding: 40px;
+        border: 1px solid $gold;
+        margin: 20px;
       }
     }
   }

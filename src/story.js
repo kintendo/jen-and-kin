@@ -6,15 +6,7 @@ const ReactAnimate = require('react-addons-css-transition-group');
 const photos = require('../lib/photos.js');
 const Years = require('./years.js');
 
-const photoClasses = [
-  'rotate-left',
-  'rotate-slight-left',
-  'rotate-major-left',
-  'rotate-right',
-  'rotate-slight-right',
-  'rotate-major-left',
-  'none'
-];
+const SIDES = ['leftPhoto', 'rightPhoto'];
 
 class Story extends React.Component {
 
@@ -23,10 +15,16 @@ class Story extends React.Component {
     this.state = {
       currentYear: '2016',
       currentDirection: 'right',
-      fadeOut: false
+      fadeOut: false,
+      currentInterval: 0,
+      leftPhoto: '',
+      rightPhoto: '',
+      leftPhotoClass: '',
+      rightPhotoClass: ''
     };
     this.handleYearClick = this.handleYearClick.bind(this);
     this.setCurrentPhotos = this.setCurrentPhotos.bind(this);
+    this.pickNewPhoto = this.pickNewPhoto.bind(this);
   }
 
   componentWillMount () {
@@ -34,50 +32,78 @@ class Story extends React.Component {
   }
 
   handleYearClick (year) {
-    // animate year, fade slide out pictures
-    const currentDirection = (year < this.state.currentYear) ? 'right' : 'left';
-    const oppositeDirection = (year < this.state.currentYear) ? 'left' : 'right';
-
+    // animate year, fade & slide out pictures
+    const currentDirection = (year < this.state.currentYear) ? 'Right' : 'Left';
+    const oppositeDirection = (year < this.state.currentYear) ? 'Left' : 'Right';
     this.setState({
       currentYear: year,
       currentDirection: currentDirection,
       fadeOut: true
     });
     setTimeout(() => {
-      // replace pictures & classes & flip direction
+      clearInterval(this.state.currentInterval);
+      // replace pictures
       this.setCurrentPhotos(year, oppositeDirection);
       setTimeout( () => {
         // fade slide pictures in
         this.setState({
           fadeOut: false,
-          currentDirection: ''
+          currentDirection: oppositeDirection
         });
-      }, 800);
-    }, 1000);
+          // every 3 seconds
+          const newInterval = setInterval(()=> {
+            // pick a side
+            const currentSide = SIDES[Math.floor(Math.random()*2)];
+            // flip out
+            this.setState({
+              [`${currentSide}Class`]: 'flipOutX'
+            });
+            setTimeout(() => {
+              // pick new photo & flip in
+              this.setState({
+                [`${currentSide}Class`]: 'flipInX',
+                [currentSide]: this.pickNewPhoto()
+              });
+            }, 1000);
+          }, 3000);
+          this.setState({currentInterval: newInterval});
+      }, 500);
+    }, 800);
+  }
+
+  pickNewPhoto() {
+    const {currentYear, leftPhoto, rightPhoto} = this.state;
+    const currentPhotos = photos[currentYear];
+    let retries = 0;
+    let randomPhoto = '';
+    do {
+      if (retries > 10) break;
+      randomPhoto = currentPhotos[Math.floor(Math.random()*currentPhotos.length)];
+      retries++;
+    } while (randomPhoto === leftPhoto || randomPhoto === rightPhoto);
+    return randomPhoto;
   }
 
   setCurrentPhotos(year, direction) {
-    // set current photos in state
-    // set current photo classes in state
-    let fabFive = [];
-    let randomClasses = [];
+
+    let leftPhoto = '';
+    let rightPhoto = '';
     if (year) {
       let currentPhotos = [...photos[year]];
-      const curLen = currentPhotos.length;
-      for(let i = 0; i < 5 && i < curLen; i++) {
-        // random photo
-        const randomPhotoIndex = Math.floor(Math.random()*currentPhotos.length);
-        let randomPhoto = currentPhotos.splice(randomPhotoIndex, 1)[0];
-        fabFive.push(randomPhoto);
-        //random photo class
-        const randomClassIndex = Math.floor(Math.random()*photoClasses.length);
-        randomClasses.push(photoClasses[randomClassIndex]);
-      }
+
+      // grab a photo
+      let randomPhotoIndex = Math.floor(Math.random()*currentPhotos.length);
+      leftPhoto = currentPhotos.splice(randomPhotoIndex, 1)[0];
+
+      // grab another
+      randomPhotoIndex = Math.floor(Math.random()*currentPhotos.length);
+      rightPhoto = currentPhotos.splice(randomPhotoIndex, 1)[0];
     }
+
     this.setState({
-      currentPhotos: fabFive,
-      currentClasses: randomClasses,
-      currentDirection: direction
+      leftPhoto: leftPhoto,
+      rightPhoto: rightPhoto,
+      //currentDirection: direction
     });
   }
 
@@ -86,23 +112,26 @@ class Story extends React.Component {
     const {
       currentYear,
       currentDirection,
-      currentPhotos,
-      currentClasses,
+      leftPhoto,
+      leftPhotoClass,
+      rightPhoto,
+      rightPhotoClass,
       fadeOut
     } = this.state;
     const years = Object.keys(photos);
 
-    const photoItems = currentPhotos.map((photo, i) => {
-      return (
-        <div key={i} className={`photo-wrapper ${currentClasses[i]} `}>
-          <img className="photo" src={photo}/>
-        </div>
-      );
-    });
+    const photoItems = [
+      <div key="left-photo" className={`photo-wrapper animated ${leftPhotoClass}`}>
+        <img className="photo" src={leftPhoto}/>
+      </div>,
+      <div key="right-photo" className={`photo-wrapper animated ${rightPhotoClass}`}>
+        <img className="photo" src={rightPhoto}/>
+      </div>
+    ];
 
     return (
       <div id="couple" className="story">
-        <div className={`photos ${fadeOut?'fade-out':''} ${currentDirection}`}>
+        <div className={`photos animated ${fadeOut?'fadeOut':'fadeIn'}${currentDirection}`}>
           {photoItems}
         </div>
         <div className="years-wrapper">
