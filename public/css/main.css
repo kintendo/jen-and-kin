@@ -48,10 +48,10 @@
       color: #D4AF37; }
 
 .story {
-  height: 100vh;
   min-height: 480px;
   background-color: #002b5c;
-  overflow: hidden; }
+  overflow: hidden;
+  padding-bottom: 40px; }
   .story .prologue {
     padding-top: 60px;
     width: 50%;
@@ -154,7 +154,7 @@
       border-top-right-radius: 80px;
       border-bottom-right-radius: 80px; }
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 736px) {
+@media (min-width: 320px) and (max-width: 1080px) {
   .years .current-year {
     width: 38px;
     padding: 12px 18px 12px 12px;
@@ -165,7 +165,7 @@
     padding: 14px;
     margin-right: -1px; } }
 
-@media only screen and (min-device-width: 737px) {
+@media (min-width: 1081px) {
   .years .current-year {
     width: 50px;
     padding: 12px 18px 14px 17px;
