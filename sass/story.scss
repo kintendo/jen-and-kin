@@ -1,6 +1,24 @@
 @import "sass/mixins";
 @import "sass/colors";
 
+@keyframes zoom {
+    0% {
+      background-size: 180%;
+    }
+    25% {
+      background-size: 170%;
+    }
+    50% {
+      background-size: 160%;
+    }
+    75%{
+       background-size: 150%;
+    }
+    100% {
+      background-size: 140%;
+    }
+}
+
 .story {
   min-height: 480px;
 
@@ -15,8 +33,9 @@
     margin-bottom: 80px;
     margin-left: auto;
     margin-right: auto;
-    background-image: url('../img/lightpaperfibers.png');
-    background-repeat: repeat;
+    // background-image: url('../img/lightpaperfibers.png');
+    // background-repeat: repeat;
+    background-color: white;
   }
   .prologue {
     padding-top: 60px;
@@ -39,24 +58,35 @@
     @include justify-content(center);
     @include align-items(center);
     @include flex-wrap(wrap);
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
     .photo-wrapper{
       height: 150px;
       width: 150px;
       overflow: hidden;
-      margin: 20px;
+      margin: 30px;
       .photo {
         height: 150px;
         width: 150px;
         background-position: center center;
         background-repeat: no-repeat;
-        background-size: 180%;
+        @include background-size(180%);
         &:hover {
-          border: 1px solid $gold;
+            @include animate(100ms linear zoom);
+            @include background-size(130%);
         }
       }
+      &:hover {
+        border: 2px solid $gold;
+        margin: 28px;
+      }
+
     }
   }
 }
+
+
 
 .years {
   list-style: none;
@@ -64,7 +94,9 @@
   @include flexbox;
   @include justify-content(center);
   @include align-items(center);
-  width: 100%;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
   .year-wrapper {
     cursor: pointer;
     text-align: center;

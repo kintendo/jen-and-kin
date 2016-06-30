@@ -1,9 +1,16 @@
+@mixin animate($val) {
+  -webkit-animation: $val;
+  -moz-animation: $val;
+  -o-animation: $val;
+  animation: $val;
+}
+
 @mixin transition($val...) {
   -webkit-transition: $val;
-  -moz-transition:$val;
-  -o-transition:$val;
-  -ms-transition:$val;
-  transition:$val;
+  -moz-transition: $val;
+  -o-transition: $val;
+  -ms-transition: $val;
+  transition: $val;
 }
 
 @mixin rotate( $val: 0deg ) {
@@ -19,6 +26,13 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+
+@mixin background-size ($val) {
+  -webkit-background-size: $val;
+  -moz-background-size: $val;
+  -o-background-size: $val;
+  background-size: $val;
 }
 
 @mixin flexbox {

@@ -55,7 +55,7 @@ class Story extends React.Component {
     if (year) {
       let currentPhotos = [...photos[year]];
       // grab 6 photos
-      for (let i = 0; i < 6 || currentPhotos.length <= 1 ; i++) {
+      for (let i = 0; i < 6 && currentPhotos.length > 0 ; i++) {
         let randomPhotoIndex = Math.floor(Math.random()*currentPhotos.length);
         sexySix.push(currentPhotos.splice(randomPhotoIndex, 1)[0]);
       }

@@ -1,3 +1,15 @@
+@keyframes zoom {
+  0% {
+    background-size: 180%; }
+  25% {
+    background-size: 170%; }
+  50% {
+    background-size: 160%; }
+  75% {
+    background-size: 150%; }
+  100% {
+    background-size: 140%; } }
+
 .story {
   min-height: 480px;
   background-color: #002b5c;
@@ -9,8 +21,7 @@
     margin-bottom: 80px;
     margin-left: auto;
     margin-right: auto;
-    background-image: url("../img/lightpaperfibers.png");
-    background-repeat: repeat; }
+    background-color: white; }
   .story .prologue {
     padding-top: 60px;
     width: 50%;
@@ -42,20 +53,36 @@
     -webkit-flex-wrap: wrap;
     -moz-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
-    flex-wrap: wrap; }
+    flex-wrap: wrap;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto; }
     .story .photos .photo-wrapper {
       height: 150px;
       width: 150px;
       overflow: hidden;
-      margin: 20px; }
+      margin: 30px; }
       .story .photos .photo-wrapper .photo {
         height: 150px;
         width: 150px;
         background-position: center center;
         background-repeat: no-repeat;
+        -webkit-background-size: 180%;
+        -moz-background-size: 180%;
+        -o-background-size: 180%;
         background-size: 180%; }
         .story .photos .photo-wrapper .photo:hover {
-          border: 1px solid #D4AF37; }
+          -webkit-animation: 100ms linear zoom;
+          -moz-animation: 100ms linear zoom;
+          -o-animation: 100ms linear zoom;
+          animation: 100ms linear zoom;
+          -webkit-background-size: 130%;
+          -moz-background-size: 130%;
+          -o-background-size: 130%;
+          background-size: 130%; }
+      .story .photos .photo-wrapper:hover {
+        border: 2px solid #D4AF37;
+        margin: 28px; }
 
 .years {
   list-style: none;
@@ -75,7 +102,9 @@
   -webkit-align-items: center;
   -moz-align-items: center;
   align-items: center;
-  width: 100%; }
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto; }
   .years .year-wrapper {
     cursor: pointer;
     text-align: center; }
