@@ -44,17 +44,18 @@
     -ms-flex-wrap: wrap;
     flex-wrap: wrap; }
     .story .photos .photo-wrapper {
-      position: relative; }
+      height: 150px;
+      width: 150px;
+      overflow: hidden;
+      margin: 20px; }
       .story .photos .photo-wrapper .photo {
-        background-color: white;
-        height: auto;
-        width: auto;
-        max-width: 300px;
-        max-height: 300px;
-        overflow: hidden;
-        padding: 40px;
-        border: 1px solid #D4AF37;
-        margin: 20px; }
+        height: 150px;
+        width: 150px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 180%; }
+        .story .photos .photo-wrapper .photo:hover {
+          border: 1px solid #D4AF37; }
 
 .years {
   list-style: none;

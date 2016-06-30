@@ -35,27 +35,24 @@
   }
   .photos {
 
-
-
-
     @include flexbox;
     @include justify-content(center);
     @include align-items(center);
     @include flex-wrap(wrap);
     .photo-wrapper{
-      position: relative;
+      height: 150px;
+      width: 150px;
+      overflow: hidden;
+      margin: 20px;
       .photo {
-        background-color: white;
-        // background-image: url('../img/large_leather.png');
-        // background-repeat: repeat;
-        height: auto;
-        width: auto;
-        max-width: 300px;
-        max-height: 300px;
-        overflow: hidden;
-        padding: 40px;
-        border: 1px solid $gold;
-        margin: 20px;
+        height: 150px;
+        width: 150px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 180%;
+        &:hover {
+          border: 1px solid $gold;
+        }
       }
     }
   }

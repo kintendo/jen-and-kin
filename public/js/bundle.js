@@ -20206,7 +20206,7 @@ var Story = function (_React$Component) {
       if (year) {
         var currentPhotos = [].concat(_toConsumableArray(photos[year]));
         // grab 6 photos
-        for (var i = 0; i < 6 || currentPhotos.length <= 0; i++) {
+        for (var i = 0; i < 6 || currentPhotos.length <= 1; i++) {
           var randomPhotoIndex = Math.floor(Math.random() * currentPhotos.length);
           sexySix.push(currentPhotos.splice(randomPhotoIndex, 1)[0]);
         }
@@ -20230,7 +20230,7 @@ var Story = function (_React$Component) {
         return React.createElement(
           'div',
           { key: i, className: 'photo-wrapper animated' },
-          React.createElement('img', { className: 'photo', src: photo })
+          React.createElement('div', { className: 'photo', style: { backgroundImage: 'url(' + photo + ')' } })
         );
       });
 

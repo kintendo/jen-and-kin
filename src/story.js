@@ -55,7 +55,7 @@ class Story extends React.Component {
     if (year) {
       let currentPhotos = [...photos[year]];
       // grab 6 photos
-      for (let i = 0; i < 6 || currentPhotos.length <= 0 ; i++) {
+      for (let i = 0; i < 6 || currentPhotos.length <= 1 ; i++) {
         let randomPhotoIndex = Math.floor(Math.random()*currentPhotos.length);
         sexySix.push(currentPhotos.splice(randomPhotoIndex, 1)[0]);
       }
@@ -78,7 +78,8 @@ class Story extends React.Component {
     const photoItems = sexySix.map((photo, i) => {
         return (
             <div key={i} className={`photo-wrapper animated`}>
-                <img className="photo" src={photo}/>
+                <div className="photo" style={{backgroundImage: `url(${photo})`}}>
+                </div>
             </div>
         );
     })
