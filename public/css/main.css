@@ -2,10 +2,12 @@
 @import url(https://fonts.googleapis.com/css?family=Sacramento);
 @import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Lora);
 @import url(https://fonts.googleapis.com/css?family=Josefin+Sans);
 @import url(https://fonts.googleapis.com/css?family=Sacramento);
 @import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Lora);
 .animate-appear {
   opacity: 0.01; }
 
@@ -22,20 +24,21 @@
   background: white;
   font-family: 'Sacramento', cursive;
   font-size: 24px;
-  height: 45px;
+  height: 60px;
   width: 100%; }
   .navbar.stick {
     position: fixed;
     top: 0;
     margin-top: 0; }
   .navbar ul {
+    height: 100%;
     margin: 0;
     list-style: none;
     display: flex;
     flex-direction: row;
     justify-content: center; }
     .navbar ul li {
-      padding: 5px 40px; }
+      padding: 15px 40px; }
       .navbar ul li a {
         color: inherit;
         text-decoration: none;
@@ -52,6 +55,14 @@
   background-color: #002b5c;
   overflow: hidden;
   padding-bottom: 40px; }
+  .story .story-wrapper {
+    width: 80%;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: url("../img/lightpaperfibers.png");
+    background-repeat: repeat; }
   .story .prologue {
     padding-top: 60px;
     width: 50%;
@@ -63,16 +74,8 @@
       font-size: 32px;
       font-family: 'Sacramento', cursive; }
     .story .prologue p {
-      color: white; }
+      color: #002b5c; }
   .story .photos {
-    width: 75%;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    background-color: white;
-    margin-left: auto;
-    margin-right: auto;
-    background-image: url("../img/lightpaperfibers.png");
-    background-repeat: repeat;
     display: -webkit-box;
     display: -webkit-flex;
     display: -moz-flex;
@@ -104,72 +107,52 @@
         padding: 40px;
         border: 1px solid #D4AF37;
         margin: 20px; }
-  .story .years-wrapper {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    -moz-justify-content: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    -moz-align-items: center;
-    align-items: center;
-    width: 100%;
-    background-color: white; }
 
 .years {
   list-style: none;
   padding: 0;
-  margin: 0; }
-  .years .current-year {
-    background: #002b5c;
-    color: #D4AF37;
-    z-index: 1;
-    float: left;
-    position: relative;
-    -webkit-transition: left 1s ease-in-out;
-    -moz-transition: left 1s ease-in-out;
-    -o-transition: left 1s ease-in-out;
-    -ms-transition: left 1s ease-in-out;
-    transition: left 1s ease-in-out; }
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center;
+  width: 100%; }
   .years .year-wrapper {
-    float: left;
     cursor: pointer;
-    background: white; }
+    text-align: center; }
     .years .year-wrapper .year {
       border-bottom: 2px;
       border-top: 2px; }
       .years .year-wrapper .year:hover {
         border-bottom: 2px solid #D4AF37; }
-    .years .year-wrapper:first-child {
-      border-top-left-radius: 80px;
-      border-bottom-left-radius: 80px; }
-    .years .year-wrapper:nth-last-child(2) {
-      border-top-right-radius: 80px;
-      border-bottom-right-radius: 80px; }
+  .years .current-year {
+    color: #D4AF37;
+    font-weight: bolder;
+    -webkit-transition: 100ms ease-in-out;
+    -moz-transition: 100ms ease-in-out;
+    -o-transition: 100ms ease-in-out;
+    -ms-transition: 100ms ease-in-out;
+    transition: 100ms ease-in-out; }
+  .years .year-direction {
+    color: #D4AF37; }
 
 @media (min-width: 320px) and (max-width: 1080px) {
-  .years .current-year {
-    width: 38px;
-    padding: 12px 18px 12px 12px;
-    font-size: 20px;
-    margin-top: -1px; }
   .years .year-wrapper {
     width: 30px;
     padding: 14px;
     margin-right: -1px; } }
 
 @media (min-width: 1081px) {
-  .years .current-year {
-    width: 50px;
-    padding: 12px 18px 14px 17px;
-    font-size: 24px; }
   .years .year-wrapper {
     width: 40px;
     padding: 18px; } }
@@ -177,7 +160,9 @@
 body {
   color: #002b5c;
   margin: 0px;
-  font-family: 'Open Sans', sans-serif; }
+  font-family: 'Lora', serif; }
+  body p {
+    font-variant: small-caps; }
 
 .preloader {
   background: url("../img/engagement_photo1.jpg") no-repeat -9999px -9999px;
@@ -185,7 +170,7 @@ body {
 
 .hero {
   opacity: 0.01;
-  height: calc(100vh - 45px);
+  height: calc(100vh - 60px);
   width: auto;
   -webkit-background-size: cover;
   -moz-background-size: cover;

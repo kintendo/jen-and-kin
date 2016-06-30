@@ -20028,7 +20028,7 @@ var Navbar = function (_React$Component) {
         offset: 40
       });
       gumShoe.init({
-        offset: 80
+        offset: 0
       });
     }
   }, {
@@ -20135,8 +20135,6 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -20161,17 +20159,12 @@ var Story = function (_React$Component) {
 
     _this.state = {
       currentYear: '2016',
-      currentDirection: 'right',
       fadeOut: false,
       currentInterval: 0,
-      leftPhoto: '',
-      rightPhoto: '',
-      leftPhotoClass: '',
-      rightPhotoClass: ''
+      sexySix: []
     };
     _this.handleYearClick = _this.handleYearClick.bind(_this);
     _this.setCurrentPhotos = _this.setCurrentPhotos.bind(_this);
-    _this.pickNewPhoto = _this.pickNewPhoto.bind(_this);
     return _this;
   }
 
@@ -20185,138 +20178,96 @@ var Story = function (_React$Component) {
     value: function handleYearClick(year) {
       var _this2 = this;
 
+      if (year === this.state.currentYear) {
+        return;
+      }
+
       // animate year, fade & slide out pictures
-      var currentDirection = year < this.state.currentYear ? 'Right' : 'Left';
-      var oppositeDirection = year < this.state.currentYear ? 'Left' : 'Right';
       this.setState({
         currentYear: year,
-        currentDirection: currentDirection,
         fadeOut: true
       });
       setTimeout(function () {
         clearInterval(_this2.state.currentInterval);
         // replace pictures
-        _this2.setCurrentPhotos(year, oppositeDirection);
+        _this2.setCurrentPhotos(year);
         setTimeout(function () {
           // fade slide pictures in
           _this2.setState({
-            fadeOut: false,
-            currentDirection: oppositeDirection
+            fadeOut: false
           });
-          // every 3 seconds
-          var newInterval = setInterval(function () {
-            // pick a side
-            var currentSide = SIDES[Math.floor(Math.random() * 2)];
-            // flip out
-            _this2.setState(_defineProperty({}, currentSide + 'Class', 'flipOutX'));
-            setTimeout(function () {
-              // pick new photo
-              _this2.setState(_defineProperty({}, currentSide, _this2.pickNewPhoto()));
-              setTimeout(function () {
-                // flip in
-                _this2.setState(_defineProperty({}, currentSide + 'Class', 'flipInX'));
-              }, 800);
-            }, 800);
-          }, 3600);
-          _this2.setState({ currentInterval: newInterval });
         }, 500);
       }, 800);
     }
   }, {
-    key: 'pickNewPhoto',
-    value: function pickNewPhoto() {
-      var _state = this.state;
-      var currentYear = _state.currentYear;
-      var leftPhoto = _state.leftPhoto;
-      var rightPhoto = _state.rightPhoto;
-
-      var currentPhotos = photos[currentYear];
-      var retries = 0;
-      var randomPhoto = '';
-      do {
-        if (retries > 10) break;
-        randomPhoto = currentPhotos[Math.floor(Math.random() * currentPhotos.length)];
-        retries++;
-      } while (randomPhoto === leftPhoto || randomPhoto === rightPhoto);
-      return randomPhoto;
-    }
-  }, {
     key: 'setCurrentPhotos',
-    value: function setCurrentPhotos(year, direction) {
-
-      var leftPhoto = '';
-      var rightPhoto = '';
+    value: function setCurrentPhotos(year) {
+      var sexySix = [];
       if (year) {
         var currentPhotos = [].concat(_toConsumableArray(photos[year]));
-
-        // grab a photo
-        var randomPhotoIndex = Math.floor(Math.random() * currentPhotos.length);
-        leftPhoto = currentPhotos.splice(randomPhotoIndex, 1)[0];
-
-        // grab another
-        randomPhotoIndex = Math.floor(Math.random() * currentPhotos.length);
-        rightPhoto = currentPhotos.splice(randomPhotoIndex, 1)[0];
+        // grab 6 photos
+        for (var i = 0; i < 6 || currentPhotos.length <= 0; i++) {
+          var randomPhotoIndex = Math.floor(Math.random() * currentPhotos.length);
+          sexySix.push(currentPhotos.splice(randomPhotoIndex, 1)[0]);
+        }
       }
 
       this.setState({
-        leftPhoto: leftPhoto,
-        rightPhoto: rightPhoto
+        sexySix: sexySix
       });
     }
   }, {
     key: 'render',
     value: function render() {
-      var _state2 = this.state;
-      var currentYear = _state2.currentYear;
-      var currentDirection = _state2.currentDirection;
-      var leftPhoto = _state2.leftPhoto;
-      var leftPhotoClass = _state2.leftPhotoClass;
-      var rightPhoto = _state2.rightPhoto;
-      var rightPhotoClass = _state2.rightPhotoClass;
-      var fadeOut = _state2.fadeOut;
+      var _state = this.state;
+      var currentYear = _state.currentYear;
+      var sexySix = _state.sexySix;
+      var fadeOut = _state.fadeOut;
 
       var years = Object.keys(photos);
 
-      var photoItems = [React.createElement(
-        'div',
-        { key: 'left-photo', className: 'photo-wrapper animated ' + leftPhotoClass },
-        React.createElement('img', { className: 'photo', src: leftPhoto })
-      ), React.createElement(
-        'div',
-        { key: 'right-photo', className: 'photo-wrapper animated ' + rightPhotoClass },
-        React.createElement('img', { className: 'photo', src: rightPhoto })
-      )];
+      var photoItems = sexySix.map(function (photo, i) {
+        return React.createElement(
+          'div',
+          { key: i, className: 'photo-wrapper animated' },
+          React.createElement('img', { className: 'photo', src: photo })
+        );
+      });
 
       return React.createElement(
         'div',
         { id: 'couple', className: 'story' },
         React.createElement(
           'div',
-          { className: 'prologue' },
+          { className: 'story-wrapper' },
           React.createElement(
-            'h4',
-            null,
-            'One Dozen Years'
+            'div',
+            { className: 'prologue' },
+            React.createElement(
+              'h4',
+              null,
+              'One Dozen Years'
+            ),
+            React.createElement(
+              'p',
+              null,
+              'Jen and Kin are finally tying the knot after twelve wonderful years together.\n                Click the years below to get a blast from the past\n                and see the happy couple through the many years.'
+            )
           ),
           React.createElement(
-            'p',
-            null,
-            'Jen and Kin are finally tying the knot after twelve wonderful years together.\n            Click the years below to get a blast from the past\n            and see the happy couple through the many years.'
+            'div',
+            { className: 'years-wrapper' },
+            React.createElement(Years, {
+              years: years,
+              currentYear: currentYear,
+              onYearClick: this.handleYearClick
+            })
+          ),
+          React.createElement(
+            'div',
+            { className: 'photos animated ' + (fadeOut ? 'fadeOut' : 'fadeIn') },
+            photoItems
           )
-        ),
-        React.createElement(
-          'div',
-          { className: 'photos animated ' + (fadeOut ? 'fadeOut' : 'fadeIn') + currentDirection },
-          photoItems
-        ),
-        React.createElement(
-          'div',
-          { className: 'years-wrapper' },
-          React.createElement(Years, {
-            years: years,
-            currentYear: currentYear,
-            onYearClick: this.handleYearClick
-          })
         )
       );
     }
@@ -20432,27 +20383,38 @@ var Venue = function (_React$Component) {
             React.createElement(
               'li',
               null,
-              'Exit Sunset Blvd and head East'
+              React.createElement(
+                'p',
+                null,
+                'Exit Sunset Blvd and head East'
+              )
             ),
             React.createElement(
               'li',
               null,
-              'Make a right on Hilgard Ave and head South'
+              React.createElement(
+                'p',
+                null,
+                'Make a right on Hilgard Ave and head South'
+              )
             ),
             React.createElement(
               'li',
               null,
-              'Make a right on Westholme Ave'
+              React.createElement(
+                'p',
+                null,
+                'Make a right on Westholme Ave'
+              )
             ),
             React.createElement(
               'li',
               null,
-              'Make a left on Charles E Young Dr'
-            ),
-            React.createElement(
-              'li',
-              null,
-              'Parking structure 2 is on the left'
+              React.createElement(
+                'p',
+                null,
+                'Entrance to parking structure 2 is immediately on the left'
+              )
             )
           ),
           React.createElement(
@@ -20466,37 +20428,56 @@ var Venue = function (_React$Component) {
             React.createElement(
               'li',
               null,
-              'Exit Wilshire Blvd and head East'
+              React.createElement(
+                'p',
+                null,
+                'Exit Wilshire Blvd and head East'
+              )
             ),
             React.createElement(
               'li',
               null,
-              'Make a left on Westwood Blvd'
+              React.createElement(
+                'p',
+                null,
+                'Make a left on Westwood Blvd'
+              )
             ),
             React.createElement(
               'li',
               null,
-              'Make an immediate right onto Lindbrook Dr'
+              React.createElement(
+                'p',
+                null,
+                'Make an immediate right onto Lindbrook Dr'
+              )
             ),
             React.createElement(
               'li',
               null,
-              'Make a slight left onto Hilgard Ave and head North'
+              React.createElement(
+                'p',
+                null,
+                'Make a slight left onto Hilgard Ave and head North'
+              )
             ),
             React.createElement(
               'li',
               null,
-              'Make a left on Westholme Ave'
+              React.createElement(
+                'p',
+                null,
+                'Make a left on Westholme Ave'
+              )
             ),
             React.createElement(
               'li',
               null,
-              'Make a left on Charles E Young Dr'
-            ),
-            React.createElement(
-              'li',
-              null,
-              'Parking structure 2 is on the left'
+              React.createElement(
+                'p',
+                null,
+                'Entrance to parking structure 2 is immediately on the left'
+              )
             )
           ),
           React.createElement(
@@ -20594,7 +20575,7 @@ var Wedding = function (_React$Component) {
 module.exports = Wedding;
 
 },{"react":167,"react-dom":33}],177:[function(require,module,exports){
-"use strict";
+'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -20621,7 +20602,7 @@ var Years = function (_React$Component) {
   }
 
   _createClass(Years, [{
-    key: "componentDidUpdate",
+    key: 'componentDidUpdate',
     value: function componentDidUpdate() {
       var _this2 = this;
 
@@ -20642,7 +20623,7 @@ var Years = function (_React$Component) {
       }
     }
   }, {
-    key: "render",
+    key: 'render',
     value: function render() {
       var _props = this.props;
       var years = _props.years;
@@ -20650,32 +20631,36 @@ var Years = function (_React$Component) {
       var onYearClick = _props.onYearClick;
       var displayYear = this.state.displayYear;
 
+
+      var nextYear = currentYear < 2016 ? currentYear + 1 : 2016;
+      var prevYear = currentYear > 2004 ? currentYear - 1 : 2004;
+
       var yearItems = years.map(function (year) {
+        var isSame = displayYear === year;
         return React.createElement(
-          "li",
-          { className: "year-wrapper", key: year, onClick: onYearClick.bind(null, year) },
+          'li',
+          { className: 'year-wrapper ' + (isSame ? 'current-year' : ''), key: year, onClick: onYearClick.bind(null, year) },
           React.createElement(
-            "span",
-            { className: "year" },
+            'span',
+            { className: 'year' },
             year
           )
         );
       });
 
-      var multiplier = 2016 - parseInt(currentYear, 10) + 1;
-      var offset = (window.innerWidth < 1000 ? 57 : 77) * multiplier;
-      var currentYearStyle = {
-        left: "-" + offset + "px"
-      };
-
       return React.createElement(
-        "ul",
-        { className: "years" },
+        'ul',
+        { className: 'years' },
+        React.createElement(
+          'li',
+          { className: 'year-wrapper year-direction', onClick: onYearClick.bind(null, prevYear) },
+          '<'
+        ),
         yearItems,
         React.createElement(
-          "li",
-          { className: "current-year", style: currentYearStyle },
-          displayYear
+          'li',
+          { className: 'year-wrapper year-direction', onClick: onYearClick.bind(null, nextYear) },
+          '>'
         )
       );
     }

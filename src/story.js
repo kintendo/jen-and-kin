@@ -14,17 +14,12 @@ class Story extends React.Component {
     super();
     this.state = {
       currentYear: '2016',
-      currentDirection: 'right',
       fadeOut: false,
       currentInterval: 0,
-      leftPhoto: '',
-      rightPhoto: '',
-      leftPhotoClass: '',
-      rightPhotoClass: ''
+      sexySix: []
     };
     this.handleYearClick = this.handleYearClick.bind(this);
     this.setCurrentPhotos = this.setCurrentPhotos.bind(this);
-    this.pickNewPhoto = this.pickNewPhoto.bind(this);
   }
 
   componentWillMount () {
@@ -32,82 +27,42 @@ class Story extends React.Component {
   }
 
   handleYearClick (year) {
+
+    if (year === this.state.currentYear) {
+        return;
+    }
+
     // animate year, fade & slide out pictures
-    const currentDirection = (year < this.state.currentYear) ? 'Right' : 'Left';
-    const oppositeDirection = (year < this.state.currentYear) ? 'Left' : 'Right';
     this.setState({
       currentYear: year,
-      currentDirection: currentDirection,
       fadeOut: true
     });
     setTimeout(() => {
       clearInterval(this.state.currentInterval);
       // replace pictures
-      this.setCurrentPhotos(year, oppositeDirection);
+      this.setCurrentPhotos(year);
       setTimeout( () => {
         // fade slide pictures in
         this.setState({
-          fadeOut: false,
-          currentDirection: oppositeDirection
+          fadeOut: false
         });
-          // every 3 seconds
-          const newInterval = setInterval(()=> {
-            // pick a side
-            const currentSide = SIDES[Math.floor(Math.random()*2)];
-            // flip out
-            this.setState({
-              [`${currentSide}Class`]: 'flipOutX'
-            });
-            setTimeout(() => {
-              // pick new photo
-              this.setState({
-                [currentSide]: this.pickNewPhoto()
-              });
-              setTimeout(() => {
-                // flip in
-                this.setState({
-                  [`${currentSide}Class`]: 'flipInX'
-                });
-              }, 800);
-            }, 800);
-          }, 3600);
-          this.setState({currentInterval: newInterval});
       }, 500);
     }, 800);
   }
 
-  pickNewPhoto() {
-    const {currentYear, leftPhoto, rightPhoto} = this.state;
-    const currentPhotos = photos[currentYear];
-    let retries = 0;
-    let randomPhoto = '';
-    do {
-      if (retries > 10) break;
-      randomPhoto = currentPhotos[Math.floor(Math.random()*currentPhotos.length)];
-      retries++;
-    } while (randomPhoto === leftPhoto || randomPhoto === rightPhoto);
-    return randomPhoto;
-  }
-
-  setCurrentPhotos(year, direction) {
-
-    let leftPhoto = '';
-    let rightPhoto = '';
+  setCurrentPhotos(year) {
+    let sexySix = [];
     if (year) {
       let currentPhotos = [...photos[year]];
-
-      // grab a photo
-      let randomPhotoIndex = Math.floor(Math.random()*currentPhotos.length);
-      leftPhoto = currentPhotos.splice(randomPhotoIndex, 1)[0];
-
-      // grab another
-      randomPhotoIndex = Math.floor(Math.random()*currentPhotos.length);
-      rightPhoto = currentPhotos.splice(randomPhotoIndex, 1)[0];
+      // grab 6 photos
+      for (let i = 0; i < 6 || currentPhotos.length <= 0 ; i++) {
+        let randomPhotoIndex = Math.floor(Math.random()*currentPhotos.length);
+        sexySix.push(currentPhotos.splice(randomPhotoIndex, 1)[0]);
+      }
     }
 
     this.setState({
-      leftPhoto: leftPhoto,
-      rightPhoto: rightPhoto
+      sexySix: sexySix
     });
   }
 
@@ -115,43 +70,40 @@ class Story extends React.Component {
 
     const {
       currentYear,
-      currentDirection,
-      leftPhoto,
-      leftPhotoClass,
-      rightPhoto,
-      rightPhotoClass,
+      sexySix,
       fadeOut
     } = this.state;
     const years = Object.keys(photos);
 
-    const photoItems = [
-      <div key="left-photo" className={`photo-wrapper animated ${leftPhotoClass}`}>
-        <img className="photo" src={leftPhoto}/>
-      </div>,
-      <div key="right-photo" className={`photo-wrapper animated ${rightPhotoClass}`}>
-        <img className="photo" src={rightPhoto}/>
-      </div>
-    ];
+    const photoItems = sexySix.map((photo, i) => {
+        return (
+            <div key={i} className={`photo-wrapper animated`}>
+                <img className="photo" src={photo}/>
+            </div>
+        );
+    })
 
     return (
       <div id="couple" className="story">
-        <div className="prologue">
-          <h4>One Dozen Years</h4>
-          <p>
-            {`Jen and Kin are finally tying the knot after twelve wonderful years together.
-            Click the years below to get a blast from the past
-            and see the happy couple through the many years.`}
-          </p>
-        </div>
-        <div className={`photos animated ${fadeOut?'fadeOut':'fadeIn'}${currentDirection}`}>
-          {photoItems}
-        </div>
-        <div className="years-wrapper">
-          <Years
-            years={years}
-            currentYear={currentYear}
-            onYearClick={this.handleYearClick}
-          />
+        <div className="story-wrapper">
+            <div className="prologue">
+              <h4>One Dozen Years</h4>
+              <p>
+                {`Jen and Kin are finally tying the knot after twelve wonderful years together.
+                Click the years below to get a blast from the past
+                and see the happy couple through the many years.`}
+              </p>
+            </div>
+            <div className="years-wrapper">
+              <Years
+                years={years}
+                currentYear={currentYear}
+                onYearClick={this.handleYearClick}
+              />
+            </div>
+            <div className={`photos animated ${fadeOut?'fadeOut':'fadeIn'}`}>
+              {photoItems}
+            </div>
         </div>
       </div>
     );

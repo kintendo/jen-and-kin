@@ -3,9 +3,21 @@
 
 .story {
   min-height: 480px;
+
+
   background-color: $navy;
   overflow: hidden;
   padding-bottom: 40px;
+  .story-wrapper {
+    width: 80%;
+    // height: 600px;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: url('../img/lightpaperfibers.png');
+    background-repeat: repeat;
+  }
   .prologue {
     padding-top: 60px;
     width: 50%;
@@ -18,18 +30,14 @@
       font-family: 'Sacramento', cursive;
     }
     p {
-      color: white;
+      color: $navy;
     }
   }
   .photos {
-    width: 75%;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    background-color: white;
-    margin-left: auto;
-    margin-right: auto;
-    background-image: url('../img/lightpaperfibers.png');
-    background-repeat: repeat;
+
+
+
+
     @include flexbox;
     @include justify-content(center);
     @include align-items(center);
@@ -51,31 +59,18 @@
       }
     }
   }
-  .years-wrapper {
-    @include flexbox;
-    @include justify-content(center);
-    @include align-items(center);
-    width: 100%;
-    background-color: white;
-  }
 }
 
 .years {
   list-style: none;
   padding: 0;
-  margin: 0;
-  .current-year {
-    background: $navy;
-    color: $gold;
-    z-index: 1;
-    float: left;
-    position:relative;
-    @include transition(left 1s ease-in-out);
-  }
+  @include flexbox;
+  @include justify-content(center);
+  @include align-items(center);
+  width: 100%;
   .year-wrapper {
-    float: left;
     cursor: pointer;
-    background: white;
+    text-align: center;
     .year {
       &:hover {
           border-bottom: 2px solid $gold;
@@ -83,26 +78,20 @@
       border-bottom: 2px;
       border-top: 2px;
     }
-    &:first-child {
-      border-top-left-radius:80px;
-      border-bottom-left-radius:80px;
-    }
-    &:nth-last-child(2) {
-      border-top-right-radius:80px;
-      border-bottom-right-radius:80px;
-    }
+  }
+  .current-year {
+    color: $gold;
+    font-weight: bolder;
+    @include transition(100ms ease-in-out);
+  }
+  .year-direction {
+      color: $gold;
   }
 }
 
 // smart phones
 @media (min-width: 320px) and (max-width: 1080px) {
   .years {
-    .current-year {
-      width: 38px;
-      padding: 12px 18px 12px 12px;
-      font-size: 20px;
-      margin-top: -1px;
-    }
     .year-wrapper {
       width: 30px;
       padding: 14px;
@@ -114,11 +103,6 @@
 // tablets & desktops
 @media (min-width: 1081px) {
   .years{
-    .current-year {
-      width: 50px;
-      padding: 12px 18px 14px 17px;
-      font-size: 24px;
-    }
     .year-wrapper {
       width: 40px;
       padding: 18px;

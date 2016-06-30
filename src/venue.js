@@ -53,21 +53,19 @@ class Venue extends React.Component {
           </div>
           <h3>{`From 405 North`}</h3>
             <ul>
-              <li>{`Exit Sunset Blvd and head East`}</li>
-              <li>{`Make a right on Hilgard Ave and head South`}</li>
-              <li>{`Make a right on Westholme Ave`}</li>
-              <li>{`Make a left on Charles E Young Dr`}</li>
-              <li>{`Parking structure 2 is on the left`}</li>
+              <li><p>{`Exit Sunset Blvd and head East`}</p></li>
+              <li><p>{`Make a right on Hilgard Ave and head South`}</p></li>
+              <li><p>{`Make a right on Westholme Ave`}</p></li>
+              <li><p>{`Entrance to parking structure 2 is immediately on the left`}</p></li>
             </ul>
           <h3>{`From 405 South`}</h3>
             <ul>
-              <li>{`Exit Wilshire Blvd and head East`}</li>
-              <li>{`Make a left on Westwood Blvd`}</li>
-              <li>{`Make an immediate right onto Lindbrook Dr`}</li>
-              <li>{`Make a slight left onto Hilgard Ave and head North`}</li>
-              <li>{`Make a left on Westholme Ave`}</li>
-              <li>{`Make a left on Charles E Young Dr`}</li>
-              <li>{`Parking structure 2 is on the left`}</li>
+              <li><p>{`Exit Wilshire Blvd and head East`}</p></li>
+              <li><p>{`Make a left on Westwood Blvd`}</p></li>
+              <li><p>{`Make an immediate right onto Lindbrook Dr`}</p></li>
+              <li><p>{`Make a slight left onto Hilgard Ave and head North`}</p></li>
+              <li><p>{`Make a left on Westholme Ave`}</p></li>
+              <li><p>{`Entrance to parking structure 2 is immediately on the left`}</p></li>
             </ul>
             <div onClick={this.enableFrameClick} onMouseLeave={this.disableFrameClick}>
               <iframe style={enableClick} src="https://www.google.com/maps/d/u/0/embed?mid=z2VcF8lpIRrI.k_CspSbNLam8"></iframe>

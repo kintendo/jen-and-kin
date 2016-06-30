@@ -28,25 +28,24 @@ class Years extends React.Component {
   render () {
     const {years, currentYear, onYearClick} = this.props;
     const {displayYear} = this.state;
+
+    const nextYear = currentYear < 2016 ? currentYear + 1 : 2016;
+    const prevYear = currentYear > 2004 ? currentYear - 1 : 2004;
+
     const yearItems = years.map((year) => {
+      const isSame = (displayYear === year);
       return (
-        <li className="year-wrapper" key={year} onClick={onYearClick.bind(null, year)}>
+        <li className={`year-wrapper ${isSame?'current-year':''}`} key={year} onClick={onYearClick.bind(null, year)}>
           <span className="year">{year}</span>
         </li>
       );
     });
 
-
-    const multiplier = 2016 - parseInt(currentYear, 10) + 1;
-    const offset = (window.innerWidth < 1000 ? 57 : 77) * multiplier;
-    const currentYearStyle = {
-      left: `-${offset}px`
-    };
-
     return (
       <ul className="years">
+        <li className="year-wrapper year-direction" onClick={onYearClick.bind(null, prevYear)}>{'<'}</li>
         {yearItems}
-        <li className="current-year" style={currentYearStyle}>{displayYear}</li>
+        <li className="year-wrapper year-direction" onClick={onYearClick.bind(null, nextYear)}>{'>'}</li>
       </ul>
     );
   }

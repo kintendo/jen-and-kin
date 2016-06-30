@@ -33,7 +33,7 @@ class Navbar extends React.Component {
         offset: 40
       });
       gumShoe.init({
-        offset: 80
+        offset: 0
       });
   }
 
