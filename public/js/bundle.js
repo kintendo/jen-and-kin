@@ -22530,11 +22530,11 @@ var Years = function (_React$Component) {
       var onYearClick = _props.onYearClick;
 
 
-      var nextYear = currentYear < 2015 ? currentYear + 1 : 2015;
-      var prevYear = currentYear > 2004 ? currentYear - 1 : 2004;
+      var nextYear = currentYear < 2015 ? parseInt(currentYear, 10) + 1 : 2015;
+      var prevYear = currentYear > 2004 ? parseInt(currentYear, 10) - 1 : 2004;
 
       var yearItems = years.map(function (year) {
-        var isSame = currentYear === year;
+        var isSame = currentYear == year;
         return React.createElement(
           'li',
           { className: 'year-wrapper ' + (isSame ? 'current-year' : ''), key: year, onClick: onYearClick.bind(null, year) },
