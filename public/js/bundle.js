@@ -13,8 +13,20 @@ module.exports = {
   2012: ['http://i.imgbox.com/WORcB49H.jpg', 'http://i.imgbox.com/BQbuAzRI.jpg', 'http://i.imgbox.com/Y7JyPjNE.jpg', 'http://i.imgbox.com/CUIwTt8u.jpg', 'http://i.imgbox.com/TtNr2IgR.jpg', 'http://i.imgbox.com/bWvnVCi4.jpg', 'http://i.imgbox.com/gnjvUg9P.jpg', 'http://i.imgbox.com/QzQ3g3Bf.jpg', 'http://i.imgbox.com/AIFOebIL.jpg', 'http://i.imgbox.com/wIZI0ewK.jpg', 'http://i.imgbox.com/mkThe1at.jpg', 'http://i.imgbox.com/C63coi4z.jpg', 'http://i.imgbox.com/kRwpHC9z.jpg', 'http://i.imgbox.com/F8KbP0F5.jpg', 'http://i.imgbox.com/9D9K26rI.jpg', 'http://i.imgbox.com/cNZXtike.jpg'],
   2013: ['http://i.imgbox.com/KpeWLNqQ.jpg', 'http://i.imgbox.com/omqtOdzb.jpg', 'http://i.imgbox.com/v99mlVsv.jpg', 'http://i.imgbox.com/g1H3BLri.jpg', 'http://i.imgbox.com/1WK4koo1.jpg', 'http://i.imgbox.com/hrmNIq1X.jpg', 'http://i.imgbox.com/ecU4pS4G.jpg', 'http://i.imgbox.com/ovLmjeo1.jpg'],
   2014: ['http://i.imgbox.com/ZiTU1h0S.jpg', 'http://i.imgbox.com/LxPudQcs.jpg', 'http://i.imgbox.com/Z99KuxxA.jpg', 'http://i.imgbox.com/RvXXQSvK.jpg', 'http://i.imgbox.com/rSiIVMjd.jpg', 'http://i.imgbox.com/w5KRo68R.jpg'],
-  2015: ['http://i.imgbox.com/3Rom0gmF.jpg', 'http://i.imgbox.com/c1d4bblq.jpg', 'http://i.imgbox.com/Qg6QEGnz.jpg', 'http://i.imgbox.com/cC6UOVb1.jpg', 'http://i.imgbox.com/cms6xz9v.jpg', 'http://i.imgbox.com/6kvPultp.jpg', 'http://i.imgbox.com/7cBkPqza.jpg', 'http://i.imgbox.com/1Yy9Ry2I.jpg', 'http://i.imgbox.com/hkmGcjWO.jpg', 'http://i.imgbox.com/0OKwLs5E.jpg', 'http://i.imgbox.com/nbjNzCmK.jpg', 'http://i.imgbox.com/7KzAQGhx.jpg', 'http://i.imgbox.com/x554rjFC.jpg', 'http://i.imgbox.com/tKmoS62v.jpg', 'http://i.imgbox.com/O180rpk1.jpg', 'http://i.imgbox.com/hy6cehNQ.jpg', 'http://i.imgbox.com/oQqc8wAE.jpg', 'http://i.imgbox.com/leHcwXHo.jpg'],
-  2016: ['http://www.carissawoophotography.com/blog/wp-content/uploads/2016/01/21-35422-post/Malibu-Cafe-Engagement-Photographer-Carissa-Woo-Photography_0028.jpg', 'http://www.carissawoophotography.com/blog/wp-content/uploads/2016/01/21-35422-post/Malibu-Cafe-Engagement-Photographer-Carissa-Woo-Photography_0033.jpg', 'http://www.carissawoophotography.com/blog/wp-content/uploads/2016/01/21-35422-post/Malibu-Cafe-Engagement-Photographer-Carissa-Woo-Photography_0035.jpg', 'http://www.carissawoophotography.com/blog/wp-content/uploads/2016/01/21-35422-post/Malibu-Cafe-Engagement-Photographer-Carissa-Woo-Photography_0038.jpg', 'http://www.carissawoophotography.com/blog/wp-content/uploads/2016/01/21-35422-post/Malibu-Cafe-Engagement-Photographer-Carissa-Woo-Photography_0040.jpg', 'http://www.carissawoophotography.com/blog/wp-content/uploads/2016/01/21-35422-post/Malibu-Cafe-Engagement-Photographer-Carissa-Woo-Photography_0041.jpg', 'http://www.carissawoophotography.com/blog/wp-content/uploads/2016/01/21-35422-post/Malibu-Cafe-Engagement-Photographer-Carissa-Woo-Photography_0045.jpg', 'http://www.carissawoophotography.com/blog/wp-content/uploads/2016/01/21-35422-post/Malibu-Cafe-Engagement-Photographer-Carissa-Woo-Photography_0049.jpg', 'http://www.carissawoophotography.com/blog/wp-content/uploads/2016/01/21-35422-post/Malibu-Cafe-Engagement-Photographer-Carissa-Woo-Photography_0051.jpg', 'http://www.carissawoophotography.com/blog/wp-content/uploads/2016/01/21-35422-post/Malibu-Cafe-Engagement-Photographer-Carissa-Woo-Photography_0053.jpg', 'http://www.carissawoophotography.com/blog/wp-content/uploads/2016/01/21-35422-post/Malibu-Cafe-Engagement-Photographer-Carissa-Woo-Photography_0054.jpg']
+  2015: ['http://i.imgbox.com/3Rom0gmF.jpg', 'http://i.imgbox.com/c1d4bblq.jpg', 'http://i.imgbox.com/Qg6QEGnz.jpg', 'http://i.imgbox.com/cC6UOVb1.jpg', 'http://i.imgbox.com/cms6xz9v.jpg', 'http://i.imgbox.com/6kvPultp.jpg', 'http://i.imgbox.com/7cBkPqza.jpg', 'http://i.imgbox.com/1Yy9Ry2I.jpg', 'http://i.imgbox.com/hkmGcjWO.jpg', 'http://i.imgbox.com/0OKwLs5E.jpg', 'http://i.imgbox.com/nbjNzCmK.jpg', 'http://i.imgbox.com/7KzAQGhx.jpg', 'http://i.imgbox.com/x554rjFC.jpg', 'http://i.imgbox.com/tKmoS62v.jpg', 'http://i.imgbox.com/O180rpk1.jpg', 'http://i.imgbox.com/hy6cehNQ.jpg', 'http://i.imgbox.com/oQqc8wAE.jpg', 'http://i.imgbox.com/leHcwXHo.jpg']
+  // 2016: [
+  //   'http://www.carissawoophotography.com/blog/wp-content/uploads/2016/01/21-35422-post/Malibu-Cafe-Engagement-Photographer-Carissa-Woo-Photography_0028.jpg',
+  //   'http://www.carissawoophotography.com/blog/wp-content/uploads/2016/01/21-35422-post/Malibu-Cafe-Engagement-Photographer-Carissa-Woo-Photography_0033.jpg',
+  //   'http://www.carissawoophotography.com/blog/wp-content/uploads/2016/01/21-35422-post/Malibu-Cafe-Engagement-Photographer-Carissa-Woo-Photography_0035.jpg',
+  //   'http://www.carissawoophotography.com/blog/wp-content/uploads/2016/01/21-35422-post/Malibu-Cafe-Engagement-Photographer-Carissa-Woo-Photography_0038.jpg',
+  //   'http://www.carissawoophotography.com/blog/wp-content/uploads/2016/01/21-35422-post/Malibu-Cafe-Engagement-Photographer-Carissa-Woo-Photography_0040.jpg',
+  //   'http://www.carissawoophotography.com/blog/wp-content/uploads/2016/01/21-35422-post/Malibu-Cafe-Engagement-Photographer-Carissa-Woo-Photography_0041.jpg',
+  //   'http://www.carissawoophotography.com/blog/wp-content/uploads/2016/01/21-35422-post/Malibu-Cafe-Engagement-Photographer-Carissa-Woo-Photography_0045.jpg',
+  //   'http://www.carissawoophotography.com/blog/wp-content/uploads/2016/01/21-35422-post/Malibu-Cafe-Engagement-Photographer-Carissa-Woo-Photography_0049.jpg',
+  //   'http://www.carissawoophotography.com/blog/wp-content/uploads/2016/01/21-35422-post/Malibu-Cafe-Engagement-Photographer-Carissa-Woo-Photography_0051.jpg',
+  //   'http://www.carissawoophotography.com/blog/wp-content/uploads/2016/01/21-35422-post/Malibu-Cafe-Engagement-Photographer-Carissa-Woo-Photography_0053.jpg',
+  //   'http://www.carissawoophotography.com/blog/wp-content/uploads/2016/01/21-35422-post/Malibu-Cafe-Engagement-Photographer-Carissa-Woo-Photography_0054.jpg'
+  // ]
 };
 
 },{}],2:[function(require,module,exports){
@@ -22028,9 +22040,8 @@ var Story = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Story).call(this));
 
     _this.state = {
-      currentYear: '2016',
+      currentYear: '2015',
       fadeOut: false,
-      currentInterval: 0,
       sexySix: [],
       currentPhoto: '',
       isModalOpen: false
@@ -22056,17 +22067,16 @@ var Story = function (_React$Component) {
         return;
       }
 
-      // animate year, fade & slide out pictures
+      // fade & slide pictures out
       this.setState({
         currentYear: year,
         fadeOut: true
       });
       setTimeout(function () {
-        clearInterval(_this2.state.currentInterval);
         // replace pictures
         _this2.setCurrentPhotos(year);
         setTimeout(function () {
-          // fade slide pictures in
+          // fade & slide pictures in
           _this2.setState({
             fadeOut: false
           });
@@ -22259,7 +22269,7 @@ var Venue = function (_React$Component) {
           React.createElement(
             'p',
             null,
-            'The ceremony will be taking place at the summit of Janss Steps.\n            It will overlook two of the most iconic buildings at UCLA, Royce Hall & Powell Library.\n            Shortly after, the event will transition to a cocktail hour steps away at Dickson Court North,\n            known to students as the "sunken garden".'
+            'The ceremony will be taking place at the summit of Janss Steps.\n            It will overlook two of the most iconic buildings at UCLA, Royce Hall & Powell Library.\n            Shortly after, the event will transition to a cocktail hour steps away at Dickson Court North,\n            known to students as the "Sunken Garden".'
           ),
           React.createElement(
             'h2',
@@ -22275,6 +22285,16 @@ var Venue = function (_React$Component) {
               '10745 Dickson Court',
               React.createElement('br', null),
               'Los Angeles, CA 90095'
+            ),
+            React.createElement(
+              'p',
+              null,
+              'Both the ceremony and reception will be right at pickup/dropoff address above.'
+            ),
+            React.createElement(
+              'p',
+              null,
+              'Directions to free parking can be found below and is just an 8 minute walk from the venue.'
             )
           ),
           React.createElement(
@@ -22495,53 +22515,26 @@ var React = require('react');
 var Years = function (_React$Component) {
   _inherits(Years, _React$Component);
 
-  function Years(props) {
+  function Years() {
     _classCallCheck(this, Years);
 
-    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Years).call(this, props));
-
-    _this.state = {
-      displayYear: props.currentYear
-    };
-    return _this;
+    return _possibleConstructorReturn(this, Object.getPrototypeOf(Years).apply(this, arguments));
   }
 
   _createClass(Years, [{
-    key: 'componentDidUpdate',
-    value: function componentDidUpdate() {
-      var _this2 = this;
-
-      var targetYear = parseInt(this.props.currentYear, 10);
-
-      if (targetYear) {
-        (function () {
-          var displayYear = parseInt(_this2.state.displayYear, 10);
-          var newDisplayYear = displayYear < targetYear ? displayYear + 1 : displayYear - 1;
-          if (displayYear != targetYear) {
-            setTimeout(function () {
-              _this2.setState({
-                displayYear: newDisplayYear.toString()
-              });
-            }, 100);
-          }
-        })();
-      }
-    }
-  }, {
     key: 'render',
     value: function render() {
       var _props = this.props;
       var years = _props.years;
       var currentYear = _props.currentYear;
       var onYearClick = _props.onYearClick;
-      var displayYear = this.state.displayYear;
 
 
-      var nextYear = currentYear < 2016 ? currentYear + 1 : 2016;
+      var nextYear = currentYear < 2015 ? currentYear + 1 : 2015;
       var prevYear = currentYear > 2004 ? currentYear - 1 : 2004;
 
       var yearItems = years.map(function (year) {
-        var isSame = displayYear === year;
+        var isSame = currentYear === year;
         return React.createElement(
           'li',
           { className: 'year-wrapper ' + (isSame ? 'current-year' : ''), key: year, onClick: onYearClick.bind(null, year) },

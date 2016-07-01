@@ -136,7 +136,7 @@
   .ReactModalPortal .ReactModal__Content {
     max-height: 400px;
     height: auto;
-    width: 60%;
+    width: 50%;
     z-index: 3;
     margin-left: auto;
     margin-right: auto;

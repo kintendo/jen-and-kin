@@ -44,12 +44,14 @@ class Venue extends React.Component {
             {`The ceremony will be taking place at the summit of Janss Steps.
             It will overlook two of the most iconic buildings at UCLA, Royce Hall & Powell Library.
             Shortly after, the event will transition to a cocktail hour steps away at Dickson Court North,
-            known to students as the "sunken garden".`}
+            known to students as the "Sunken Garden".`}
           </p>
           <h2>{`Directions to UCLA`}</h2>
           <div>
             <p>10745 Dickson Court<br/>
             Los Angeles, CA 90095</p>
+            <p>Both the ceremony and reception will be right at pickup/dropoff address above.</p>
+            <p>Directions to free parking can be found below and is just an 8 minute walk from the venue.</p>
           </div>
           <h3>{`From 405 North`}</h3>
             <ul>

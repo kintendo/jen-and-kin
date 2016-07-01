@@ -15,9 +15,8 @@ class Story extends React.Component {
   constructor() {
     super();
     this.state = {
-      currentYear: '2016',
+      currentYear: '2015',
       fadeOut: false,
-      currentInterval: 0,
       sexySix: [],
       currentPhoto: '',
       isModalOpen: false
@@ -38,17 +37,16 @@ class Story extends React.Component {
         return;
     }
 
-    // animate year, fade & slide out pictures
+    // fade & slide pictures out
     this.setState({
       currentYear: year,
       fadeOut: true
     });
-    setTimeout(() => {
-      clearInterval(this.state.currentInterval);
+    setTimeout( () => {
       // replace pictures
       this.setCurrentPhotos(year);
       setTimeout( () => {
-        // fade slide pictures in
+        // fade & slide pictures in
         this.setState({
           fadeOut: false
         });
