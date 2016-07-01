@@ -46,7 +46,7 @@ class Venue extends React.Component {
             Shortly after, the event will transition to a cocktail hour steps away at Dickson Court North,
             known to students as the "Sunken Garden".`}
           </p>
-          <h2>{`Directions to UCLA`}</h2>
+          <h2>{`Directions`}</h2>
           <div>
             <p>10745 Dickson Court<br/>
             Los Angeles, CA 90095</p>

@@ -7,13 +7,13 @@ class Wedding extends React.Component {
   constructor() {
     super();
     this.events = [
-      {time: '9:30 a.m.', title: 'the tea ceremony',
+      {time: '9:30 a.m.', title: 'tea ceremony',
         description: `
           An intimate ceremony attended exclusively by family, relatives, and close family friends.
           This ritual serves as the bride's symbolic introduction to the groom's family.
         `
       },
-      {time: '4:30 p.m.', title: 'the wedding ceremony',
+      {time: '4:30 p.m.', title: 'wedding ceremony',
         description: `
           The ceremony will be taking place at the top of Janss steps overlooking UCLA’s two most iconic buildings,
           Royce Hall and Powell Library.
@@ -21,7 +21,7 @@ class Wedding extends React.Component {
           Come witness as Jennifer and Kin have each prepared their own vows to exchange.
         `
       },
-      {time: '5:30 p.m.', title: 'the cocktail hour',
+      {time: '5:30 p.m.', title: 'cocktail hour',
         description: `
           At the conlcusion of the ceremony,
           stroll on over to Dickson Court North and begin the celebration with a magical hour of passed appetizers,
@@ -29,7 +29,7 @@ class Wedding extends React.Component {
           and craft beers.
         `
       },
-      {time: '6:30 p.m.', title: 'the reception',
+      {time: '6:30 p.m.', title: 'reception',
         description: `
           Continue the celebration with the newlyweds with a seven course family-style traditional Chinese banquet followed by a wedding cake from King’s Hawaiian.
           Dinner will be followed by dancing (mandatory per the groom’s request!).

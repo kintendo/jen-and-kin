@@ -125,5 +125,28 @@ body {
 }
 
 .party {
-  height: 800px;
+  margin-top: 40px;
+  @include flexbox;
+  @include justify-content(center);
+  .bio-wrapper {
+      h3 {
+          text-align: center;
+          font-family: 'Sacramento', cursive;
+          font-size: 42px;
+          font-weight: 100;
+      }
+      width: 50%;
+      .bio {
+        margin-top: 40px;
+        margin-bottom: 40px;
+        &.groom {
+          margin-left: 80px;
+          margin-right: 40px;
+        }
+        &.bride {
+          margin-left: 40px;
+          margin-right: 80px;
+        }
+      }
+  }
 }

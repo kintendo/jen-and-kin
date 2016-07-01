@@ -22,7 +22,7 @@ class App extends React.Component {
         <Navbar />
         <Wedding />
         <Venue />
-        {/*}<Party />*/}
+        <Party />
         <Story />
       </div>
     );

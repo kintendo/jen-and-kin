@@ -21,6 +21,9 @@
     flex-direction: row;
     justify-content: center;
     li {
+      &.date {
+          color: $gold;
+      }
       padding: 15px 40px;
       a {
         color: inherit;

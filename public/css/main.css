@@ -39,6 +39,8 @@
     justify-content: center; }
     .navbar ul li {
       padding: 15px 40px; }
+      .navbar ul li.date {
+        color: #D4AF37; }
       .navbar ul li a {
         color: inherit;
         text-decoration: none;
@@ -362,4 +364,30 @@ body {
     border: none; }
 
 .party {
-  height: 800px; }
+  margin-top: 40px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center; }
+  .party .bio-wrapper {
+    width: 50%; }
+    .party .bio-wrapper h3 {
+      text-align: center;
+      font-family: 'Sacramento', cursive;
+      font-size: 42px;
+      font-weight: 100; }
+    .party .bio-wrapper .bio {
+      margin-top: 40px;
+      margin-bottom: 40px; }
+      .party .bio-wrapper .bio.groom {
+        margin-left: 80px;
+        margin-right: 40px; }
+      .party .bio-wrapper .bio.bride {
+        margin-left: 40px;
+        margin-right: 80px; }
