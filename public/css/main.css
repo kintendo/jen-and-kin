@@ -176,6 +176,46 @@
   .years .year-direction {
     color: #D4AF37; }
 
+.ReactModal__Overlay {
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.7) !important; }
+
+.ReactModalPortal {
+  max-height: 400px;
+  width: auto;
+  top: 80px;
+  z-index: 3; }
+  .ReactModalPortal .ReactModal__Content {
+    max-height: 400px;
+    height: auto;
+    width: 60%;
+    z-index: 3;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px;
+    border: none !important;
+    background: none !important;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    align-items: center; }
+    .ReactModalPortal .ReactModal__Content img {
+      height: 100%;
+      width: auto;
+      margin-left: auto;
+      margin-right: auto; }
+
 @media (min-width: 320px) and (max-width: 1080px) {
   .years .year-wrapper {
     width: 30px;

@@ -2,9 +2,11 @@
 
 const React = require('react');
 const ReactDOM = require('react-dom');
+const Modal = require('react-modal');
 const ReactAnimate = require('react-addons-css-transition-group');
 const photos = require('../lib/photos.js');
 const Years = require('./years.js');
+
 
 const SIDES = ['leftPhoto', 'rightPhoto'];
 
@@ -16,10 +18,14 @@ class Story extends React.Component {
       currentYear: '2016',
       fadeOut: false,
       currentInterval: 0,
-      sexySix: []
+      sexySix: [],
+      currentPhoto: '',
+      isModalOpen: false
     };
     this.handleYearClick = this.handleYearClick.bind(this);
     this.setCurrentPhotos = this.setCurrentPhotos.bind(this);
+    this.setCurrentPhoto = this.setCurrentPhoto.bind(this);
+    this.closeModal = this.closeModal.bind(this);
   }
 
   componentWillMount () {
@@ -66,10 +72,26 @@ class Story extends React.Component {
     });
   }
 
+  setCurrentPhoto (photo) {
+      this.setState({
+          currentPhoto: photo,
+          isModalOpen: true
+      });
+
+  }
+
+  closeModal () {
+      this.setState({
+          isModalOpen: false
+      });
+  }
+
   render (){
 
     const {
+      isModalOpen,
       currentYear,
+      currentPhoto,
       sexySix,
       fadeOut
     } = this.state;
@@ -78,11 +100,11 @@ class Story extends React.Component {
     const photoItems = sexySix.map((photo, i) => {
         return (
             <div key={i} className={`photo-wrapper animated`}>
-                <div className="photo" style={{backgroundImage: `url(${photo})`}}>
+                <div className="photo" style={{backgroundImage: `url(${photo})`}} onClick={this.setCurrentPhoto.bind(this, photo)}>
                 </div>
             </div>
         );
-    })
+    });
 
     return (
       <div id="couple" className="story">
@@ -105,6 +127,14 @@ class Story extends React.Component {
             <div className={`photos animated ${fadeOut?'fadeOut':'fadeIn'}`}>
               {photoItems}
             </div>
+        </div>
+        <div className="modal-wrapper">
+            <Modal
+                isOpen={isModalOpen}
+                onRequestClose={this.closeModal}
+            >
+                <img className="lightbox" src={currentPhoto}></img>
+            </Modal>
         </div>
       </div>
     );

@@ -118,6 +118,38 @@
   }
 }
 
+.ReactModal__Overlay {
+    z-index: 2;
+    background-color: rgba(0,0,0,0.7) !important;
+}
+
+.ReactModalPortal {
+    max-height: 400px;
+    width: auto;
+    top: 80px;
+    z-index: 3;
+    .ReactModal__Content {
+        max-height: 400px;
+        height: auto;
+        width: 60%;
+        z-index: 3;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0px;
+        border: none !important;
+        background: none !important;
+        @include flexbox;
+        @include justify-content(center);
+        @include align-items(center);
+        img {
+            height: 100%;
+            width: auto;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
+
 // smart phones
 @media (min-width: 320px) and (max-width: 1080px) {
   .years {
