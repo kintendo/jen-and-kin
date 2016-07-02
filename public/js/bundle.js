@@ -22125,12 +22125,12 @@ var Party = function (_React$Component) {
             React.createElement(
               'h4',
               null,
-              'Irene Ho'
+              'Michelle Lin'
             ),
             React.createElement(
               'p',
               null,
-              'Irene has known Jen and Kin for over 10 years. Irene now works in a business management firm. She loves to eat tacos, any and all vegetables, and green smoothies. Her random memory about Jen is when Jen used to not like avocados or guacamole (she has since converted) and also when they went swimming in the ocean in Hawaii. She also remembers Kin taking Jen to their high school prom in his new and decorated Mini Cooper! Irene’s guilty pleasures include celebrity gossip and lately, Shondaland.'
+              'Michelle, or "Moosh," is from SoCal and attended UCLA studying Applied Mathematics. She currently works as a Human Resources Executive for Target. One of her biggest passions in life is the love of music and she has been playing violin and piano for more than 15 years. More recently, she has started to find the love of dancing hip hop, so when people say it\'s "Moosh type of music" or a "Moosh type of bar," all her friends know what that means. Moosh definitely appreciates Kin\'s witty humor and enjoys the constant jokes he has about her, but Moosh seriously sees Kin as an older brother who\'s always there for her. A favorite memory of Jen is when they first became friends they risked their lives on a dangerous hike in Malibu, but of course Moosh acted as if she wasn\'t scared and played it cool, when she was actually terrified of that hike due to the height of it. Many other adventures have followed after that – their friendship is truly one of a kind.'
             )
           ),
           React.createElement(
@@ -22139,12 +22139,12 @@ var Party = function (_React$Component) {
             React.createElement(
               'h4',
               null,
-              'Michelle Lin'
+              'Irene Ho'
             ),
             React.createElement(
               'p',
               null,
-              'Michelle, or "Moosh," is from SoCal and attended UCLA studying Applied Mathematics. She currently works as a Human Resources Executive for Target. One of her biggest passions in life is the love of music and she has been playing violin and piano for more than 15 years. More recently, she has started to find the love of dancing hip hop, so when people say it\'s "Moosh type of music" or a "Moosh type of bar," all her friends know what that means. Moosh definitely appreciates Kin\'s witty humor and enjoys the constant jokes he has about her, but Moosh seriously sees Kin as an older brother who\'s always there for her. A favorite memory of Jen is when they first became friends they risked their lives on a dangerous hike in Malibu, but of course Moosh acted as if she wasn\'t scared and played it cool, when she was actually terrified of that hike due to the height of it. Many other adventures have followed after that – their friendship is truly one of a kind.'
+              'Irene has known Jen and Kin for over 10 years. Irene now works in a business management firm. She loves to eat tacos, any and all vegetables, and green smoothies. Her random memory about Jen is when Jen used to not like avocados or guacamole (she has since converted) and also when they went swimming in the ocean in Hawaii. She also remembers Kin taking Jen to their high school prom in his new and decorated Mini Cooper! Irene’s guilty pleasures include celebrity gossip and lately, Shondaland.'
             )
           )
         )
@@ -22403,160 +22403,176 @@ var Venue = function (_React$Component) {
           'div',
           { className: 'content-wrapper' },
           React.createElement(
-            'h1',
-            null,
-            'U',
-            React.createElement(
-              'span',
-              { className: 'gold' },
-              'C'
-            ),
-            'LA'
-          ),
-          React.createElement('div', { className: 'school-banner' }),
-          React.createElement(
-            'p',
-            null,
-            'The ceremony will be taking place at the summit of Janss Steps.\n            It will overlook two of the most iconic buildings at UCLA, Royce Hall & Powell Library.\n            Shortly after, the event will transition to a cocktail hour steps away at Dickson Court North,\n            known to students as the "Sunken Garden".'
-          ),
-          React.createElement(
-            'h2',
-            null,
-            'Directions'
-          ),
-          React.createElement(
             'div',
             null,
             React.createElement(
+              'h1',
+              null,
+              'U',
+              React.createElement(
+                'span',
+                { className: 'gold' },
+                'C'
+              ),
+              'LA'
+            ),
+            React.createElement('div', { className: 'school-banner' }),
+            React.createElement(
               'p',
               null,
-              '10745 Dickson Court',
-              React.createElement('br', null),
-              'Los Angeles, CA 90095'
-            ),
-            React.createElement(
-              'p',
-              null,
-              'Both the ceremony and reception will be right at pickup/dropoff address above.'
-            ),
-            React.createElement(
-              'p',
-              null,
-              'Directions to free parking can be found below and is just an 8 minute walk from the venue.'
-            )
-          ),
-          React.createElement(
-            'h3',
-            null,
-            'From 405 North'
-          ),
-          React.createElement(
-            'ul',
-            null,
-            React.createElement(
-              'li',
-              null,
-              React.createElement(
-                'p',
-                null,
-                'Exit Sunset Blvd and head East'
-              )
-            ),
-            React.createElement(
-              'li',
-              null,
-              React.createElement(
-                'p',
-                null,
-                'Make a right on Hilgard Ave and head South'
-              )
-            ),
-            React.createElement(
-              'li',
-              null,
-              React.createElement(
-                'p',
-                null,
-                'Make a right on Westholme Ave'
-              )
-            ),
-            React.createElement(
-              'li',
-              null,
-              React.createElement(
-                'p',
-                null,
-                'Entrance to parking structure 2 is immediately on the left'
-              )
-            )
-          ),
-          React.createElement(
-            'h3',
-            null,
-            'From 405 South'
-          ),
-          React.createElement(
-            'ul',
-            null,
-            React.createElement(
-              'li',
-              null,
-              React.createElement(
-                'p',
-                null,
-                'Exit Wilshire Blvd and head East'
-              )
-            ),
-            React.createElement(
-              'li',
-              null,
-              React.createElement(
-                'p',
-                null,
-                'Make a left on Westwood Blvd'
-              )
-            ),
-            React.createElement(
-              'li',
-              null,
-              React.createElement(
-                'p',
-                null,
-                'Make an immediate right onto Lindbrook Dr'
-              )
-            ),
-            React.createElement(
-              'li',
-              null,
-              React.createElement(
-                'p',
-                null,
-                'Make a slight left onto Hilgard Ave and head North'
-              )
-            ),
-            React.createElement(
-              'li',
-              null,
-              React.createElement(
-                'p',
-                null,
-                'Make a left on Westholme Ave'
-              )
-            ),
-            React.createElement(
-              'li',
-              null,
-              React.createElement(
-                'p',
-                null,
-                'Entrance to parking structure 2 is immediately on the left'
-              )
+              'The ceremony will be taking place at the summit of Janss Steps.\n                It will overlook two of the most iconic buildings at UCLA, Royce Hall & Powell Library.\n                Shortly after, the event will transition to a cocktail hour steps away at Dickson Court North,\n                known to students as the "Sunken Garden".'
             )
           ),
           React.createElement(
             'div',
-            { onClick: this.enableFrameClick, onMouseLeave: this.disableFrameClick },
-            React.createElement('iframe', { style: enableClick, src: 'https://www.google.com/maps/d/u/0/embed?mid=z2VcF8lpIRrI.k_CspSbNLam8' })
+            { className: 'directions-wrapper' },
+            React.createElement(
+              'div',
+              { className: 'directions' },
+              React.createElement(
+                'h2',
+                null,
+                'Directions'
+              ),
+              React.createElement(
+                'div',
+                null,
+                React.createElement(
+                  'p',
+                  null,
+                  '10745 Dickson Court',
+                  React.createElement('br', null),
+                  'Los Angeles, CA 90095'
+                ),
+                React.createElement(
+                  'p',
+                  null,
+                  'Both the ceremony and reception will be right at pickup/dropoff address above.'
+                ),
+                React.createElement(
+                  'p',
+                  null,
+                  'Directions to free parking can be found below and is just an 8 minute walk from the venue.'
+                )
+              ),
+              React.createElement(
+                'h3',
+                null,
+                'From 405 North'
+              ),
+              React.createElement(
+                'ul',
+                null,
+                React.createElement(
+                  'li',
+                  null,
+                  React.createElement(
+                    'p',
+                    null,
+                    'Exit Sunset Blvd and head East'
+                  )
+                ),
+                React.createElement(
+                  'li',
+                  null,
+                  React.createElement(
+                    'p',
+                    null,
+                    'Make a right on Hilgard Ave and head South'
+                  )
+                ),
+                React.createElement(
+                  'li',
+                  null,
+                  React.createElement(
+                    'p',
+                    null,
+                    'Make a right on Westholme Ave'
+                  )
+                ),
+                React.createElement(
+                  'li',
+                  null,
+                  React.createElement(
+                    'p',
+                    null,
+                    'Entrance to parking structure 2 is immediately on the left'
+                  )
+                )
+              ),
+              React.createElement(
+                'h3',
+                null,
+                'From 405 South'
+              ),
+              React.createElement(
+                'ul',
+                null,
+                React.createElement(
+                  'li',
+                  null,
+                  React.createElement(
+                    'p',
+                    null,
+                    'Exit Wilshire Blvd and head East'
+                  )
+                ),
+                React.createElement(
+                  'li',
+                  null,
+                  React.createElement(
+                    'p',
+                    null,
+                    'Make a left on Westwood Blvd'
+                  )
+                ),
+                React.createElement(
+                  'li',
+                  null,
+                  React.createElement(
+                    'p',
+                    null,
+                    'Make an immediate right onto Lindbrook Dr'
+                  )
+                ),
+                React.createElement(
+                  'li',
+                  null,
+                  React.createElement(
+                    'p',
+                    null,
+                    'Make a slight left onto Hilgard Ave and head North'
+                  )
+                ),
+                React.createElement(
+                  'li',
+                  null,
+                  React.createElement(
+                    'p',
+                    null,
+                    'Make a left on Westholme Ave'
+                  )
+                ),
+                React.createElement(
+                  'li',
+                  null,
+                  React.createElement(
+                    'p',
+                    null,
+                    'Entrance to parking structure 2 is immediately on the left'
+                  )
+                )
+              )
+            ),
+            React.createElement(
+              'div',
+              { className: 'map' },
+              React.createElement(
+                'div',
+                { onClick: this.enableFrameClick, onMouseLeave: this.disableFrameClick },
+                React.createElement('iframe', { style: enableClick, src: 'https://www.google.com/maps/d/u/0/embed?mid=z2VcF8lpIRrI.k_CspSbNLam8' })
+              )
+            )
           )
         )
       );
